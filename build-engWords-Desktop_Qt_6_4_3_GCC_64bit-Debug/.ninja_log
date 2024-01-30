@@ -1,0 +1,20 @@
+# ninja log v5
+1	10	1705585929586875001	engWords_autogen/timestamp	ff0ac101d2e04dea
+1	10	1705585929586875001	engWords_autogen/mocs_compilation.cpp	ff0ac101d2e04dea
+56	953	1705582061151674998	CMakeFiles/engWords.dir/main.cpp.o	aff3d324a016767d
+1	10	1705585929586875001	/home/vladimir_khlghatyan/Desktop/engWords/build-engWords-Desktop_Qt_6_4_3_GCC_64bit-Debug/engWords_autogen/timestamp	ff0ac101d2e04dea
+1	10	1705585929586875001	/home/vladimir_khlghatyan/Desktop/engWords/build-engWords-Desktop_Qt_6_4_3_GCC_64bit-Debug/engWords_autogen/mocs_compilation.cpp	ff0ac101d2e04dea
+55	931	1705582061131674321	CMakeFiles/engWords.dir/engWords_autogen/mocs_compilation.cpp.o	57eac445f3e2760b
+1	132	1705404276712435348	build.ninja	3831049e2f95c55f
+10	1125	1705585930702904933	CMakeFiles/engWords.dir/mainwindow.cpp.o	6356e04277ab1f8b
+1125	1281	1705585930854909010	engWords	cf97cb957a365d2f
+2	16	1705585958891661544	engWords_autogen/timestamp	ff0ac101d2e04dea
+2	16	1705585958891661544	engWords_autogen/mocs_compilation.cpp	ff0ac101d2e04dea
+2	16	1705585958891661544	/home/vladimir_khlghatyan/Desktop/engWords/build-engWords-Desktop_Qt_6_4_3_GCC_64bit-Debug/engWords_autogen/timestamp	ff0ac101d2e04dea
+2	16	1705585958891661544	/home/vladimir_khlghatyan/Desktop/engWords/build-engWords-Desktop_Qt_6_4_3_GCC_64bit-Debug/engWords_autogen/mocs_compilation.cpp	ff0ac101d2e04dea
+1	13	1705585965083827891	engWords_autogen/timestamp	ff0ac101d2e04dea
+1	13	1705585965083827891	engWords_autogen/mocs_compilation.cpp	ff0ac101d2e04dea
+1	13	1705585965083827891	/home/vladimir_khlghatyan/Desktop/engWords/build-engWords-Desktop_Qt_6_4_3_GCC_64bit-Debug/engWords_autogen/timestamp	ff0ac101d2e04dea
+1	13	1705585965083827891	/home/vladimir_khlghatyan/Desktop/engWords/build-engWords-Desktop_Qt_6_4_3_GCC_64bit-Debug/engWords_autogen/mocs_compilation.cpp	ff0ac101d2e04dea
+14	1232	1705585966299860565	CMakeFiles/engWords.dir/mainwindow.cpp.o	6356e04277ab1f8b
+1232	1383	1705585966451864650	engWords	cf97cb957a365d2f
