@@ -24,10 +24,12 @@ public:
     QString     getExecutableGrandparentDirPath(void);
     QStringList readFromFile(const QString& filepath);
     int         getRandomNumber(int lower, int upper);
-    void        writeToFile(const QString& filePath, const QStringList& source);
+    void        writeToFileInAppendMode(const QString& filePath, const QStringList& source);
+    void        writeToFileInTranscateMode(const QString& filePath, const QStringList& source);
     void        parse(QStringList& source);
     void        newWordButtonPushAction(void);
     void        clearButtonPushAction(void);
+    void        deleteButtonPushAction(void);
     void        buttonPushAction(int index);
 
 private:
@@ -35,9 +37,11 @@ private:
     QVector<QPushButton*>    _button;
     QStringList             _engWords;
     QStringList             _armWords;
+    QString                 _filePath;
     int                     _correctIndex;
     int                     _totalAnswers;
     int                     _rightAnswers;
+    int                     _currentWordIndex;
 
 };
 #endif // MAINWINDOW_H
