@@ -38,16 +38,24 @@ MainWindow::MainWindow(QWidget *parent)
                         })");
 
     ui->clear->setStyleSheet(R"(QPushButton {
-                                    font-size:        14px;
+                                    font-size:  14px;
                                 })");
 
+    ui->dlt->setEnabled(false);
     ui->dlt->setStyleSheet(R"(QPushButton {
-                                    font-size:        14px;
+                                    font-size:  14px;
+                                    color:      gray;
                                 })");
 
     ui->countLabel->setStyleSheet(R"(QLabel {
                                         font-size:  20px;
                                         color:      white;
+                                    })");
+
+    ui->dltLabel->hide();
+    ui->dltLabel->setStyleSheet(R"(QLabel {
+                                        font-size:  20px;
+                                        color:      #FF3333;
                                     })");
 
 
@@ -58,6 +66,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     _totalAnswers = 0;
     _rightAnswers = 0;
+    _deletedWords = 0;
+    _currentWordIndex = -1;
 
     _filePath = getExecutableGrandparentDirPath() + "/words/";
     auto sourse = readFromFile(_filePath + "source.txt");
@@ -77,6 +87,29 @@ MainWindow::MainWindow(QWidget *parent)
         connect(_button[i], &QToolButton::clicked, this, [this, i] { this->buttonPushAction(i); });
         _button[i]->setEnabled(false);
     }
+
+    connect(ui->checkBox, &QCheckBox::stateChanged, this,
+            [&](void)
+            {
+                if (ui->checkBox->isChecked())
+                {
+                    ui->dlt->setEnabled(true);
+                    ui->dlt->setStyleSheet(R"(QPushButton {
+                                                font-size:  14px;
+                                                color:      white;
+                                            })");
+                    ui->dltLabel->show();
+                }
+                else
+                {
+                    ui->dlt->setEnabled(false);
+                    ui->dlt->setStyleSheet(R"(QPushButton {
+                                                font-size:  14px;
+                                                color:      gray;
+                                            })");
+                    ui->dltLabel->hide();
+                }
+            });
 }
 
 MainWindow::~MainWindow()
@@ -232,7 +265,7 @@ void MainWindow::newWordButtonPushAction(void)
     }
 
     _currentWordIndex = getRandomNumber(0, _engWords.size() - 1);
-    ui->label->setText(_engWords[_currentWordIndex]);
+    ui->wordLabel->setText(_engWords[_currentWordIndex]);
 
     _correctIndex = getRandomNumber(0, 3);
     _button[_correctIndex]->setText(_armWords[_currentWordIndex]);
@@ -269,10 +302,14 @@ void MainWindow::clearButtonPushAction(void)
 
 void MainWindow::deleteButtonPushAction(void)
 {
+    if (_currentWordIndex == -1)
+        return;
+
     _engWords.removeAt(_currentWordIndex);
     _armWords.removeAt(_currentWordIndex);
     writeToFileInTranscateMode(_filePath + "eng.txt", _engWords);
     writeToFileInTranscateMode(_filePath + "arm.txt", _armWords);
+    ui->dltLabel->setText(QString::number(++_deletedWords));
     newWordButtonPushAction();
 }
 

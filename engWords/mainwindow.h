@@ -41,6 +41,7 @@ private:
     int                     _correctIndex;
     int                     _totalAnswers;
     int                     _rightAnswers;
+    int                     _deletedWords;
     int                     _currentWordIndex;
 
 };
