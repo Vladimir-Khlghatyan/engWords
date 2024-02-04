@@ -34,15 +34,16 @@ public:
 
 private:
     Ui::MainWindow          *ui;
-    QVector<QPushButton*>    _button;
+    QVector<QPushButton*>   _button;
     QStringList             _engWords;
     QStringList             _armWords;
-    QString                 _filePath;
+    QString                 _sourcePath;
     int                     _correctIndex;
     int                     _totalAnswers;
     int                     _rightAnswers;
     int                     _deletedWords;
     int                     _currentWordIndex;
+    QTimer*                 _timer;
 
 };
 #endif // MAINWINDOW_H

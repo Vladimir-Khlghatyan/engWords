@@ -3,8 +3,10 @@
 
 #include <QDir>
 #include <QFile>
+#include <QFileDialog>
 #include <QTextStream>
 #include <QToolButton>
+#include <QTimer>
 #include <QDebug>
 
 #include <random>
@@ -37,8 +39,14 @@ MainWindow::MainWindow(QWidget *parent)
                             font-weight:      bold;
                         })");
 
+    ui->source->setStyleSheet(R"(QPushButton {
+                                    font-size:  12px;
+                                })");
+
+    ui->clear->setEnabled(false);
     ui->clear->setStyleSheet(R"(QPushButton {
                                     font-size:  14px;
+                                    color:      gray;
                                 })");
 
     ui->dlt->setEnabled(false);
@@ -49,8 +57,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->countLabel->setStyleSheet(R"(QLabel {
                                         font-size:  20px;
-                                        color:      white;
+                                        color:      gray;
                                     })");
+
+    ui->newWord->setEnabled(false);
+    ui->newWord->setStyleSheet(R"(QPushButton {
+                                    color: gray;
+                                })");
 
     ui->dltLabel->hide();
     ui->dltLabel->setStyleSheet(R"(QLabel {
@@ -69,15 +82,52 @@ MainWindow::MainWindow(QWidget *parent)
     _deletedWords = 0;
     _currentWordIndex = -1;
 
-    _filePath = getExecutableGrandparentDirPath() + "/words/";
-    auto sourse = readFromFile(_filePath + "source.txt");
-    parse(sourse);
-    writeToFileInAppendMode(_filePath + "words.txt", sourse);
+    _timer = new QTimer(this);
+    _timer->setSingleShot(true);
+    _timer->setInterval(500);
 
-    _engWords = readFromFile(_filePath + "eng.txt");
-    _armWords = readFromFile(_filePath + "arm.txt");
+    ui->checkBox->hide();
+    connect(ui->source, &QToolButton::clicked, this,
+            [&](void)
+            {
+                QString startDir = getExecutableGrandparentDirPath() + "/source";
+                _sourcePath = QFileDialog::getExistingDirectory(nullptr, "Select Directory", startDir, QFileDialog::ShowDirsOnly);
 
+                if (_sourcePath.isEmpty())
+                    return;
 
+                auto source = readFromFile(_sourcePath + "/source.txt");
+                parse(source);
+                writeToFileInAppendMode(_sourcePath + "/words.txt", source);
+                _engWords = readFromFile(_sourcePath + "/eng.txt");
+                _armWords = readFromFile(_sourcePath + "/arm.txt");
+
+                ui->clear->setEnabled(true);
+                ui->clear->setStyleSheet(R"(QPushButton {
+                                            font-size:  14px;
+                                            color:      white;
+                                        })");
+
+                ui->countLabel->setStyleSheet(R"(QLabel {
+                                                    font-size:  20px;
+                                                    color:      white;
+                                                })");
+
+                ui->checkBox->show();
+
+                ui->newWord->setEnabled(true);
+                ui->newWord->setStyleSheet(R"(QPushButton {
+                                                color: white;
+                                            })");
+
+                ui->wordLabel->setText("Are you ready?");
+
+                ui->source->setEnabled(false);
+                ui->source->setStyleSheet(R"(QPushButton {
+                                                font-size:  14px;
+                                                color:      gray;
+                                            })");
+            });
 
     connect(ui->newWord, &QToolButton::clicked, this, [&](void) { this->newWordButtonPushAction(); });
     connect(ui->clear, &QToolButton::clicked, this, [&](void) { this->clearButtonPushAction(); });
@@ -235,6 +285,16 @@ void MainWindow::parse(QStringList& source)
                 }
             }
 
+            // chacking "ed" at the end of the word
+            if (word.endsWith("ed"))
+            {
+                auto substring1 = word.left(word.size() - 1);
+                auto substring2 = word.left(word.size() - 2);
+                if (set.find(substring1) != set.end() || set.find(substring2) != set.end()) {
+                    set.erase(word);
+                }
+            }
+
         }
     }
 
@@ -307,10 +367,16 @@ void MainWindow::deleteButtonPushAction(void)
 
     _engWords.removeAt(_currentWordIndex);
     _armWords.removeAt(_currentWordIndex);
-    writeToFileInTranscateMode(_filePath + "eng.txt", _engWords);
-    writeToFileInTranscateMode(_filePath + "arm.txt", _armWords);
+    writeToFileInTranscateMode(_sourcePath + "/eng.txt", _engWords);
+    writeToFileInTranscateMode(_sourcePath + "/arm.txt", _armWords);
     ui->dltLabel->setText(QString::number(++_deletedWords));
-    newWordButtonPushAction();
+
+    _button[_correctIndex]->setStyleSheet("QPushButton { background-color: green;}");
+   _timer->start();
+    QObject::connect(_timer, &QTimer::timeout, this, [&]() {
+        newWordButtonPushAction();
+    });
+
 }
 
 void MainWindow::buttonPushAction(int index)

@@ -42,11 +42,9 @@ and
 another
 any
 apart
-api
 app
 appearance
 append
-application
 applied
 apply
 applying
@@ -55,14 +53,12 @@ approaching
 appropriately
 arbitrary
 architecture
-are
 argc
 argument
 argv
 around
 arrange
 arrangement
-array
 ascendingorder
 ask
 aspects
@@ -103,29 +99,24 @@ box
 branch
 brief
 building
-built
 button
 call
 calling
 can
 cannot
 capabilities
-capable
 care
 case
 cast
 cause
 causes
-cell
 central
 certain
 chance
 changed
 changes
-check
 checkbox
 chestnut
-child
 choice
 choices
 choose
@@ -137,7 +128,6 @@ clicked
 clicking
 closely
 closes
-collection
 colors
 combination
 combined
@@ -192,7 +182,6 @@ could
 count
 covered
 covers
-create
 created
 createeditor
 createindex
@@ -221,7 +210,6 @@ default
 deferred
 defined
 definition
-delegate
 delegates
 demonstrate
 demonstrates
@@ -229,7 +217,6 @@ depending
 derived
 describe
 describes
-deselect
 deselected
 deselecting
 design
@@ -306,7 +293,6 @@ ensures
 ensuring
 entire
 entry
-enum
 equivalent
 etc
 even
@@ -329,7 +315,6 @@ expensive
 explained
 explore
 explored
-export
 exported
 expose
 exposed
@@ -347,7 +332,6 @@ fast
 fetched
 fetches
 fetchmore
-few
 fewer
 file
 filesystem
@@ -362,7 +346,6 @@ finditems
 finish
 finished
 first
-five
 flag
 flat
 flexible
@@ -385,7 +368,6 @@ functioning
 further
 gamma
 general
-generate
 generic
 given
 gives
@@ -431,7 +413,6 @@ independently
 index
 indexa
 indexb
-indexc
 indicate
 indicated
 indicates
@@ -446,12 +427,10 @@ inherit
 inheriting
 initially
 input
-inserted
 inserting
 insertion
 inside
 insist
-install
 installed
 installing
 instance
@@ -494,7 +473,6 @@ lambda
 layout
 lazy
 leads
-left
 level
 lie
 lieu
@@ -508,8 +486,6 @@ local
 locate
 located
 location
-long
-longer
 look
 loop
 lump
@@ -519,7 +495,6 @@ mainly
 maintain
 maintained
 mainwindow
-makes
 making
 manage
 management
@@ -529,7 +504,6 @@ manipulate
 manipulated
 manipulates
 many
-maps
 matchflags
 matching
 matter
@@ -543,8 +517,6 @@ methods
 million
 mime
 mimedata
-mimetypes
-mind
 minimize
 mode
 modes
@@ -566,7 +538,6 @@ navigation
 necessary
 need
 neglected
-never
 new
 newly
 next
@@ -577,9 +548,7 @@ not
 nothing
 notify
 now
-null
 nullptr
-number
 numeric
 numrows
 object
@@ -594,9 +563,6 @@ one
 only
 onto
 open
-operate
-operation
-operators
 option
 order
 ordinary
@@ -613,7 +579,6 @@ outline
 over
 overall
 overview
-own
 paint
 painting
 paradigm
@@ -654,7 +619,6 @@ predefined
 predictably
 presence
 present
-presenting
 pressed
 prevents
 previously
@@ -663,7 +627,6 @@ private
 process
 processed
 produce
-programmatically
 programming
 propagated
 properly
@@ -696,7 +659,6 @@ recommend
 recommended
 record
 recorded
-recording
 rect
 rectangle
 reduce
@@ -711,7 +673,6 @@ region
 register
 reimplement
 reimplementation
-reimplemented
 relation
 relationship
 relevant
@@ -733,7 +694,6 @@ representation
 represented
 request
 requested
-required
 requires
 resemble
 resized
@@ -751,7 +711,6 @@ retrieved
 retrieving
 return
 returned
-reuse
 reverse
 right
 roles
@@ -772,7 +731,6 @@ selection
 sense
 sensible
 separate
-separates
 separation
 sequence
 serialized
@@ -804,18 +762,15 @@ sizehint
 slightly
 slot
 smalltalk
-solve
 some
 something
 sometimes
 somewhere
 sophisticated
-sort
 sortable
 sorting
 source
 sources
-specialized
 specific
 specified
 specifies
@@ -840,7 +795,6 @@ straightforward
 stream
 streamed
 string
-strongly
 structural
 structure
 style
@@ -853,7 +807,6 @@ success
 successful
 suit
 suitable
-sum
 summary
 supplement
 supplied
@@ -865,7 +818,6 @@ surrounding
 sycamore
 system
 table
-take
 takechild
 taken
 tasks
@@ -911,7 +863,6 @@ updates
 usable
 use
 used
-useful
 user
 using
 valid
@@ -937,7 +888,6 @@ widget
 window
 with
 within
-worry
 would
 write
 writeonly
