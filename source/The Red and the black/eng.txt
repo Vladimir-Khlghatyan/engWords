@@ -41,7 +41,6 @@ anything
 apart
 april
 area
-aristocrat
 armies
 arms
 army
@@ -53,7 +52,6 @@ artists
 ask
 asleep
 attack
-aunt
 authors
 autumn
 awake
@@ -78,7 +76,6 @@ bed
 bedroom
 before
 begin
-beginning
 behaves
 behind
 belief
@@ -149,7 +146,6 @@ careless
 carriage
 carried
 carrying
-cases
 cathedral
 caught
 caused
@@ -344,7 +340,6 @@ faithful
 fall
 family
 famous
-far
 fascinating
 fasten
 father
@@ -399,14 +394,12 @@ friendly
 frightened
 front
 full
-furniture
 future
 gaoler
 garden
 gave
 generals
 gently
-get
 getting
 gift
 girl
@@ -477,7 +470,6 @@ helper
 helping
 henri
 here
-herself
 hidden
 hide
 hiding
@@ -555,7 +547,6 @@ jump
 jura
 just
 keep
-kept
 key
 kill
 killing
@@ -586,7 +577,6 @@ lazy
 leader
 learning
 least
-leave
 left
 less
 lessons
@@ -753,7 +743,6 @@ parisian
 passion
 passionate
 passionately
-past
 path
 pay
 peaceful
@@ -877,7 +866,6 @@ ribbon
 rich
 richer
 richest
-right
 ring
 ringing
 river
@@ -1053,7 +1041,6 @@ talking
 tall
 taught
 teach
-teaching
 tears
 tell
 ten
@@ -1080,7 +1067,6 @@ thinking
 third
 thirtieth
 thirty
-this
 those
 though
 thought
@@ -1101,7 +1087,6 @@ tomb
 tomorrow
 tonight
 too
-took
 torn
 touch
 towards
@@ -1134,7 +1119,6 @@ understand
 understood
 unfaithful
 unfriendly
-ungrateful
 unhappiness
 unhappy
 uniform
@@ -1215,7 +1199,6 @@ wouldn
 wrong
 wrote
 year
-you
 young
 youngest
 your
