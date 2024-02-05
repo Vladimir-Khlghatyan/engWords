@@ -82,9 +82,13 @@ MainWindow::MainWindow(QWidget *parent)
     _deletedWords = 0;
     _currentWordIndex = -1;
 
-    _timer = new QTimer(this);
-    _timer->setSingleShot(true);
-    _timer->setInterval(500);
+    _dltTimer = new QTimer(this);
+    _dltTimer->setSingleShot(true);
+    _dltTimer->setInterval(500);
+
+    _nextTimer = new QTimer(this);
+    _nextTimer->setSingleShot(true);
+    _nextTimer->setInterval(1000);
 
     ui->checkBox->hide();
     connect(ui->source, &QToolButton::clicked, this,
@@ -372,8 +376,8 @@ void MainWindow::deleteButtonPushAction(void)
     ui->dltLabel->setText(QString::number(++_deletedWords));
 
     _button[_correctIndex]->setStyleSheet("QPushButton { background-color: green;}");
-   _timer->start();
-    QObject::connect(_timer, &QTimer::timeout, this, [&]() {
+   _dltTimer->start();
+    QObject::connect(_dltTimer, &QTimer::timeout, this, [&]() {
         newWordButtonPushAction();
     });
 
@@ -400,6 +404,11 @@ void MainWindow::buttonPushAction(int index)
                                     color: white;
                                 })");
     ui->newWord->setEnabled(true);
+
+    _nextTimer->start();
+    QObject::connect(_nextTimer, &QTimer::timeout, this, [&]() {
+        newWordButtonPushAction();
+    });
 }
 
 

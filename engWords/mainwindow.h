@@ -43,7 +43,8 @@ private:
     int                     _rightAnswers;
     int                     _deletedWords;
     int                     _currentWordIndex;
-    QTimer*                 _timer;
+    QTimer*                 _dltTimer;
+    QTimer*                 _nextTimer;
 
 };
 #endif // MAINWINDOW_H
