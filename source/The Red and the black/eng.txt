@@ -133,7 +133,6 @@ businessmen
 busy
 but
 butterflies
-buy
 call
 calm
 came
@@ -169,14 +168,12 @@ cheeks
 chestnut
 chief
 child
-children
 chin
 choice
 choices
 chose
 christi
 church
-city
 class
 classical
 cleaned
@@ -359,7 +356,6 @@ finally
 find
 fine
 fingers
-finished
 first
 fiveteen
 flashes
@@ -372,11 +368,9 @@ foolish
 foolishly
 for
 forehead
-foreign
 forget
 forgive
 forgot
-forgotten
 forward
 fought
 found
@@ -414,7 +408,6 @@ going
 gone
 good
 goodbye
-got
 government
 governors
 grand
@@ -551,7 +544,6 @@ key
 kill
 killing
 kind
-kindly
 kindness
 king
 kissed
@@ -565,7 +557,6 @@ known
 ladder
 land
 landowner
-language
 large
 last
 latter
@@ -577,7 +568,6 @@ lazy
 leader
 learning
 least
-left
 less
 lessons
 let
@@ -592,7 +582,6 @@ lifted
 lifting
 light
 lightning
-like
 lines
 listen
 listening
@@ -654,7 +643,6 @@ messenger
 met
 metal
 metres
-metz
 midday
 middle
 might
@@ -725,7 +713,6 @@ once
 one
 only
 onwards
-open
 opinions
 ordinary
 our
@@ -782,7 +769,6 @@ pope
 portrait
 position
 possible
-power
 powerful
 pray
 prayers
@@ -812,7 +798,6 @@ property
 protect
 proud
 prove
-pulled
 pulling
 punish
 punishing
@@ -887,7 +872,6 @@ ruler
 ruling
 run
 running
-sadly
 sadness
 safe
 said
@@ -973,7 +957,6 @@ son
 soon
 sorel
 sorry
-sound
 speak
 speech
 spelling
@@ -1134,7 +1117,6 @@ use
 useless
 usually
 valenod
-verb
 vergy
 very
 visit

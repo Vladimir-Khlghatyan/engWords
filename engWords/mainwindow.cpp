@@ -106,6 +106,12 @@ MainWindow::MainWindow(QWidget *parent)
                 _engWords = readFromFile(_sourcePath + "/eng.txt");
                 _armWords = readFromFile(_sourcePath + "/arm.txt");
 
+                if (_engWords.size() < 4)
+                {
+                    ui->wordLabel->setText("Not enough words in eng.txt.\nSelect another source!");
+                    return;
+                }
+
                 ui->clear->setEnabled(true);
                 ui->clear->setStyleSheet(R"(QPushButton {
                                             font-size:  14px;
