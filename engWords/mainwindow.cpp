@@ -71,6 +71,11 @@ MainWindow::MainWindow(QWidget *parent)
                                         color:      #FF3333;
                                     })");
 
+    ui->wordCount->setStyleSheet(R"(QLabel {
+                                        font-size:  14px;
+                                        color:      gray;
+                                    })");
+
 
     _button.push_back(ui->pushButton_0);
     _button.push_back(ui->pushButton_1);
@@ -95,6 +100,7 @@ MainWindow::MainWindow(QWidget *parent)
             [&](void)
             {
                 QString startDir = getExecutableGrandparentDirPath() + "/source";
+                qDebug() << "startDir:" << startDir;
                 _sourcePath = QFileDialog::getExistingDirectory(nullptr, "Select Directory", startDir, QFileDialog::ShowDirsOnly);
 
                 if (_sourcePath.isEmpty())
@@ -111,6 +117,8 @@ MainWindow::MainWindow(QWidget *parent)
                     ui->wordLabel->setText("Not enough words in eng.txt.\nSelect another source!");
                     return;
                 }
+
+                ui->wordCount->setText(QString("Words in base: ") + QString::number(_engWords.size()));
 
                 ui->clear->setEnabled(true);
                 ui->clear->setStyleSheet(R"(QPushButton {
@@ -385,6 +393,7 @@ void MainWindow::deleteButtonPushAction(void)
    _dltTimer->start();
     QObject::connect(_dltTimer, &QTimer::timeout, this, [&]() {
         newWordButtonPushAction();
+        ui->wordCount->setText(QString("Words in base: ") + QString::number(_engWords.size()));
     });
 
 }
