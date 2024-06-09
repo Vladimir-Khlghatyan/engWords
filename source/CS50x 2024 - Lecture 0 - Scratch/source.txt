@@ -1,0 +1,6497 @@
+
+
+hello world this is cs50 Harvard
+
+University's introduction to the
+
+intellectual Enterprises of computer
+
+science and the Art of
+
+programming wolf
+
+wolf
+
+I'm sorry
+
+Dave what
+
+This is CS50
+about what
+
+about we
+
+ lights we can see in the
+
+dark we are
+
+Rockets pointed up at the
+
+start at the
+
+start we are
+
+billions of beautiful
+
+hearts and you
+
+so us down the river too
+
+far what
+
+about what about all the T you said you
+
+are the
+
+answer what about us what about all
+
+the gr from Happy Ever
+
+After what
+
+about what about
+
+all what
+
+about what
+
+about
+
+[Music]
+
+all right
+
+so
+
+this is cs50 Harvard University's
+
+introduction to the intellectual
+
+Enterprises of computer science and the
+
+Art of programming and this is spot and
+
+our thanks to our friends at 3D Cowboys
+
+for bringing him by class today perhaps
+
+a round of applause for our special
+
+professor
+
+gu my name is David M and I actually
+
+took this class cs50 myself some years
+
+ago but I almost didn't and I didn't
+
+because when I got to campus as a first
+
+year I really gravitated toward things
+
+already familiar things with which I was
+
+already comfortable specifically
+
+government and I came in here thinking I
+
+was going to major or concentrate in
+
+government and it was only once I got to
+
+sophomore year fall semester that some
+
+friends of mine were coming to this
+
+class called cs50 that was very much to
+
+beware at the time in that it was an
+
+unfamiliar field to so many of us myself
+
+included but I sort of got up the nerve
+
+to go over the threshold sit in on the
+
+first class to shop it so to speak and I
+
+was hooked I found that like homework
+
+was for the first time fun and this was
+
+after having enrolled only because the
+
+professor let me enroll pass fail or sat
+
+on set because I didn't really think I
+
+could even cut it but fast forward to
+
+like five Mondays later in the semester
+
+I actually switched to a letter grade
+
+deciding wow this is actually something
+
+for me and I say this because computer
+
+science what I didn't realize about it
+
+at the time really is this very general
+
+purpose way of thinking and way of
+
+solving problems and even if this is the
+
+only CS class you ever take even if this
+
+is the only formal training you have in
+
+Pro programming is a practical skill
+
+it's just so darn applicable to so many
+
+other fields the Arts Humanity social
+
+sciences Natural Sciences and Beyond and
+
+certainly within the stem Fields
+
+themselves that said it's going to often
+
+feel a little something like this this
+
+is from our friends at MIT down the road
+
+which uh is one of their hacks whereby
+
+they connected a fire hydrant to a
+
+drinking fountain with a little sign up
+
+there that says getting an education
+
+from MIT is like drinking from a fire
+
+hose which is to say it's going to feel
+
+quite often in this class too that
+
+there's just a lot of information and
+
+you can't possibly absorb it all but
+
+realize that's sort of to be expected
+
+especially in an introductory class the
+
+whole point is for so much of it to feel
+
+new but with practice with time with
+
+years even looking back will you get all
+
+the more comfortable with the material
+
+but you're not meant to feel comfortable
+
+along the way and so let me encourage
+
+you invite you expect you to get
+
+comfortable feeling uncomfortable along
+
+the way whether you have or have not
+
+prior computer science or programming
+
+experience now back in my day the
+
+class's syllabus was a little bit
+
+different and really when I and all of
+
+my classmates exited the class we would
+
+say to friends that we learned how to
+
+program in C which is a language that we
+
+ourselves will still learn in this class
+
+but that was it for languages but
+
+nowadays as you'll see we'll explore not
+
+just this older language called C but a
+
+more modern language called python
+
+that's very much invogue for data
+
+science and web applications and much
+
+more but we'll also introduce you along
+
+the way to another language called SQL
+
+or SQL which is specific specifically
+
+for databases and sqls a different type
+
+of programming language that's just
+
+going to give you different ways of
+
+solving problems different building
+
+blocks with which to express problems
+
+you want to solve we'll introduce you
+
+toward the end of the semester but yet
+
+another language JavaScript often used
+
+with markup languages called HTML and
+
+CSS with which maybe you have some
+
+experience if you've made websites but
+
+we'll do this because so many of today's
+
+actual real world software is web- based
+
+or it's phone based mobile based but
+
+even then it's using these same
+
+languages like JavaScript and so by the
+
+end of cs50 in particular you won't know
+
+how to program in X or Y or Z per se but
+
+period you'll learn how to program and
+
+indeed among the goals of this class is
+
+to equip you with enough of a set of
+
+Concepts enough practical skills and
+
+experience that after cs50 again if you
+
+never take another CS class you can
+
+teach yourself new languages and you
+
+won't feel you won't have been reliant
+
+on a class to indeed introduce you to
+
+each and one of those ideas and what are
+
+we going to do then in this class class
+
+and really what are we going to start
+
+doing today well we're going to learn
+
+how to solve problems and that's really
+
+what computer science is all about we'll
+
+very specifically today knock off a few
+
+to-dos we'll learn how to represent
+
+simple things like numbers we'll learn
+
+how to represent letters of an alphabet
+
+like English we'll learn how to
+
+represent colors red green blue and
+
+everything in between we'll learn how to
+
+represent more more interestingly
+
+full-fledged images that you might see
+
+in the web or your phone we'll talk
+
+about representing videos and even audio
+
+files so by the end of today alone you
+
+will exit here here with a new found
+
+mental model for how you can represent
+
+all of today's media and multimedia that
+
+we sort of take for granted and use most
+
+every day but we'll also Focus today
+
+ultimately on how to write algorithms
+
+like step-by-step instructions for
+
+solving some problem specifically
+
+implementing algorithms with code and
+
+that's what we'll find an algorithm is
+
+just something you can express in
+
+English or any human language but code
+
+is a translation of that to presumably
+
+the zeros and ones that you've probably
+
+heard is all that computers ultimately
+
+speak and if you're feeling like that's
+
+a lot for today if you're feeling like
+
+that's a lot for the whole semester
+
+realize and take comfort in knowing that
+
+2third of you have never taken a CS
+
+course before so even if you think like
+
+I did all those years ago that surely my
+
+friends the kids I didn't even know in
+
+the class must know more than I've been
+
+programming since they were you know six
+
+years old that's just not the case
+
+you're in very much good company and
+
+within the class will you find different
+
+tracks by way of the homework
+
+assignments called Problem sets by way
+
+of the sections or recitations there'll
+
+be different tracks for those of you
+
+less comfortable more comfortable
+
+somewhere in between and if you really
+
+don't know why you are here today we'll
+
+even have sections for those least
+
+comfortable where you just don't
+
+necessarily feel ready to dive into CS
+
+or maybe stem more generally but we'll
+
+get you there by way of the course's
+
+support structure and it's very much
+
+grounded in this mindset what ultimately
+
+matters in this class is not so much
+
+where you end up relative to your
+
+classmates but where you end up relative
+
+to yourself when you began so whether
+
+you have or have not prior programming
+
+or CS experience it's not going to
+
+matter matter when it comes to
+
+evaluation when it comes to the output
+
+be it a grade or satisfactory Mark they
+
+like it's going to depend on really
+
+where you are today in this what we call
+
+week zero um versus the very end of the
+
+semester when you'll have built
+
+something Grand of your very own in
+
+software but cs50 is also characterized
+
+fairly uniquely by its Community its
+
+culture and along the way you'll see
+
+that your experience is punctuated by a
+
+lot of Social and academic events alike
+
+cs50 lunches most every Friday we'll
+
+gather at a nearby restaurant called
+
+Chang show where we'll have Chinese
+
+lunch together and as many of you as
+
+might want to attend that week will be
+
+able to join us sit down and chat
+
+casually with me the courses teaching
+
+staff um friends of ours alumni from
+
+industry as well um cs50 puzzle day
+
+coming up this weekend will be an
+
+opportunity even if you have no prior CS
+
+experience just to solve problems not
+
+jigsaw puzzles but puzzles in The
+
+Logical sense we'll hand you a packet of
+
+uh puzzles logic problems or riddles or
+
+the like that you as teams can solve
+
+together and at the very end we'll walk
+
+you through and along the way there'll
+
+be not only these puzzles but pizza and
+
+prizes and so much more as well towards
+
+the end of the semester we'll have a
+
+cs50 hackathon whereby we'll get
+
+together around 700 P p.m. uh at the
+
+start of reading period and we'll finish
+
+up around 7 a.m. the next morning and
+
+it'll be this opportunity to really bond
+
+with your classmates your project
+
+Partners if you work in a team on your
+
+very own final project which is meant to
+
+be a Capstone of the course something
+
+you build yourselves that we don't hand
+
+you a specification for but it's sort of
+
+your final offboarding so that when you
+
+exit cs50 you don't need cs50 anymore
+
+you don't need me you don't need your TF
+
+you can actually write code and solve
+
+problems on your own so this picture
+
+here is one of our past uh photos from
+
+earlier in the evening things get a
+
+little quieter as we then around 5:00
+
+a.m. Drive anyone who's still awake and
+
+energetic to a nearby IHOP for pancakes
+
+around then um but here is how most of
+
+the evenings tend to end for at least
+
+some of your classmates prior but at the
+
+very end of the class is the so-called
+
+cs50 Fair an exhibition of all of your
+
+final projects for friends faculty
+
+students and staff across campus whereby
+
+you'll invite be invited to a space like
+
+this bring your laptop bring your phone
+
+whatever is you have built and created
+
+and we'll just show it off for a bit of
+
+the afternoon complete with music and
+
+friends from industry and candy and all
+
+what makes uh gathering together a terms
+
+and fund and you'll wear ultimately very
+
+proudly we hope your very own I took
+
+cs50 stating very matter of factly what
+
+I did some years ago that indeed this
+
+was a course I myself took so today
+
+Computer Science
+let's focus in on computer science like
+
+what is it well it's really like the
+
+study of information but really it's
+
+more specifically about solving problems
+
+using certain ideas and techniques all
+
+of which you'll exit the course with so
+
+as such problem solving is a tech is a
+
+goal that will approach by way of
+
+something called computational thinking
+
+so computational thinking you can kind
+
+of overs simplistically think about it
+
+as like thinking like a computer but
+
+it's really the application of ideas
+
+that we'll dive into today and we'll
+
+finish some weeks from now that you can
+
+apply to problems from this this field
+
+almost any other but in a computational
+
+that is a very methodical very careful
+
+way and that's what CS really did for me
+
+and does for a lot of people it helps
+
+kind of clean up your thought processes
+
+even if you go off into the real world
+
+and do nothing in Tech you have an
+
+ability after classes like this to
+
+express yourself a little more correctly
+
+more precisely and generally having
+
+better command of your own ideas and
+
+your language so what's problem solving
+
+let me propose that this is it like this
+
+is as simple as we can make today's
+
+goals and the semester's goals problems
+
+to be solved look like this you've got
+
+some input the problem to be solved
+
+you've got a goal being the output like
+
+the solution there too and then
+
+somewhere in the middle is the secret
+
+sauce where we'll spend the next several
+
+weeks figuring out how we can convert
+
+these inputs to outputs but before we
+
+can do that we all just kind of have to
+
+agree on how to represent these inputs
+
+and outputs whether it's with English or
+
+really any type of language but as I
+
+spoiled earlier you probably came in
+
+Binary
+here already with a general sense that
+
+yeah computers somehow only speak or
+
+know zero and ones the so-called binary
+
+system but that's just one way of
+
+representing information even simpler
+
+than binary is unary so if you've ever
+
+at this age or any prior age sort of
+
+counted on your fingers this is unary
+
+notation whereby each of your digits
+
+your fingers literally represent some
+
+piece of information taking attendance
+
+like 1 2 3 four five but on your one
+
+human hand how high can you count in
+
+this unary
+
+notation five I'm hearing five
+
+six I heard one six but I'm going to go
+
+further and say the answer if you're
+
+clever about it is actually 4 not quite
+
+40 you overbid but 31 is as high as I
+
+can actually count and that's because if
+
+I actually and if you're thinking this
+
+is weirdly painful now like it will be
+
+but this is my hand representing the
+
+number zero normally in unary this is 1
+
+2 3 4 five of course obviously but what
+
+if I take into account the order in
+
+which I'm putting my fingers up and down
+
+so maybe this is still zero maybe this
+
+is still one but maybe this is now two
+
+where it's just the single second finger
+
+up not two of them total maybe this is
+
+now three maybe this is now often
+
+offensive with just the middle finger up
+
+this is now five this is now six this is
+
+now seven and my hand just hurts too
+
+much if I try to count higher than seven
+
+but theoretically because each of my
+
+fingers can be down or up and I've got
+
+five of them that's actually 32 possible
+
+permutations up and down but wait a
+
+minute we said 31 but if you start at
+
+zero you kind of have to subtract one
+
+from the biggest possible value so this
+
+is to say you and I have been using
+
+unary because it's just simple and it
+
+gets the job done but if we just think
+
+about representation a little more
+
+cleverly we can do exactly what
+
+computers do using not what
+
+mathematicians call Base one where the
+
+finger's either there or it's not but
+
+base two and in base two we just need
+
+two digits at our disposal and we could
+
+could call these digits one and two A
+
+and B black or white like we just need
+
+two words to describe two pieces of
+
+information computers keep it simple and
+
+just like we humans start counting 0 1 2
+
+3 on up computers use zero and one and
+
+that's it but that's by convention but
+
+why do they do that well it turns out
+
+when you use base 2 otherwise known as
+
+binary well it just Maps really readily
+
+to the real world because at the end of
+
+the day what do we all do if you've got
+
+a laptop or phone or any device like you
+
+plug it into the wall because it needs
+
+electricity at some point and what if
+
+you have electricity or not well there's
+
+your sort of two possible values either
+
+it's there or it's not and because
+
+computers are electrical devices this is
+
+why binary is just useful it's nice and
+
+simple either electricity is there or
+
+it's not so when you plug this device in
+
+and you've got all these electrons or
+
+whatever flowing maybe if we just kind
+
+of hang on to some of that electricity
+
+we can represent what we'll call a one
+
+and maybe if we let it dissipate or go
+
+away that's a zero so on and off Maps
+
+very readily to this idea of just zeros
+
+and ones and if you've ever thought of
+
+this now as binary digits uh by implying
+
+two zero and one well if you've ever
+
+heard this term now bit it just means
+
+binary digit a single bit is just a zero
+
+or one but we could have called these
+
+things anything we want now how does
+
+this map to be clear to the real world
+
+well we can't see the hiny little
+
+switches inside of our Mac PCS and our
+
+phones that are actually turning the
+
+electricity on or off storing
+
+electricity or not but they're called
+
+transistors they've got like millions of
+
+them in today's hardware and they're
+
+just on or off like a switch or a light
+
+bulb so for instance if there's no
+
+electricity the switch is off we would
+
+call this by convention a zero if though
+
+you throw the switch and it actually
+
+turns on we would call this an on
+
+exactly a one we could have reversed it
+
+but this is just the way the world
+
+decided to standardize and that's it so
+
+you've got either got something on or
+
+off a one or zero and this then is this
+
+thing we know now as a binary digit or
+
+bit so once we've got these values what
+
+about how how can we go about perhaps
+
+representing things well you know what
+
+it turns out we got like a lot of light
+
+bulbs right here let me grab okay excuse
+
+me spot let me grab the uh the little
+
+music stand here let me borrow a couple
+
+of these bulbs and see if we can't make
+
+clearer than my hand alone what's going
+
+on here so I'm going to go ahead and
+
+grab two of these and I'll just put them
+
+here and I can turn these things on or
+
+off now so if I've got two bits two
+
+switches two transistors if you will
+
+well if I go ahead and turn on this one
+
+I'm representing what number in binary
+
+perhaps so just one now if I'm using
+
+unary I would turn this one on and be
+
+done with it and that's two but not in
+
+binary binary it's the permutations
+
+which ones are on and off that matters
+
+so what now am I representing here
+
+perhaps two so this is when I put like
+
+my single pointer finger up but but then
+
+when I did this in my human hand this
+
+was like representing the number three
+
+how do I represent the number
+
+four yeah like I need kind of another
+
+light bulb so I need more Hardware so to
+
+speak so if I turn if I leave this one
+
+if I turn this one on this one off this
+
+one off now I have the number
+
+four and someone tell me saying the
+
+words on and on and on or on or off or
+
+on using combinations of on off and on
+
+and off how do I represent five from
+
+your left to your right how about over
+
+here on off on on off on I heard and
+
+that's exactly right and how do I
+
+represent maybe six over here off on off
+
+on on not from left to right the other
+
+way the okay so from right to left so I
+
+think we leave this one on this one I'm
+
+going to claim represents now uh uh six
+
+and seven
+
+I'm just going to it's actually going to
+
+be on on on now if you're sort of
+
+wondering like where are these people
+
+coming up with these combinations
+
+there's actually a system here it's
+
+actually kind of hard for me to do it
+
+backwards but it turns out there's
+
+actually a system that's not all that
+
+unfamiliar in fact let me propose this
+
+let me propose that we consider what you
+
+and I all learned in grade school which
+
+was something like the base 10 system 10
+
+meaning that you use 10 different digits
+
+not two 10 so like 0 1 2 3 4 5 6 7 8 9
+
+the base 10 system otherwise known as
+
+decimal deck implying 10 so that's what
+
+you and I use every day well let's think
+
+about how we represent numbers in
+
+decimal in the normal human way well
+
+here is a number it's what what number
+
+of
+
+course 123 so we all just have an
+
+intuition for that obviously but it's
+
+not necessarily 123 you're just
+
+assigning meaning to the positions of
+
+these digits this is really the pattern
+
+1 2 3 but you immediately jump
+
+mathematically to 123 but why well odds
+
+are in grade school you learn that the
+
+rightmost digit is the ones place or the
+
+ones column this is the 10's place or
+
+the 10's column this is the hundred's
+
+place and so why is this relevant well
+
+this is like doing 100 * 1+ 10 * 2+ 1 *
+
+3 or if we multiply that out 100 plus 20
+
+plus 3 airo the number now that we just
+
+take for granted is
+
+123 but that's in base 10 the so-called
+
+Decimal System whereby each of these
+
+digits is in a different column and
+
+those columns are again ones place tens
+
+hundreds if we keep going thousand 10,
+
+and so forth but where did these come
+
+from well here's the base if you
+
+remember exponents and all of that this
+
+is just 10 the 0o 10 the 1 10 the two at
+
+infinum and so now what if we just
+
+change the base from 10 0 through 9 to
+
+just two digits 0o and one well now the
+
+math is sort of fundamentally the same
+
+but it's two to the 0o 2 to the 1 2 to
+
+the two which gives us the one's Place
+
+two's place and Four's place now why is
+
+this relevant if you've got three light
+
+bulbs or three bits that are off off off
+
+what have I done 4 * 0 plus 2 * 0 plus 1
+
+* 0 is obviously the number you and I
+
+know in decimal as zero this though
+
+represents the number you and I know as
+
+this
+
+represents three four and just to be
+
+clear this is why when I grabed the
+
+additional light bulb we claimed that
+
+this now was four because we had on off
+
+off on on off off this now is five this
+
+now is six this now is seven and if I
+
+wanted to count higher what would the
+
+pattern of zeros and ones be for the
+
+number
+
+eight 1 0 0 0 so we just need more
+
+Hardware more bits so it wasn't
+
+arbitrary even if it was nonobvious what
+
+I was actually doing with turning these
+
+light bulbs on and off now it turns out
+
+here we are talking about how to
+
+represent information like numbers but
+
+we could also use bits zeros and ones
+
+light bulbs to represent instructions as
+
+well cuz at the end of the day like
+
+that's kind of all computers do they
+
+kind of process data information of some
+
+sort whether it's files or numbers or
+
+images or videos or the like and you do
+
+things with those files like you open
+
+them you print them you edit them and
+
+the like so there's this notion of
+
+instructions like what the computer can
+
+actually do and I bet we could come up
+
+with some kind of pattern of zeros and
+
+ones or equivalently light bulbs that
+
+tell even spot what to do maybe go up or
+
+down or left or right and it could
+
+certainly do this autonomously by using
+
+various sensors we to keep things safe
+
+today using Wi-Fi and sending spot these
+
+very instructions but what's happening
+
+wirelessly with our friend Andrew here
+
+is essentially he's sending spot
+
+instructions just encoded wirelessly
+
+somehow as patterns of zeros and ones
+
+and the folks at Boston Dynamics who
+
+built this robot programed spot to
+
+recognize certain patterns as meaning up
+
+a certain pattern as meaning down left
+
+right and any number of other things so
+
+in fact spot come on over here if you
+
+could come on
+
+spot
+
+okay so spot for instance may very well
+
+have a pattern of zeros and ones that
+
+represents shake shake spot so he could
+
+do that and any number of other
+
+movements as well and maybe especially
+
+with sensors here and also a little
+
+human help over here for today what if
+
+we went ahead and did something maybe
+
+ask spot some questions so let's go
+
+ahead and we'll start simple
+
+spot here we we have some bits off off
+
+on
+
+spot what okay spot what is this
+
+representing off off
+
+[Music]
+
+on correct I think so kind of like very
+
+horse okay thank you all right so round
+
+of applause for spot here all right so
+
+spot what if we turn okay we'll turn
+
+that one off here how about turn this
+
+one on so it's off on off spot what's
+
+this
+
+[Music]
+
+number is that correct nice okay how
+
+about one final flourish how about spot
+
+instead of off on off let's go ahead and
+
+do off on on so think in your mind's eye
+
+what the answer should
+
+be all right spot off on
+
+[Music]
+
+on okay and a round of applause for spot
+
+as
+
+well so this is to say no matter how
+
+fancy thank you spot no matter how fancy
+
+today's Hardware or software is it
+
+really just boils down to representing
+
+information and instructions and
+
+computers and phones and the like really
+
+are just operating on those same pieces
+
+of information whether implemented in
+
+zeros and ones or with really anything
+
+else all right so where can we take this
+
+this once we have this agreed upon
+
+system for
+
+representing information well it turns
+
+out that using three bits three zeros
+
+and ones at a time isn't actually all
+
+that useful and you and I even in
+
+conversation don't often say the word
+
+bit we say the word bite and what is a
+
+bite if familiar yeah so it's just eight
+
+bits it's just a more useful unit of
+
+measure and it happens to be a power of
+
+two 2 to the 3 which just makes math
+
+work out cleanly but it's just a
+
+convention to have more interesting
+
+units of measure individual bits so a
+
+bite is eight bits so for instance this
+
+represents using eight bits eight light
+
+bulbs the number you and I know is zero
+
+and this bite of all one bits now you
+
+got to do some quick math represents
+
+what number
+
+instead so it's all ones eight of them
+
+total how about over here on the
+
+end so it's indeed 255 now that's not
+
+kind of math that you need to do in your
+
+head for a class like this but you could
+
+this is is the ones place 2os Four's 8
+
+16 32 64 128 and because they're all one
+
+you just have to add up all of those
+
+columns values and you get 255 but a
+
+little mental trick too is that if
+
+you've got eight bits and each of them
+
+can be two possible values zero or one
+
+that's like two possibilities here time
+
+2 * 2 * 2 * two eight times so that's 2
+
+to the eth so that is maybe a little
+
+easier to do two that's 256 or easier in
+
+the sense that you used to seeing these
+
+numbers in CS that's 256 but wait a
+
+minute how do I reconcile this with your
+
+255 because you start at zero so you
+
+sort of lose one on the high end because
+
+we started counting and representing the
+
+number like zero all right questions on
+
+how we've represented just numbers or
+
+for instance instructions to spot thus
+
+far any questions on binary
+
+unary or the
+
+like no all right so seeing none let's
+
+let things escalate a bit so how do you
+
+ASCII
+represent letters CU obviously this
+
+makes our devices more useful whether
+
+it's in English or any other human
+
+language how could we go about
+
+representing the letter A for instance
+
+if at the end of the day all our
+
+computers all our phones have access to
+
+is electricity or equivalently switches
+
+or metaphorically tiny little light
+
+bulbs inside of them that can be on and
+
+off that's it there's no more building
+
+blocks to give
+
+you how could we represent something
+
+like the letter A yeah how about here
+
+yeah assign perfect so we could just
+
+assign every letter a number and we
+
+could do this super simply like maybe
+
+zero is a and one is b or maybe one is a
+
+and two is B it doesn't really matter so
+
+long as we all agree and we all use the
+
+same types of computers in some sense
+
+ultimately well for various reasons the
+
+humans that designed this system they
+
+went with the number 65 so nowadays
+
+anytime your computer is showing you the
+
+capital letter a on the screen
+
+underneath the hood so to speak it's
+
+actually storing a pattern of zeros and
+
+ones that represents the number 65 and
+
+it tends to use seven bits or typically
+
+eight bits total even if it doesn't need
+
+all of those bits in total so how do we
+
+get there well here for instance is that
+
+same pattern uh here is that pattern of
+
+bits that represents 65 and why we quick
+
+quick check here this is the ones place
+
+twos fours 8 uh 16 30 to 64's place okay
+
+so 64 + 1 gives me 65 so that is to say
+
+here's how a computer using some light
+
+switches so to speak would represent the
+
+number 65 and our Macs R PCS our phones
+
+just all know this so whenever they see
+
+that in their memory so to speak they
+
+show a capital letter A on the screen so
+
+that's it that's a system known as asy
+
+the American Standard code for
+
+information interchange and the a is
+
+actually um operative there because
+
+we're only talking thus far about
+
+English letters in our alphabet and in
+
+fact I claimed a moment ago that we only
+
+use seven maybe eight bits to represent
+
+letters of an alphabet so just to come
+
+back to you if I may how many possible
+
+letters of the alphabet could how many
+
+possible letters of any alphabet could
+
+we represent with eight bits 256 the
+
+number 0 through 255 now that's more
+
+than enough for English because we've
+
+got a through z uppercase lowercase a
+
+bunch of numbers a bunch of punctuation
+
+symbols but in a lot of languages with
+
+accented characters 's a lot of Asian
+
+characters this is not nearly enough
+
+memory or bits with which to represent
+
+all of those possible values so we need
+
+to do a little better than asky but we
+
+can build on top of what they did years
+
+ago so here is a chart of aski codes
+
+it's just a bunch of columns showing us
+
+the mapping between letters and numbers
+
+so for instance up here is the capital
+
+letter a 65 capital B 66 Capital C 67
+
+dot dot dot uh 72 is H 73 is I and so
+
+forth there's some weird things over
+
+here like special symbols that we'll
+
+learn about over time but there's a
+
+mapping between every English letter of
+
+the alphabet and some number just as you
+
+propose both for uppercase and lowercase
+
+so for instance if we highlight just a
+
+few of these for now and I say that I've
+
+just received a text message or an email
+
+that underneath the hood so to speak if
+
+I have the ability to look at what
+
+switches are on and off I've received
+
+this message here well first and this is
+
+not what CS is about but just fun fact
+
+does anyone know what number this would
+
+represent in decimal if this is the
+
+binary
+
+pattern like one's Place two's Place 72
+
+is correct and again not intellectually
+
+all that interesting and this is not the
+
+kind of math that we spend all day a CS
+
+a computer scientist doing but it's just
+
+following the same darn pattern which is
+
+to say it might look cryptic but uh
+
+conceptually intellectually It
+
+ultimately is exactly as we did before
+
+so yes I'll spoil the rest of the math
+
+it's 72 73 33 now anyone remember in
+
+your mind's eye what message we just
+
+spelled yeah so it is in fact High
+
+though no one really said that excitedly
+
+what's the 33 if you
+
+noticed okay so a lot of people notice
+
+yes it's an exclamation point and that's
+
+indeed noticeable right here 33 is the
+
+exclamation point and that's just
+
+something eventually that might sink in
+
+but for the most part if you remember
+
+capital A is 65 you can figure out like
+
+at least 25 other answers to these kinds
+
+of questions because they're all
+
+contiguous like that so there's the
+
+exclamation point But at the end of the
+
+day we might just have uh this mapping
+
+known as asy and it's how our phones and
+
+computers and devices more generally
+
+actually store information so we thought
+
+we make uh maybe take a little pressure
+
+off of me here and could we maybe uh
+
+flip things around how about we we try
+
+applying this newfound knowledge if it's
+
+indeed new to you with like seven
+
+volunteers seven bits if we could okay
+
+so your hand first come on down maybe
+
+your hands there okay three come on down
+
+over here about four and five yep come
+
+on down yep in the black shirt yep how
+
+about let me go farther back how about
+
+in the green over there and how about
+
+you seven over here all right come on
+
+down come on
+
+down show our Round of Applause for our
+
+brave
+
+volunteers all right so if you'd like to
+
+stand roughly uh side by side here in
+
+the middle of the
+
+stage first of all thank you let's see 1
+
+2 3 4 5 6 seven perfect okay and let's
+
+go all the way over to this place here
+
+if you would would like to introduce
+
+yourself I'm class Rachel Richie okay
+
+and what what year anything about you uh
+
+first year concentrating in CS okay
+
+welcome to the stage next hi I'm Kang uh
+
+also first year concentrating in
+
+CS hello my name is LAM um R student
+
+from education department nice okay next
+
+hi I'm Jordan mler concentrating in
+
+economics and maybe some
+
+CS H so hi I'm Natalia first year and I
+
+want to do
+
+CS hi I'm Kad I'm a first year and I
+
+want to do
+
+CS uh hello I'm Caleb and once again
+
+first year concentrating in CS okay
+
+wonderful a pattern yes thank you thank
+
+you so if you haven't guessed already
+
+each of these volunteers is going to
+
+represent a bit from left to right or
+
+right to left in this case so let's see
+
+if you want to represent how about the
+
+twos play Place how about The Four's
+
+place the E's Place 16th Place 32s 64
+
+and 128 although wait I think I screwed
+
+up we needed 1/8 volunteer I think you
+
+know well I
+
+think spot okay come on over if you guys
+
+could step forward a little bit and then
+
+scooch this way just to give spot some
+
+room so spot will represent the ones
+
+place now what our volunteers have on
+
+the back back of their sheets of paper
+
+are little instructions we're going to
+
+spell out a three-letter word in English
+
+by using three bites from left to right
+
+because now we have eight volunteers I'm
+
+going to propose that you raise your
+
+hand if you're supposed to represent a
+
+one or you just stand there without
+
+raising your hand if you're meant to
+
+represent a zero and what we'll have the
+
+audience do is do the quick math to
+
+figure out one two three each letter
+
+what number is it what letter is it and
+
+we'll see what word that we finally
+
+spelled all right so in round one you
+
+have instructions on your back of your
+
+sheet that will tell you to what your
+
+number is if you're Zero stand there if
+
+you're a one raise your
+
+hand what number do these guys seem to
+
+be
+
+representing 66 I think 64 + 2 so 66
+
+which is the letter okay so B okay so B
+
+all right hands down second letter is
+
+going to be spelled spell
+
+[Music]
+
+how all right what are we spelling
+
+now I
+
+think okay yeah I think
+
+you
+
+okay now what number are we
+
+spelling 79 I heard which is the letter
+
+oh okay so hands down thank you spot one
+
+final flourish so we've spelled b o
+
+third letter go
+
+[Music]
+
+ahead what number now is
+
+this I heard it here 87 which is W which
+
+of course spells bow so if our
+
+volunteers could take a bow spot
+
+included
+
+so this will make more sense uh in week
+
+one when we have an assignment involving
+
+a certain someone from the Nintendo
+
+World but we have a lovely parting gift
+
+for each of you thank you for
+
+volunteering you might need to share
+
+with the folks next to
+
+you oh here we go there we go thank you
+
+so much one more round of applause if we
+
+could for our volunteers thank
+
+you okay
+
+all right
+
+so spots had it so let's see then if
+
+Unicode
+we've solved now the problem of
+
+representing English letters of the
+
+alphabet being able to spell out words
+
+like ba b w what if we actually do have
+
+accented characters what if we do have
+
+other uh glyphs that we want to
+
+represent well here of course is a
+
+standard US English keyboard which a lot
+
+of you might have but there's also
+
+characters that you can type much more
+
+easily if you have a a foreign keyboard
+
+relative to the US or with certain
+
+keystrokes on your own Mac PC and phone
+
+but nowadays two there's this menu that
+
+probably you've used in the past like
+
+hour or two to actually send some emoji
+
+and Emoji even though they look like
+
+pictures and they actually are pictures
+
+on the screen they're technically just
+
+characters of an emoji
+
+alphabet that happen to use a certain
+
+pattern of zeros and ones to represent
+
+each of these faces each of these people
+
+and places and things and it turns out
+
+that one of the reasons that we have
+
+just so many uh so
+
+many so many um such characters nowadays
+
+is because we now use Unicode instead of
+
+ASI so Unicode is a superet so to speak
+
+of ASI which is to say that we humans
+
+realized some time ago that just using
+
+eight bits to represent letters of the
+
+alphabet certainly isn't very good when
+
+we want to represent other non-english
+
+languages so Unicode doesn't just use
+
+eight bits it sometimes uses 16 bits per
+
+character sometimes 24 bits per
+
+character and sometimes even 32 bits per
+
+character now why those numbers that's
+
+just one bite two bytes three bytes or
+
+four bytes and that gives us does anyone
+
+know that gives us the the ability to
+
+represent as many as like 4 billion
+
+possible characters because if the
+
+longest one is 32 bits that's 2 to the
+
+32 which if you do out the math trust me
+
+is roughly four billion so that's a lot
+
+of characters and we've got a lot of
+
+room then for these Emoji but it's not
+
+just about having sort of fun
+
+pictorially on the screen unicode's
+
+Mission really is to represent and to
+
+preserve all human languages digitally
+
+both past present and future so it is
+
+really about capturing the entirety of
+
+sort of human knowledge as we've
+
+expressed it in language but also giving
+
+this new found ability that's been used
+
+you know centuries ago too in writings
+
+on walls and the like pictograms via
+
+which we can still communicate even
+
+independently of our own human language
+
+so we'll reduce it today to just
+
+patterns of zeros and ones but the
+
+problem being solved is much greater and
+
+well beyond CS itself there so here
+
+here's a pattern of zeros and ones using
+
+Unicode so more than 8 Bits that
+
+represents a very popular Emoji which
+
+might be a bit of a hint this is the
+
+most popular Emoji as of last year at
+
+least statistically
+
+[Music]
+
+internationally does this help it's
+
+roughly this number here no it's this
+
+one here so this is the most popular
+
+Emoji by most measures as of last year
+
+but it doesn't always look like this
+
+those of you who have a Mac or an iPhone
+
+recognize this symbol perhaps
+
+immediately those of you with Android
+
+devices or other platforms might notice
+
+that it's the same idea but it's a
+
+little bit different and this is because
+
+too emojis at the end of the day just
+
+represent characters but those
+
+characters can be drawn can be painted
+
+in different ways and reasonable people
+
+will uh interpret differently this Emoji
+
+whose official name is face with tears
+
+of joy and indeed Google interprets it a
+
+little differently from Apple versus
+
+Microsoft versus meta versus other
+
+companies as well so you can almost
+
+think of those different companies as
+
+having different fonts for emoji and
+
+that really starts to connect things to
+
+the world of text and characters so just
+
+so you've seen it more on this another
+
+time it turns out that emoji and really
+
+characters in general we don't use
+
+binary zeros and ones to represent them
+
+because no one myself included is going
+
+to recognize what's what it's just too
+
+much math it's not interesting and even
+
+decimal numbers that was like four
+
+billion or something like I don't
+
+remember which uh number is which so we
+
+represent things a little more compactly
+
+and this too admittedly still looks
+
+cryptic but this is a Unicode code point
+
+it uses another system mathematically
+
+called base 16 or hexadecimal more on
+
+that another time but it's just a way of
+
+representing numbers even more
+
+succinctly writing Less on the screen
+
+because you're using not just 0 through
+
+n as in decimal but you're using a
+
+through f as well so a few letters of
+
+the English alphabet come into play but
+
+for now that's just a little easier to
+
+remember to for people who care uh that
+
+that is the number that represents face
+
+with tears of joy but what if we want to
+
+customize emoji and this increasingly is
+
+the case here for instance are the five
+
+skin tones that phones and laptops and
+
+desktops nowadays support it's based on
+
+something called the Fitzpatrick scale
+
+which essentially categorizes human skin
+
+tone into six or in this case five
+
+different categories from lighter to
+
+darker but this sort of suggests that
+
+wow if we want to represent uh people
+
+with five different skin tones like this
+
+that could kind of significantly
+
+increase how many unique patterns of
+
+zeros and ones we need for every
+
+possible face but if we think about it
+
+from an engineering perspective we can
+
+actually just think of skin tone as
+
+modifying some default color For Better
+
+or For Worse and like yellow was sort of
+
+the deao default sort of Simpson style
+
+but to modify it to look more genuinely
+
+humanlike from lighter to darker well
+
+maybe we just use the same pattern of
+
+bits to represent a human thumb for
+
+instance thumbs up or thumbs down and we
+
+just then modify that character to be
+
+displayed with a different skin tone so
+
+for instance here then is the thumbs up
+
+that you might use on various platforms
+
+and let let me just stipulate that this
+
+is the Unicode code point that is the
+
+number that Macs PCS and phones use
+
+underneath the hood to represent the
+
+default yellow thumbs up but if you want
+
+to give it like a medium skin tone you
+
+still use that same number that same
+
+pattern of zeros and ones or switches
+
+underneath the hood but you use a few
+
+more switches that the computer or phone
+
+will interpret as oh you don't want to
+
+see the default and yellow because of
+
+this second number that's in the
+
+computer's memory somewhere you want me
+
+to adjust it to be the median skin tone
+
+or any of the other values instead so
+
+that's sort of the engineering solution
+
+to this problem of just trying to
+
+represent different ranges of emoji here
+
+well what about something like this
+
+there's a lot more combinatorics
+
+nowadays on your keyboard for
+
+relationships for instance so here is a
+
+couple with heart here so the couple
+
+here of course is represented with
+
+apparently this number here but that's
+
+it but if you want to be more specific
+
+like man and woman or man man woman
+
+woman it's the same idea but we just
+
+need to express ourselves a little with
+
+a little more information so for
+
+instance the way uh the Unicode folks
+
+came up with years ago to represent for
+
+instance a woman with a heart and a man
+
+from left to right would be using these
+
+values so things just escalated quickly
+
+but only in the sense that we're using
+
+more bits more zeros and ones to
+
+represent more expressively this
+
+particular combination so this happens
+
+to be the number in Unicode that
+
+represents the woman at left this is the
+
+number that represents the man at right
+
+and this is the pair of numbers that
+
+represents the heart in the middle
+
+sometimes red sometimes pink displayed
+
+here as pink but if we want to change
+
+the combination for instance to be uh
+
+say woman uh if we want to change the
+
+combination to be woman woman notice
+
+that now the left and the rightmost
+
+numbers match or if we flip it back to
+
+man man it's just using different
+
+numbers on the tail ends again and
+
+meanwhile if I rewind there's these two
+
+identical values here these are called
+
+zero WID joiners or zge characters it
+
+just is a special number that humans
+
+reserved to say glue the Emoji at the
+
+left uh to the Emoji on the right and so
+
+forth so it kind of connects ideas in
+
+this way so there's actually a lot of
+
+emojis nowadays that are a combination
+
+of different things like heart on fire
+
+is one that's technically the
+
+combination of a heart emoji the fire
+
+Emoji joined together numerically in
+
+this way so computer scientists who come
+
+up with these things are just s of
+
+reducing things to representations all
+
+we have at our disposal or zeros and
+
+ones so we all just need to agree
+
+ultimately whether we're Google
+
+Microsoft or the like how we're going to
+
+standardize these kinds of things as
+
+information questions then on how
+
+characters are represented in a computer
+
+be it English or any other language
+
+yeah how is the
+
+what oh the U plus is just a convention
+
+really so U plus represents a special
+
+Unicode character which is a u with a
+
+plus in the middle and this is just the
+
+convention for saying hey hey everyone
+
+here comes a number that represents a
+
+Unicode code point the U and the one
+
+have no sorry the U and the Plus have no
+
+mathematical significance it's just a
+
+visual uh clue to folks other questions
+
+on representing text in this way all
+
+right so what about colors we've already
+
+started looking at pictures well how are
+
+those pictures be it emojis or anything
+
+else represented one of the most common
+
+ways is just with RGB red green and blue
+
+it turns out that if we just keep track
+
+of how much red should be on the screen
+
+and how much green and how much blue
+
+combined together that gives us every
+
+color of the rainbow from white to black
+
+and everything in between so how do we
+
+represent an amount of red and green and
+
+blue well frankly just with three
+
+different numbers and this is how
+
+computers typically represent colors
+
+Color
+every one of the dots on your computer
+
+screen or your phone screen is called a
+
+pixel and every single dot underneath
+
+the hood has three numbers associated
+
+with it so three numbers three numbers
+
+three numbers for every little Dot and
+
+those three numbers together say how
+
+much red green green and blue should the
+
+device display at that location so for
+
+instance if you had a DOT on your screen
+
+that said use this much red this much
+
+green this much blue because each of
+
+these numbers I'll tell you are one bite
+
+or eight bits which means the total
+
+possible values is 0 to 255 let me just
+
+ballpark that the 72 it feels like a
+
+medium amount of red because it's in
+
+between 0 and 255 73 is a medium amount
+
+of green and 33 of blue is just a little
+
+bit so so if you combine a medium amount
+
+of red green and a little bit of blue
+
+anyone want to guess what color of the
+
+rainbow this
+
+is
+
+sorry Brown so at close it's a little
+
+more yellow than it is brown but if we
+
+combine them it looks a little something
+
+like this this is CS trivia not
+
+something that I even I would be able to
+
+eyeball unless I came up with that
+
+particular example but wait a minute
+
+we've seen these numbers before 72 73 33
+
+represented what a few minutes so it
+
+meant high but here I am claiming no no
+
+no no that means yellow how do you
+
+reconcile this well at the end of the
+
+day this is all we have zeros and ones
+
+whether you think of them as numbers or
+
+letters or even colors now but it
+
+depends on the context so like if you've
+
+Representation
+received a text message or an email odds
+
+are the pattern of zeros and ones that
+
+the computer is showing you are going to
+
+be interpreted as text because that's
+
+the whole point of a text message or an
+
+email if though you opened up Mac os's
+
+or ios's or Windows or Android's
+
+calculator app the same pattern of zeros
+
+and ones might be interpreted as numbers
+
+for some addition or subtraction or
+
+whatever if you open the same pattern of
+
+zeros and ones in Photoshop like a
+
+graphics program they're going to be
+
+interpreted in that context as colors so
+
+context matters and indeed as soon as
+
+next week when you start writing code in
+
+that language called C the onus will be
+
+on you the programmer to tell the
+
+computer interpret the following
+
+sequence of bits as a number or a letter
+
+or something else and you won't have to
+
+even worry about what the zeros and ones
+
+are but you need to give the computer a
+
+hint as to what type of file or piece of
+
+data you're representing so that gives
+
+us bits and you can actually see these
+
+these dots these pixels on the screen
+
+let me zoom in zoom in and here we have
+
+it just with this Emoji which at the end
+
+of the day is a picture that someone at
+
+Apple in this case Drew and you can see
+
+if you really zoom in or take your phone
+
+or TV and really put it close to your
+
+face you'll see all of these dots
+
+depending on the hardware and each of
+
+these dots these squares is storing 24
+
+bits or three bytes 24 bits 24 bits 24
+
+bits and that's why dot dot dot if
+
+you've got a photograph for instance
+
+that's like 3 megabytes which is 3
+
+million bytes well odds are there's 1
+
+million pixels there in because you're
+
+using three bytes per pixel to represent
+
+each of those colors that's a bit of an
+
+oversimplification but that's why images
+
+and photos are getting bigger and bigger
+
+nowadays because we're throwing even
+
+more pixels uh into the file
+
+music how could you represent music
+
+digitally using just zeros and ones or
+
+numbers
+
+really any Instinct whether a musician
+
+or not
+
+yeah yeah so we could just represent
+
+notes by a number so a is some number
+
+and B and maybe sharp or flat is some
+
+other number but note might not be quite
+
+enough for some s yeah ah okay so one
+
+note or one number to repres the note
+
+itself the sound or the pitch one other
+
+number to represent the duration like in
+
+the context of piano like how long is
+
+the human holding the key down and maybe
+
+I can think of a third like the loudness
+
+like how hard has the person played that
+
+note so minimally with three numbers you
+
+could imagine representing music as well
+
+and indeed that's very well might be
+
+what computers are doing when you listen
+
+to sound what about video how could you
+
+represent
+
+videos as well yeah many images yeah
+
+many images so if you've ever like
+
+produced a film or looked at some of the
+
+fine print 30 frames per second FPS or
+
+29 frames per second is just how many
+
+pictures are flying across the screen
+
+but that's really all a video file is on
+
+a computer lots of pictures moving so
+
+quickly in front of us that you and I
+
+our brains interpolate that as being
+
+actual motion and in fact from yester
+
+year Motion Pictures it's like pictures
+
+that are giving the illusion of motion
+
+even though there's only 30 or so of
+
+them flying across the screen so we have
+
+a way now to represent information both
+
+as input and output whether it's numbers
+
+letters images anything else let's now
+
+focus on what's inside of that black box
+
+Algorithms
+so to speak wherein we have algorithms
+
+step-by-step instructions for solving
+
+some problem now what do I mean by
+
+algorithms or step-by-step instructions
+
+well maybe if we were to turn this into
+
+code and that's how we'll connect the
+
+dots ultimately today code is just the
+
+implementation in computers of
+
+algorithms an algorithm can be something
+
+we do in the physical world code is how
+
+we Implement that exact same idea in the
+
+context of a computer instead and here
+
+for instance is a very common
+
+application inside of a computer for
+
+your context this is like the iOS
+
+version of the icon and typically if you
+
+click on that icon you'll see something
+
+like all of your contacts here typically
+
+alphabetical by first name or last name
+
+and your phone or your computer lets you
+
+often search for someone's name at the
+
+very top and it will sort of
+
+autocomplete and it'll be pretty darn
+
+fast but it'll be pretty darn fast
+
+because the programmers who implemented
+
+that application are looking for someone
+
+quickly for you now I can do this sort
+
+of old school
+
+style whereby we have one of these
+
+things from yester year an actual phone
+
+book so in a physical phone book like
+
+this you might have like a thousand
+
+pages and on every page are a bunch of
+
+names and a bunch of numbers and as I
+
+flip through this I could look for
+
+someone specific so suppose I want to
+
+call John Harvard whose first name of
+
+course starts with the J well I could
+
+just turn Page by Page looking for John
+
+Harvard and if he's not there I keep
+
+turning and turning so this is an
+
+algorithm I'm stepping through the phone
+
+book one page at a time is it correct
+
+this algorithm assuming I'm looking down
+
+so yeah I mean it's kind of stupidly
+
+slow because why am I wasting my time
+
+with the A's and the B's and the so
+
+forth I could probably take bigger bites
+
+out of it but it is correct and that's
+
+going to be one of the goals of writing
+
+code is to of course solve the problem
+
+you care about correctly so correctness
+
+sort of goes without saying El what's
+
+the point of writing the code or Sol or
+
+implementing the algorithm all right
+
+well let me at least speed things up so
+
+instead of one page at a time so 2 4 6 8
+
+don't ignore that 10 12 uh 14 16 and so
+
+forth it's a little hard to do
+
+physically but it sounded faster it was
+
+twice as fast theoretically but is it
+
+correct so no why yeah yeah you might
+
+yeah I might miss John Harvard because
+
+just by accident he might get sandwiched
+
+between two pages but do I have to throw
+
+the algorithm out all together like
+
+probably not like once I reach like the
+
+K section which is past the J section I
+
+could double back at least one page at
+
+least and just make sure I didn't blow
+
+past him completely so that sort of is
+
+twice as fast because I'm going two
+
+pages at a time plus one extra step so
+
+it's still an improvement so the first
+
+algorithm worst case if it's not JN but
+
+someone whose name starts with z that
+
+might take me a full Thousand Steps the
+
+second algorithm is just like 500 steps
+
+because I'm going two pages at a time
+
+plus one in case I have to double back
+
+but that's in the worst case but most of
+
+us in the in yester year and what apple
+
+and Google and others are actually doing
+
+is in software or here physically we're
+
+typically going roughly to the middle
+
+especially if there's no cheat sheet on
+
+the side like a through z I'm just going
+
+to go to roughly the middle and oh here
+
+I am not surprisingly in the M section
+
+but what do I now know if like this is
+
+the m section where is John Harvard so
+
+clearly to the left alphabetically and
+
+so here is where we can take a much
+
+bigger bite out of the problem we can
+
+really divide and conquer this problem
+
+by tearing the problem in half throwing
+
+half of it away 500 pages away leaving
+
+me with a smaller problem half as big
+
+that I can really just now repeat so I
+
+go roughly here and now I'm in the the E
+
+section so I I went a little too far
+
+back but what do I now know if this is
+
+the E page is where's John so now he's
+
+to the right so I can again hopefully
+
+he's not on that page I can tear the
+
+problem in half again throw that 250
+
+Pages away and now I've gone from a
+
+th000 to 500 to 250 Pages like now I'm
+
+moving cu the first algorithm was one
+
+page at a time second was two this is
+
+hundreds of pages at a time and if I go
+
+roughly again to the middle roughly to
+
+the middle roughly to the middle
+
+hopefully I'll find John Harvard on one
+
+final page can only do this once but one
+
+final page so that kind of invites the
+
+question I would think if the phone book
+
+does have a thousand or so Pages how
+
+many times can I divide the problem in
+
+half to get down to one last page so
+
+it's roughly 10 and the quick math is
+
+like 1,000 goes to 500 to 250 to 12 25
+
+to like 67 something so we have to deal
+
+with rounding issues eventually but
+
+assuming we work out the math it's
+
+roughly 10 page hairs and that's crazy
+
+faster than 1,000 pages and still faster
+
+than 500 pages so it's sort of
+
+fundamentally better and indeed if I
+
+finally get to that final page you know
+
+in the software World you'd see
+
+something like this John Harvard and his
+
+number which you're welcome to call or
+
+text but that's how we now have our
+
+answer much like the single page there
+
+but let's consider just efficient that
+
+actually is so here's a very rough uh
+
+broad with broad Strokes of chart so
+
+here's a an XY plot so here on the
+
+horizontal is going to be the size of
+
+the problem and by that I mean how many
+
+pages are we trying to go through this
+
+would be zero Pages this would be a lot
+
+of pages uh how much time does it take
+
+to solve the problem how do long does it
+
+take to find John Harvard or anyone else
+
+this means like no time this means a lot
+
+of time so what's the relationship among
+
+these algorithms well the first one is
+
+actually just a straight line if there's
+
+n pages is in the phone book well I
+
+claim that it's kind of a onetoone
+
+relationship because if like Verizon or
+
+the phone company adds another page next
+
+year that just means I might have one
+
+more step next year as well to find John
+
+Harvard or anyone else and but the
+
+second algorithm it's also a straight
+
+line but it's lower even though it might
+
+not look obvious and what do I mean by
+
+that well let me just draw some
+
+temporary lines if this is how many
+
+pages are in the phone book dot dot dot
+
+notice that it takes this much time on
+
+the red line to solve the problem
+
+but if I instead use the second
+
+algorithm it takes me half as much time
+
+so even though they're both straight
+
+lines one is strictly lower than the
+
+other which means it's faster it's
+
+better but the third algorithm is a
+
+fundamentally different shape and it
+
+looks a little something like this and
+
+it looks like it's going to flatten
+
+flatten flatten out but it never does it
+
+just Rises ever so slowly and what this
+
+means is that if maybe Cambridge and
+
+Austin here in Massachusetts merge next
+
+year so we go from a th page phone book
+
+to a 2,000 page phone book that kind of
+
+means like if we're here this year we're
+
+over here next year it's not all that
+
+much higher but it would be much higher
+
+if we were using the first two
+
+algorithms why it'd be an extra thousand
+
+steps to find someone in that combined
+
+phone book or maybe another 500 steps
+
+but to be clear if we're using my third
+
+and final algorithm how many more steps
+
+will it take me next year when Cambridge
+
+and Altin merge into one 2000 page phone
+
+book just one more step no big deal it's
+
+one more page tear and this is what we
+
+mean ultimately about not just writing
+
+code or implementing algorithms that are
+
+correct but now that are well-designed
+
+or efficient specifically and this is
+
+what makes someone a better programmer
+
+perhaps than someone else or a better
+
+Problem Solver than someone else is
+
+acquiring over time these skills so that
+
+sure you could solve the problem sort of
+
+quickly and dirtily so to speak but if
+
+you're going to have a lot of data
+
+eventually be it in your phone book or
+
+maybe your Google website index if
+
+you're searching the web you're going to
+
+want to try to think about how to design
+
+algorithms that look like this math
+
+atically this is called a logarithm and
+
+it's log base 2 because I'm having
+
+having having again and again but for
+
+now just know that it's a fundamentally
+
+faster and different shape so among our
+
+goals in cs50 ultimately is not just to
+
+write and solve problems correctly But
+
+ultimately ever more efficiently as well
+
+any questions then on these ideas of
+
+efficiency and
+
+design any questions here yeah and back
+
+a good question just to repeat can a
+
+graph like this capture the accuracy of
+
+the algorithm short answer no for
+
+instance if I drew a straight line that
+
+is super low on this graph which would
+
+imply that the algorithm takes the same
+
+amount of time no matter how many pages
+
+there are my algorithm might actually be
+
+to just pull a random page from the
+
+phone book one step and say here it is
+
+but that's not necessarily going to be
+
+accurate unless I get really really
+
+lucky so the graph really only speaks to
+
+efficiency and the design of the
+
+algorithm not the correctness of it to
+
+analyze the correctness you need to use
+
+use another uh mechanism Al together
+
+namely logic other questions now on
+
+efficiency in this way no all right so
+
+with that in mind let's begin to
+
+translate this to some actual code and
+
+in fact before we look at today at one
+
+Pseudocode
+actual programming language albeit a
+
+graphical one let's consider something
+
+called pseudo code so pseudo code has no
+
+formal meaning generally you write it in
+
+English or whatever your own human
+
+language is but you write uh your
+
+thoughts down turly succinctly but
+
+precisely you try to really convey your
+
+thoughts not with a wave of the hand
+
+metaphorically but step by step
+
+precisely so what do I mean by this here
+
+might be some representative pseudo code
+
+via which I def describe that third and
+
+final algorithm in a way that I could
+
+hand it to you and you could do the same
+
+at home or I could hand it to someone at
+
+Google and they could implement it in
+
+Android or I could hand it to someone to
+
+Apple and they could implement it in iOS
+
+so step one I claim was pick up phone
+
+book step two was open to the middle of
+
+the phone book step three look at the
+
+page as I did and now things get a
+
+little more interesting step four if
+
+person is on page I have to make a
+
+decision presumably what should I do if
+
+John Harvard is on the page I'm looking
+
+at so stop and probably like make the
+
+call or email or whatever the goal might
+
+be and so I'm going to actually indent
+
+this visually by a few spaces just to
+
+make clear that you should only do line
+
+five if the answer to line four is yes
+
+otherwise you don't bother the next
+
+thing I'm going to do line six is
+
+consider another possibility if the
+
+person I'm looking for is earlier in the
+
+book what do I want to do well I could
+
+write I could describe this in a bunch
+
+of ways I'm going to do this turly as
+
+follows open to the middle of the left
+
+half of the book so open to the middle
+
+of the left half of the book and then
+
+what am I going to do well I've just
+
+kind of divided the problem into
+
+something smaller but it's fundamentally
+
+the same problem it's just a fewer
+
+number of pages so I'm just going to go
+
+back to line three and do it again
+
+because the problems just getting
+
+smaller and smaller presumably else if
+
+the person I'm looking for is later in
+
+the book open to the middle of the right
+
+half of the book and also go back to
+
+line three but there's a fourth
+
+possibility and it's failure to realize
+
+sometimes that there's other possible
+
+outcomes that make computers crash or
+
+spinning beach balls or the like if a
+
+programmer doesn't anticipate some
+
+situation what's the fourth possible
+
+situation when looking for John
+
+Harvard if they're not in the book at
+
+all and indeed I might get to the very
+
+last page and John Harvard's not even on
+
+that one i' better handle that and say
+
+else like kind of as a catch all just
+
+quit all together and truly often your
+
+Mac's PC's phones when they freeze or
+
+again spinning beach ball or the like
+
+and just weird things happen that's just
+
+cuz some human made a dumb mistake and
+
+they didn't realize that you could
+
+somehow get your phone or your laptop
+
+into a configuration that they didn't
+
+anticipate so we're going to try to
+
+handle that here now this is just one
+
+way of writing pseudo code there's no
+
+one way to do this all of us in this
+
+room could come up with slightly
+
+different pseudo code but I think you'll
+
+find characteristic are certain building
+
+blocks in all of our uh right answers
+
+here in yellow are what as of today
+
+we're going to start calling functions
+
+technically speaking these are like
+
+actions or verbs that literally in this
+
+case like tell me what to do next we're
+
+going to have these things conditional
+
+sort of forks in the road so to speak
+
+that uh take me down this path or
+
+another metaphorically so I do this
+
+thing or something else but how do I
+
+decide if I want to go this way or this
+
+way or this way or this way I need to
+
+ask a question and in programming we'll
+
+typically use what are called Boolean
+
+Expressions named after mathemati bull
+
+and a Boolean expression is essentially
+
+just a question with a yes no answer a
+
+true or false answer a one or zero
+
+answer doesn't matter how you think
+
+about it but it's got two possible
+
+answers and so you can kind of think of
+
+these as being expressions with question
+
+marks even though I didn't draw such
+
+person on page person earlier in book
+
+person later in book those those are
+
+Boolean expressions and they tell me
+
+whether I should go down one fork in the
+
+road or another and lastly there's this
+
+go back to line three in two different
+
+places that represents what we' call a
+
+loop like some kind of cycle that's
+
+doing something again and again now
+
+these are just a few building blocks
+
+here functions conditionals Boolean
+
+Expressions Loops but you'll find that
+
+they're characteristic of so many
+
+different languages one of which we'll
+
+look at today another of which we'll
+
+look at next week and those include
+
+indeed C and Python and other languages
+
+still and so this is why we focus us on
+
+these Basics and fundamentals in these
+
+early days because we're going to see
+
+them again and again so even if you feel
+
+like that fire hose is hitting you
+
+sometime will give you today ultimately
+
+more visuals bya which you can hang on
+
+to so as to actually write code
+
+ultimately in different languages and
+
+solve all sorts of problems now we'd be
+
+remiss in not bringing up sort of what's
+
+behind characters like spot and chat GPT
+
+and other software artificial
+
+intelligence and it turns out to get to
+
+the point of AI we're actually going to
+
+need more building blocks than just
+
+functions and loops and conditionals
+
+it's not going to be quite that simple
+
+but this has been a lot so far let's go
+
+ahead here and take a five minute break
+
+and when we resume we'll take a look not
+
+only at AI but also a specific language
+
+called scratch so no cake just yet but
+
+we'll come back in
+
+five before we dive back in I just
+
+Thank you
+wanted to call out a special guest that
+
+we have here today Beyond spot someone
+
+who's come from even farther away and in
+
+fact if any of you have taken cs50x the
+
+open course Weare version of the class
+
+or dabbled in it over the past few years
+
+in some of cs50's online social
+
+communities you might have had your
+
+questions answered by a certain human
+
+from New Zealand and she's come all this
+
+way today to spend this uh this lecture
+
+with us this is cs50's own Brenda
+
+Anderson if you might come up for
+
+acknowledgement from all of us
+
+[Applause]
+
+here it's not much but just a little
+
+token of our thanks Brenda has helped
+
+truly thousands of students online for
+
+the past many years and in fact her own
+
+daughter has been the artist uh behind
+
+the duck that's about to loom large in
+
+cs50 this year and Beyond so thank you
+
+to
+
+Brenda all right so it's hard to escape
+
+Artificial Intelligence
+a discussion of artificial intelligence
+
+nowadays but we thought we'd use this as
+
+an opportunity to connect some of these
+
+thoughts because indeed over the course
+
+of the semester we'll be not only be
+
+talking about AR arcial intelligence or
+
+AI but really using it all the more
+
+constructively to help you solve
+
+problems help you get unblocked when you
+
+hit a wall cognitively or syntactically
+
+when writing code um and indeed it's no
+
+accident that we have this duck here
+
+looming large which is really the
+
+embodiment of the sort of AI that you'll
+
+experience within cs50 itself this year
+
+so let's talk about this so-called
+
+chatbot that inspired some of those
+
+headlines with which we began class that
+
+weren't quite on the nose so the class
+
+will still be taught by us humans but
+
+helped by this sort of cs50 duck a
+
+chatbot of sorts now what do I mean by
+
+this well it turns out that when it
+
+comes to implementing something like an
+
+artificial intelligence we don't quite
+
+have all of the building blocks yet
+
+certainly after just today's week zero
+
+to implement something like that but I
+
+think we can sort of skate in that
+
+direction intellectually so for instance
+
+if we were to take a stab at
+
+implementing our own chatbot some
+
+interactive test space program that
+
+talks to us and answers questions in the
+
+we could try borrowing some of today's
+
+ideas already those functions
+
+conditionals loops and more and I could
+
+write something like this if I am
+
+writing code or pseudo code for a
+
+chatbot I could program the chatbot to
+
+do something like this if the student
+
+says hello to the chatbot then the
+
+chatbot should say hello back else if
+
+the student says goodbye well the
+
+chatbot should say goodbye back else if
+
+the student asks how you are the chat
+
+box should say that it's well but things
+
+get a little harder when you start
+
+asking more interesting questions like
+
+uh else if the student asks why 111 in
+
+binary is seven in decimal now you could
+
+imagine that we just have a conditional
+
+with this Boolean expression that
+
+programs the chatbot to just give you
+
+the answer and explain in an English
+
+sentence why that in fact is but what if
+
+you the student asks why one0 is six in
+
+decimal or y 0 one0 is two I mean you
+
+can just imagine the explosion and the
+
+amount of code that we would have to
+
+write to just anticipate every darn
+
+question that you might ask about today
+
+and every other class not to mention all
+
+of the knowledge in the universe so
+
+surely there are other ways to implement
+
+algorithms that allow something like a
+
+chatbot or AI more generally to be fed
+
+input still like all of the internet all
+
+of the worldwide web all of the pages
+
+and textual content they're in but to
+
+let it just figure out how to answer our
+
+questions based on those kinds of inputs
+
+assuming the inputs themselves are
+
+accurate so large language models is a
+
+term you might have heard Bandy about
+
+over the past several months or llms and
+
+a large language model really is an
+
+implementation in software of code that
+
+actually takes as input lots and lots of
+
+language like the text of lots and lots
+
+of web pages dictionaries encyclopedias
+
+wikipedias and the like and sort of
+
+infers from the patterns of English
+
+words or any human language what a
+
+typical human might actually say when
+
+asked a question and some of these
+
+questions are easy right probably on the
+
+internet alone not to mention everyday
+
+life if someone extends their hand and
+
+says Hi how are you odds are like with
+
+90% probability you're going to say good
+
+thanks how are you so I bet we could
+
+write software that just infers what it
+
+should say probabilistically
+
+statistically based on those kinds of
+
+patterns online and that's indeed where
+
+the world is starting to go when it
+
+comes to the most sophisticated of
+
+algorithms where you and I the humans we
+
+don't try to anticipate every possible
+
+input rather we give it a more General
+
+purpose input like all human knowledge
+
+and ideally just let it figure things
+
+out now we're not quite there yet and
+
+odds are you've heard of hallucinations
+
+or just mistakes that these large
+
+language models make but their inputs
+
+are imperfect and sometimes there's a
+
+bit of Randomness sprinkled in because
+
+you don't want the thing to always say
+
+the exact same thing even you and I
+
+might say ah I'm not that great today
+
+10% of the time so you need to sort of
+
+perturb the output in some way but
+
+within cs50 and within this world of
+
+large language models we do have these
+
+tools like chat PT and Bing chat and
+
+others and we'll stipulate that for
+
+cs50's purposes the direction we're
+
+going this year is that this is what's
+
+in the syllabus dot dot dot that it will
+
+not be allowed it will be considered not
+
+reasonable to use aib based software
+
+other than cs50's own so the goal here
+
+is not to Simply take away tools that
+
+are clearly inevitable in my view and
+
+clearly helpful and productivity Savers
+
+but we'd like there to be some some
+
+guard rails intellectually on just how
+
+helpful these chat Bots are because as
+
+you probably seen if you ask it a
+
+question these chat Bots are already
+
+pretty good and not just helping you
+
+finish your current thought but it'll
+
+hand you your second and your third
+
+thought and sort of do the assignment
+
+for you but I think through prompting so
+
+to speak we'll be able to Coke some of
+
+our own tools being computer scientists
+
+ourself in a direction that you actually
+
+find to be the right balance Ain to
+
+having a good tutor by your side 247 who
+
+doesn't just hand you answers but indeed
+
+tries to lead you to the same so you
+
+actually get something out of the
+
+experience and ideally 3 plus months
+
+from now those training wheels can come
+
+off too and you're able to still stand
+
+on your own so it will be reasonable to
+
+use cs50's own AI based software which
+
+will actually take the form of a cs50
+
+duck which is actually available now and
+
+we'll use it throughout the term at
+
+cs50. a a web-based application that's
+
+quite similar to chat PT but that has
+
+the personality of a cs50 teaching
+
+fellow or TF or teaching assistant ta
+
+that also happens to think of itself as
+
+a duck and for reasons we'll get to in a
+
+couple of weeks time but rubber ducks in
+
+particular are kind of a thing in
+
+programming but more on that before long
+
+as you can even see from the one there
+
+on my desk um with that said too allow
+
+me to call out cs50's own Brenda
+
+Anderson whose daughter Sophie kindly
+
+not only uh created the first
+
+Incarnation digitally of this duck but
+
+also most recently once it actually did
+
+more than quack uh a random number of
+
+times in response to questions has now
+
+been virtually brought to life too so
+
+all that and more over the coming weeks
+
+but you'll find ultimately that the goal
+
+is to really bring to life the
+
+availability of an AI based tutor that
+
+you have access to a friend in your uh
+
+next to you uh that will help guide you
+
+through a lot of the courses challenges
+
+along the way and we've actually rolled
+
+it out this past summer already with
+
+some of your predecessors through the
+
+Harvard summer school one student wrote
+
+at Summer's end that this duck felt like
+
+having a personal tutor I love how AI
+
+Bots will answer questions without ego
+
+and without judgment generally
+
+entertaining even the stupidest of
+
+questions without treating them like
+
+they're stupid it has as one could
+
+expect an inhuman level of patience so
+
+there's actually actually something
+
+really there because as many teachers as
+
+there are in cs50 myself the courses
+
+preceptors teaching fellows teaching
+
+assistants and course assistants there's
+
+only so many of us and we're only awake
+
+so many hours of the day and I think
+
+you'll find too that we're on the cusp
+
+of something pretty remarkable in the
+
+coming years where it's going to get a
+
+lot more enabling now to learn material
+
+not only within the confines of a class
+
+but on your own ultimately as well and
+
+as one other student put it at Summer's
+
+end uh with respect to the duck love
+
+love love the duck we're friends now so
+
+that too awaits but first we're going to
+
+need to start with the basics and we
+
+started today by talking about binary
+
+and darn it here it is again so we can't
+
+actually get to the point of using or
+
+solving or uh implementing AI until we
+
+understand this and odds are most of you
+
+won't know at a glance what this piece
+
+of software does but these are the zeros
+
+and ones that represent perhaps the
+
+first program that any programmer writes
+
+which is now a clue to some of you who
+
+have dabbled in code before what does
+
+this pattern of zeros and ones tell a
+
+typical computer to do might someone
+
+guess it's going to have it a hello
+
+world which is one of the very first
+
+program programs that most any
+
+programmer writes should you be able to
+
+recognize these zeros and ones do I
+
+recognize these zeros and ones like no
+
+not at all I just happened to know that
+
+they are the same and that was kind of a
+
+leading question but they are
+
+representing data and instructions
+
+ultimately data like h e l l o comma w r
+
+l d and an instruction like print that
+
+data to the screen as for what these
+
+patterns of zeros and ones are this is
+
+not something that a computer scientist
+
+or programmer worries about we just
+
+stipulate that okay someone somewhere
+
+knows how to do this and it's probably
+
+someone like Intel who makes the
+
+hardware inside of the computers but you
+
+and I starting now already in week zero
+
+can start to view uh binary more
+
+abstractly we don't care about the zeros
+
+and ones we only care that you can use
+
+zeros and ones to represent more useful
+
+quantities like uh numbers and letters
+
+colors and more so this next week is
+
+going to be the code we actually start
+
+writing at a keyboard and this is that
+
+language called C it's the same language
+
+I myself learned years ago when taking
+
+cs50 when all we learned at the time was
+
+C but this too has some cryptic to it
+
+and if you've never programmed before
+
+you can probably wrap your mind around
+
+okay I'm guessing the print F prints out
+
+the hello world but what's with the
+
+semicolon the quotes The Backs slash n
+
+the curly braces the hash include and
+
+all of this stupid syntax a lot of this
+
+in the beginning of any class is really
+
+a distraction it is not intellectually
+
+interesting but it's the stupid kind of
+
+stuff that's going to trip you up quite
+
+often and so today what we'll do is
+
+focus not on syntax characters on the
+
+keyboard but ideas because what really
+
+matters in this program is that printf
+
+is a function here for our purposes and
+
+that function is to display information
+
+on the screen everything else as we'll
+
+soon see has value and will be
+
+understood by you before long but for
+
+now it's a distraction let's focus on
+
+those building blocks when it comes time
+
+cs50.dev
+time to write code though for the
+
+Curious especially if you've programmed
+
+before we'll use a very popular free and
+
+open source tool called Visual Studio
+
+code or vs code we'll use a cloud-based
+
+version of it that we pre-install
+
+everything you need in the cloud for you
+
+so you don't have to deal with headaches
+
+like getting your Mac or PC to work
+
+you'll use instead this URL cs50. deev
+
+but more on that in next week week one
+
+Scratch
+for now we'll use another cloud-based
+
+editor called scratch and odds are some
+
+number of you use this probably as early
+
+as like Middle School or the like and
+
+that was fine to create your own art uh
+
+animations games interactive art or the
+
+like but we'll use it today for just a
+
+bit and we'll use it in the course's
+
+first homework AKA problem set zero to
+
+explore now some of these same ideas and
+
+among the goals today for the remainder
+
+of today is not to focus so much on
+
+Scratch and the particulars because this
+
+is not a language that you're going to
+
+use often but to give you very uh visual
+
+representations of ideas so that when
+
+things do escalate next week to see to
+
+the more cryptic it's the same ideas
+
+just typed out instead of dragged and
+
+dropped so by that I mean this I'm going
+
+to go ahead and share in just a moment
+
+the user interface of scratch but what's
+
+nice about scratch is that this is how
+
+we're going to implement that same
+
+program today these are two blocks or
+
+puzzle pieces on the screen and they've
+
+been interconnected to tell the computer
+
+to say hello world on the screen the
+
+user interface that we're about to use
+
+will look generally something like this
+
+it's a web-based editor that you can
+
+also download it locally to use offline
+
+and you'll see that at the left here are
+
+a whole bunch of puzzle pieces or blocks
+
+they're categorized by color and the
+
+blue ones tend to relate to motion for
+
+instance the uh purple ones represent
+
+looks the pink one represents sounds the
+
+yellow one represents events more on
+
+that soon the orange ones represent
+
+control and then there's operators
+
+variables my blocks and even some
+
+extensions we can install as well so it
+
+just categorizes things visually and
+
+colorfully so that you can sort of find
+
+what you're looking for but we're going
+
+to use these puzzle pieces to drag and
+
+drop them onto this area here and we're
+
+going to connect them when we want them
+
+to do something what can they do well by
+
+default scratch comes with this cat here
+
+otherwise known as a Sprite Which is a
+
+character in a game or in a graphics
+
+context and this cat lives in this
+
+two-dimensional World in which the cat
+
+can go up down left right and you can
+
+actually change the Cat's costume to be
+
+a dog or a bird or anything else it
+
+really is more of an idea than it is a
+
+specific animal in this case but the
+
+world that scratch lives in looks a
+
+little something like this it's like a
+
+cartisian plane with x coordinates and
+
+y-coordinates and the the numbers don't
+
+so much matter fundamentally except that
+
+when you want the cat or any character
+
+to go up down left or right by some
+
+amount it's useful to know for instance
+
+that 0 0 is the middle 0 comma 0 for X
+
+comma y all the way up is a yv value of
+
+180 all the way down is negative 180 all
+
+the way to the left is -240 all the way
+
+to the right is 240 and generally you're
+
+not going to have to worry about numbers
+
+you're going to use these relatively go
+
+right go left go up or down but that's
+
+just the world that scratch itself lives
+
+in here so let's go about using scratch
+
+Hello, World
+here I'm going to change over to um my
+
+cloud-based editor here where I've gone
+
+to scratch.mit.edu and I've clicked
+
+create in order to create a project and
+
+that gives me this blank canvas here and
+
+I'm going to do these somewhat quickly
+
+because I kind of know what I'm looking
+
+for but part of the process with problem
+
+set zero is just going to be clicking
+
+and dragging and sort of scrolling
+
+around to see what what building blocks
+
+exist but I know under events there's
+
+this puzzle piece here when green flag
+
+clicked why is that Germain well if I
+
+zoom out and go back to scratch's world
+
+at the right here notice that above
+
+scratch's world there's a green flag
+
+which is going to mean go and a red stop
+
+sign which of course is going to mean
+
+stop so if I drag this puzzle piece
+
+anywhere into the middle it's just going
+
+to plop where I put it but what that
+
+means semantically is when someone
+
+clicks that green flame FL I want
+
+scratch the cat to do this other thing
+
+well what do I want it to do let me go
+
+under looks and looks here in purple
+
+have some puzzle pieces like this well I
+
+can say hello for some number of seconds
+
+or I can just go ahead and say hello so
+
+let's do that I'm going to drag this say
+
+block and notice that as soon as I get
+
+close enough it's going to sort of
+
+magnetically want to connect so I can
+
+let go and they snap together
+
+automatically because they're the right
+
+shape I don't have to say Hello
+
+exclamation point I can change it to the
+
+more canonical hello comma world so
+
+anything in this white oval is editable
+
+that you can change as just text there
+
+if I now zoom out let me go ahead and
+
+click the green flag and voila this
+
+should be my first program in
+
+scratch hello world without any of the
+
+distractions of syntax or weird
+
+characters on the screen it's just done
+
+what I want it to do all right let me go
+
+ahead and click stop there and let me
+
+make it a little more connected to what
+
+we've discussed thus far so this puzzle
+
+piece here say hello world represents
+
+what type of build building block using
+
+the vocabulary of today so it's a
+
+function so these purple blocks are
+
+functions say hello world and let me
+
+give you another piece of terminology
+
+these white ovals that take textual
+
+input in general those are called
+
+parameters or arguments and they
+
+customize the behavior of a function so
+
+a parameter or an argument customizes
+
+modifies the default behavior of a
+
+function like in this case say similarly
+
+in the C code from earlier that we'll
+
+see next week the print F function took
+
+a quoted phrase like Hello World
+
+similarly as input but more on that in
+
+the uh in the future so how does this
+
+connect to what the mental model we
+
+presented earlier well here's problem
+
+solving as I described it earlier inputs
+
+to outputs with algorithms or code in
+
+the middle well what we've got here
+
+really is an input of hello world the
+
+white oval the function or algorithm
+
+that it's going into as input is the say
+
+block and what is the output of using
+
+the say block the say function it's the
+
+visual effect of having the cat have the
+
+little speech bubble appear above its
+
+head saying hello world so everything we
+
+do in fact can be mapped back to that
+
+very simple idea of inputs and outputs
+
+well let's make it a little more
+
+Hello, You
+interesting though it's a little boring
+
+to just say hello world all the time let
+
+me go ahead and uh drag this away and if
+
+you just drag it to the left and let go
+
+it gets automatically deleted let me go
+
+under sensing in light blue here and
+
+you'll see there's a bunch of blocks one
+
+of which is an Ask block an askk
+
+function which is going to prompt the
+
+human me for some input so let me go
+
+ahead and drag that over here and it
+
+snaps together I could change the
+
+question but I'm okay with that question
+
+we'll use what's your name but notice
+
+that this block ask is a little special
+
+it is not just going to display like a
+
+speech bubble on the screen it's
+
+actually going to return a value and
+
+this is another term of art today and
+
+onward a return value is some value that
+
+can be handed back to you conceptually
+
+from a function so that you can do
+
+something with it it's as though the ask
+
+ask function asks someone for their name
+
+writes it down on a piece of paper and
+
+hands you the piece of paper you can do
+
+anything now that you want with that
+
+name and here is how you access the name
+
+in this special block called answer
+
+which again we'll start calling a return
+
+value so if I want to say hello to
+
+someone specific I'm going to do this
+
+let me zoom out let me go back to looks
+
+and let me go back to say and I'm going
+
+to change the say block here to hello
+
+comma then I'm going to zoom out well I
+
+need two inputs I think so all right I'm
+
+going to grab another say block and I'm
+
+going to put it below and I could just
+
+type David but this is going to defeat
+
+the whole point of asking me for the
+
+name and it will only work for me so I
+
+don't want to do that so let me go back
+
+to sensing and notice the shape is
+
+important here even if it's not quite
+
+the same size the shape matters and I
+
+can actually drag this and change the
+
+input of this save function to be
+
+whatever that return value is that piece
+
+of paper that has the person's name on
+
+it and it grows to fill but now we have
+
+a program that I think when I click the
+
+green flag watch is going to prompt me
+
+what's your name and now I have room to
+
+type down here so I'm going to type DV
+
+ID I'm going to hit enter and it should
+
+say hello Dave what
+
+h Huh oh let me maybe that that was
+
+maybe it was H didn't work d a v d here
+
+we go hello David H it's missing the
+
+hello but I'm quite sure we have a Hello
+
+right there so what explains this bug or
+
+mistake yeah
+
+exactly it's just my put another way my
+
+Mac my PC is just so darn fast that it
+
+did exactly what it was supposed to but
+
+it said hello David so fast that we
+
+didn't even see we being the human the
+
+slowest part of the puzzle see the
+
+actual hello so there's a few different
+
+ways to fix this as you know we could
+
+have it say hello for some number of
+
+seconds so I could kind of do that so
+
+let me do this I can decouple these by
+
+just dragging in letting it go so that
+
+they're magnetically far apart let me go
+
+ahead and drag this one say hello for 2
+
+seconds I'm going to change the grammar
+
+here to be hello comma again I'm going
+
+to go ahead and disconnect these two I'm
+
+going to throw away the old one that I
+
+don't want to use and I'm going to
+
+reconnect this so that now okay it's
+
+going to say hello for two seconds and
+
+then my name hopefully so let me click
+
+stop and start daav ID
+
+enter okay so it's better but it's kind
+
+of like poorly implemented like come on
+
+I just wanted to say hello comma David
+
+why is that that hard well maybe we can
+
+actually combine these a little
+
+differently and let me propose this let
+
+me actually get rid of these blocks
+
+again and let me go ahead and just say
+
+one thing but can I somehow combine this
+
+to say hello comma David all in one
+
+breath well it turns out if I go under
+
+operators I know from having played with
+
+this before that there's this puzzle
+
+piece down here called join and it's a
+
+circle or it's an oval it's a little big
+
+but again it will grow to fill and by
+
+default it wants to join two words apple
+
+and banana but whoops but those are just
+
+placeholders so let me go ahead and drag
+
+this over the default hello let me
+
+change Apple to hello comma space and
+
+then banana let me go back to sensing
+
+let me grab answer and drag and drop
+
+that so now notice that I'm kind of
+
+layering my ideas and put another way
+
+the output of this join block is
+
+presumably going to join two things
+
+together apple and banana or hello comma
+
+David and then the output of join is
+
+going to become the input to say so
+
+aesthetically it just looks better it's
+
+still correct but it's just better so if
+
+I type David and hit enter hello David
+
+this is what a normal program would
+
+presumably do not show you part of the
+
+phrase and then the rest of the phrase
+
+like it's just better in this way so
+
+let's connect this now to this same
+
+puzzle piece and this methodology so
+
+here's that same puzzle piece ask how do
+
+we fit it into this input and out output
+
+flow with algorithms well the input to
+
+that puzzle piece is something like
+
+what's your name question mark then the
+
+algorithm or the code implementation
+
+thereof is this ask block and wait so
+
+the human has a moment to type their
+
+response in the output of that function
+
+recall is a return value you don't see
+
+anything on the screen by default
+
+because we've not used say yet but we
+
+get this return value and let me scooch
+
+everything over now so that we can now
+
+join those inputs together so here's
+
+this puzzle piece let me go ahead and
+
+propose that the inputs now to the join
+
+block are two arguments or two
+
+parameters so to speak hello and answer
+
+they go into that joined puzzle piece
+
+whose purpose in life is to return one
+
+joined version thereof let me slide this
+
+all over logically now so that now that
+
+output becomes the input to the say
+
+block and now is why the cat has the
+
+speech bubble saying all at once hello
+
+comma David so what we've done here is
+
+kind of composed the output and uh from
+
+one function into the input of another
+
+and you can think of this in a couple of
+
+different ways left or right as I did
+
+there we're kind of like stacking these
+
+things on top of one another but at the
+
+end of the day even as programming gets
+
+more and more powerful for us it's just
+
+inputs and outputs inputs and outputs
+
+and thankfully with built-in
+
+functionality from our friends at MIT
+
+who designed scratch I can even do
+
+something playful like this I can go to
+
+that extensions button at the bottom and
+
+there's a lot of fancy things I can add
+
+here like text to speech so let me go
+
+ahead and choose text to speech
+
+let me go ahead here and change the say
+
+block in purple let me get rid of the SE
+
+block and let me borrow this let me get
+
+the speak block like this and now let me
+
+drag and drop this oval it's going to
+
+grow to fill and I think it's just about
+
+to be a little more interesting let me
+
+click play now and hopefully this isn't
+
+too loud DAV ID enter hello David okay
+
+thank
+
+you thank you that's a low bar let me go
+
+ahead and set the voice too and you
+
+might now remember how we began class
+
+where we had a robotic computerized
+
+voice well we didn't use scratch at the
+
+time but we could change this uh in
+
+scratch alone to be a little different
+
+so da a hello David okay little creepy
+
+but we can play all day long with that
+
+but the point is that these functions
+
+are just now doing something a little
+
+different but it's just these inputs and
+
+outputs well let's make the cat more
+
+like a cat let me go ahead and throw
+
+away all of this asking question stuff
+
+Meow
+let me go up to Sam
+
+and let me go ahead and drag the play
+
+sound meow until done and here too it
+
+comes with meow you can add your own
+
+sounds Lang and sounds uh as well but
+
+I'm just going to use the default meow
+
+and here too hopefully this won't be too
+
+loud let's make the cat meow by clicking
+
+play okay it's a little piercing but
+
+it's cute and if I want the cat to maow
+
+twice I could just play the game
+
+twice all right but it would be nice to
+
+just get it to meow automatically too or
+
+three or more times so you know what I
+
+could do I could just drag a second one
+
+of these I could actually you know what
+
+I could even just rightclick or control
+
+click and duplicate them but I'll just
+
+keep dragging and dropping there's
+
+different ways to solve problems and now
+
+let me click
+
+play okay cat does not sound
+
+particularly happy so we could go under
+
+how about control we could wait one
+
+second now there's no room but it will
+
+sort of expand to give room for me so
+
+let me try this and now it's going to
+
+wait 1 second in between
+
+[Music]
+
+the okay let me stipulate that is
+
+correct if my goal is to get the cat to
+
+meow three times it meow three times but
+
+per our discussion earlier of algorithms
+
+and the design thereof this is not the
+
+best
+
+design okay thank you for playing along
+
+at home yeah what in what sense is this
+
+arguably not well designed yeah you
+
+repeated yourself I repeated myself
+
+which actually in programming tends not
+
+to be a good thing now it was easy I
+
+literally I almost resorted to copy
+
+paste which saves me time up front but
+
+just imagine a contrived scenario now
+
+what if I want it to wait like two
+
+seconds in between all right it's not
+
+that big a deal I change it here and I
+
+change it here but what if the program
+
+is meant to me out 10 times then I have
+
+to change it here and here and here and
+
+here and here and eventually I'm going
+
+to screw up like humans are fallible I'm
+
+going to overlook one of them one time
+
+it's going to be one second another's
+
+going to be two and just stupid things
+
+will happen you're setting yourself up
+
+for failure if you design things poorly
+
+and so I would propose that we use
+
+another type of building block to solve
+
+this instead yeah yeah so we could use a
+
+loop and just write minimal code but to
+
+accomplish even more functionality so
+
+let me throw away most of these blocks
+
+and let's go and grab this repeat block
+
+which we haven't used yet but it's right
+
+there and as the name suggests this will
+
+allow me to repeat something some number
+
+of times let me put these two puzzle
+
+pieces inside it'll grow to fill let me
+
+reconnect it to the green flag I'll
+
+change the default 10 to a three and
+
+[Music]
+
+now it's just sort of better because if
+
+now you want it to meow more times you
+
+change it one place if you want it to
+
+slow down you change it in one place
+
+there's no room for error and that's
+
+generally a good thing but you know this
+
+Abstraction
+is silly like the scratch comes with a
+
+cat why didn't MIT give us a puzzle
+
+piece called meow like why am I
+
+implementing the idea of meowing myself
+
+like that took me what 1 2 3 four puzzle
+
+pieces why isn't there just one puzzle
+
+piece that meows for me this too we can
+
+do in code be it in scratch or C or
+
+other languages too I'm going to go down
+
+to these per these uh Pink uh my blocks
+
+here where I can create my own puzzle
+
+piece and I'm going to call this
+
+literally meow and I'm going to go ahead
+
+and just click okay and notice that it's
+
+given me this new type of start
+
+connector it's a start puzzle piece that
+
+nothing goes above it but you can put
+
+anything you want below it and I'm going
+
+to go ahead and cheat here I'm just
+
+going to grab my existing code so to
+
+speak this is code code I'm writing even
+
+though it's puzzle pieces and now let me
+
+just claim and I'll move this aside here
+
+is now an implementation of my own
+
+function my own block called meow whose
+
+purpose in life is to meow until done
+
+and then wait one second but what's
+
+powerful now is notice at top left now
+
+that I've made the block I can use it
+
+any number of times so I can grab this
+
+meow block drag it over here and you
+
+know what now that meow exists as an
+
+idea I can abstract that way and I'm
+
+just going to arbitrarily drag it way to
+
+the bottom I'm not deleting it I'm just
+
+putting it out of sight out of mind so
+
+that we can focus now on this idea and I
+
+claim that this implementation of
+
+meowing is sort of better because it's
+
+more compact it does what it says and I
+
+don't care about the implementation
+
+details of meow so this idea of
+
+abstraction something we're going to use
+
+frequently to abstract something away is
+
+to simplify don't think about the
+
+underlying implementation details just
+
+care about what it does or what it's
+
+called someone has to care about the
+
+implementation details like me 30
+
+seconds ago but here on out I don't need
+
+to care and so in fact you and I are
+
+using the abstraction that is scratch
+
+because I don't know how to put a speech
+
+bubble on the screen I don't know how to
+
+create that sound meow MIT did that and
+
+they abstracted those pieces of
+
+functionality away already for us by
+
+just giving us these puzzle pieces we
+
+see here so the code will work the exact
+
+[Music]
+
+same but it's sort of better designed
+
+now because now abstracted away the idea
+
+of meowing but I bet I can improve this
+
+further can I get rid of the repeat
+
+block altogether and let me just tell
+
+the meow block how many times to meow
+
+well let me go down to the bottom and
+
+look at the implementation details I'm
+
+going to right click or control click on
+
+this and I'm going to edit it so I'm
+
+going to make a change and I didn't do
+
+this before but I'm going to call it
+
+meow as before I'm going to add an input
+
+and just so I know what it says what it
+
+does I'm going to add the word times
+
+here so and I'm going to change this
+
+placeholder to uh n for n for number is
+
+the go-to placeholder anytime we want to
+
+talk about a number in CS so now notice
+
+the puzzle piece looks a little
+
+different it takes an argument or a
+
+parameter called n which represents the
+
+number of times you want the thing to
+
+meow now that doesn't do that yet so let
+
+me go back to my other code let me just
+
+decouple these temporarily I'm going to
+
+move my Loop into my implementation of
+
+meowing but I don't want a hard code
+
+that is literally write the number three
+
+anymore
+
+I'm going to grab this circle this oval
+
+and put it there so now I've generalized
+
+the function so now it will meow any
+
+number of times zero on up by executing
+
+that Loop and now more powerfully out of
+
+sight out of mind notice that my code
+
+just became so darn simple like my
+
+function is called meow it meows some
+
+number of times all I have to do is type
+
+A number there and it just works and I
+
+don't care anymore about those lower
+
+level so to speak implementation details
+
+so here no surprise if I type in the
+
+number three zoom out and hit
+
+[Music]
+
+play it still works just fine so any
+
+questions on what we've just done here
+
+it's still just meowing but that's
+
+besides the point it's this creation of
+
+our own functions this modularity this
+
+abstraction that's going to be the idea
+
+that keeps coming back to
+
+us no all right so let's make this a
+
+little more catlike let me throw away
+
+all of this code and let go ahead oops
+
+Conditionals
+let me throw away this code first and
+
+then the rest of this code and let me go
+
+ahead and give myself another green flag
+
+block and let me go ahead and let's
+
+create a cat that allows us to pet it by
+
+moving my cursor over the cat and maybe
+
+it likes that so it'll meow when I do
+
+that so let me go under control and let
+
+me grab this if conditional which we
+
+talked as a about as a building block
+
+earlier let me go to sensing and we
+
+haven't used this before but here is a
+
+weird sort of diagonal shape that says
+
+touching Mouse pointer question mark so
+
+that's a Boolean expression so I'm going
+
+to drag that and it's definitely the
+
+wrong size but it is the right shape so
+
+it will grow to fill and the question I
+
+want to ask is if the cat is touching
+
+the mouse pointer then go ahead and meow
+
+happily so let me grab the meow sound
+
+put it in there and so I think when I
+
+click the green flag to start the
+
+program and now I let the cursor the
+
+mouse pointer touch the cat we should
+
+hear
+
+huh huh doesn't seem to be
+
+working there's a bug or a mistake in
+
+this program too what did I do wrong
+
+yeah I don't need to specify the Sprite
+
+explicitly because a detail I didn't
+
+discuss earlier in the bottom right of
+
+the screen notice that the cat is
+
+already selected so this code relates to
+
+that cat so your your instinct is good
+
+if we had two or more Sprites but I just
+
+have one so I I'm I'm covered there
+
+other thoughts
+
+yeah it only only checks once so I click
+
+the green flag the computer did what I
+
+told it to do the Cur the mouse pointer
+
+was not touching the cat at that moment
+
+because it was touching the green flag
+
+so of course it didn't meow so what
+
+maybe is the fix here what puzzle piece
+
+can we
+
+add flag okay so okay interesting
+
+solution so let me go ahead and under
+
+control let me grab a Wait f 1 second
+
+I'm going to change the one to five and
+
+now I'm going to click the green flag so
+
+here we go one 2 3 four five damn it
+
+okay that was yours not
+
+mine it didn't
+
+work
+
+sorry oh maybe forever so your approach
+
+would work but it's very much a hack if
+
+you will like you I would have to time
+
+it perfectly so that the mouse pointer
+
+is touching it or or conversely I have
+
+to drag it there and just leave it there
+
+for 5 seconds and that's a little weird
+
+cuz like you don't just touch a cat and
+
+then like 5 seconds later it meows at
+
+you like presumably we want it to be
+
+more interactive so I like this idea of
+
+a loop right why don't we just tell the
+
+cat to
+
+Forever uh listen for the cursor as by
+
+using not repeat but forever let me move
+
+this in here so now the cat's going to
+
+be told when the green flag is clicked
+
+just forever if touching if touching if
+
+touching oh meow when actually touched
+
+so now if I zoom out and hit play
+
+nothing's happening I don't have to wait
+
+any number of seconds but when I do
+
+touch the
+
+[Music]
+
+cat fan section here thank you so now
+
+it's actually working quite well so
+
+there we have sort of a logical bug but
+
+it does make sense if you think about
+
+what it was you told the computer to
+
+actually do well let's make things even
+
+more interesting by using one of these
+
+extensions in this bottom left corner
+
+this is how I got to text to speech
+
+earlier let me go to video sensing over
+
+here too and I can actually there we go
+
+literally the video has come on let me
+
+go ahead and do this get rid of this
+
+code and let me step out of the frame
+
+when video motion is greater than well
+
+this is cs50 so let's just type in 50
+
+which is just a measure of motion let me
+
+go and play sound
+
+meow okay and let me stop and
+
+restart all right so there's the
+
+cat Okay it worked cat a little
+
+insensitive there we go actually you
+
+know what maybe it's just let me put uh
+
+let's change it 20 oh my gosh that's
+
+okay there we go all right there we go
+
+so now it's a little more sensitive to
+
+the petting by using the camera now this
+
+is kind of a weird example and if I just
+
+start moving around crazily like it's
+
+just going to meow incessantly which is
+
+what was H
+
+stop okay when in doubt this is when you
+
+reload the
+
+page all right so now we're back to
+
+where we wanted to be but where can we
+
+now use these kinds of building blocks
+
+like we were doing such tiny little
+
+programs but even that like we could
+
+turn into a whole game I bet could we
+
+get like one volunteer to come on up one
+
+volunteer everyone's like looking down
+
+okay on the end here come on down yeah
+
+all Round of Applause for our one Brave
+
+volunteer
+
+here all right these Super Mario cookies
+
+are on the line for you depending on how
+
+this goes so I'm going to have you come
+
+over here and in advance on scratch's
+
+website we have some pre-made games uh
+
+one of them written by one of your
+
+predecessors a former student um that
+
+they implemented this sort of
+
+whack-a-mole game so what you're about
+
+to see is the camera turn on on you and
+
+you're going to see four moles above
+
+below left and right and using only your
+
+head up down left right the goal is to
+
+whack a mole to get a point every time
+
+your head touches one of these Sprites
+
+so you're about to see things get very
+
+interesting very quickly but using these
+
+building blocks just those simple blocks
+
+but have four Sprites not four cats but
+
+four moles in this case we can actually
+
+turn these into actual games so here we
+
+go beginner okay okay and we just need
+
+you to Center your head
+
+[Music]
+
+first
+
+nice 10
+
+[Music]
+
+seconds nice 2
+
+seconds all right a round of
+
+applause thank
+
+you do you want to introduce
+
+yourself hi everybody my name is vanilla
+
+I'm a first year and I'm going to be
+
+majoring in computer science and
+
+economics nice to meet you here we go
+
+thank
+
+you so we won't look at the code for
+
+that actual game it was written by one
+
+of your predecessors and you can see it
+
+online if curious but you can think
+
+about now with our functions
+
+conditionals Boolean Expressions Loops
+
+how you could kind of compose that kind
+
+of program so odds are there was a loop
+
+that was just constantly listening for
+
+that kind of connectivity or it was one
+
+of those that was waiting for
+
+motion to go touch one of those Sprites
+
+notice that there's these numbers up
+
+here and we haven't talked about this
+
+yet but just like in math where you can
+
+have variables X and Y and Z in
+
+programming you can create variables
+
+using other puzzle pieces in scratch
+
+that just keep track of how many seconds
+
+are left that keeps track of how many
+
+times her head hit one of the moles and
+
+so you can implement the mechanics of
+
+games using very simple building blocks
+
+
+but how do you go about building
+
+something that's more interesting and
+
+interactive like that let me go ahead
+
+and bring up for instance one of of the
+
+very first things I wrote years ago when
+
+I was in graduate school and scratch had
+
+just come out I was taking a class at
+
+mit's media lab and they invited us to
+
+beta test that is try out the software
+
+before it then became part of the world
+
+and the game I made was this one here
+
+let me find the right version of Oscar
+
+time so Oscar time is a game that took
+
+me tens of hours probably in the end it
+
+was a little bit addictive but let me go
+
+ahead and full screen it and I won't
+
+play the whole game but looks a little
+
+something like
+
+this where trash is falling from the sky
+
+and I can click on it and drag it and
+
+notice as I get close the lid opens up
+
+like this and if I let it keep falling
+
+it goes in and Oscar gives me a point
+
+and I can do this again trash if you
+
+really want to see something trash all
+
+right here comes something else I
+
+have so now there's two pieces of trash
+
+all
+
+hes going and going and going and if we
+
+can lower the volume for just a moment
+
+we'll let more trash fall but to your
+
+comment earlier about one Sprite or more
+
+Sprites that's what we're seeing here
+
+even though our examples thus far are
+
+just one cat one or two puzzle pieces or
+
+a few puzzle pieces here is I claim a
+
+Sprite here is another Sprite here is
+
+another Sprite and by toggling among
+
+them in that bottom right hand corner I
+
+can just associate different puzzle
+
+pieces with each of these Sprites now I
+
+didn't start off by implementing this
+
+whole game and in just a moment if we
+
+can raise the volume a little bit we'll
+
+see even more trash is falling so this
+
+is why I hate this song now like at 10
+
+plus hours listening to this song on
+
+Loop just to get the timing right but it
+
+brings to life all of these different
+
+Sprites and if you play it again and
+
+again it's always a little bit different
+
+cuz I'm using some Randomness so this
+
+newspaper doesn't always fall from there
+
+sometimes it's here sometimes it's here
+
+and so here again we have mechanics of a
+
+game where things are being perturbed a
+
+little randomized a little bit to keep
+
+things more interesting and let me go
+
+ahead there we go how about raise a
+
+little volume look at this Restless junk
+
+one more piece of trash so a clock it
+
+just goes on forever this kind of game
+
+but let's go ahead and consider let me
+
+close that let me go ahead and consider
+
+how I went about implementing that in
+
+from the GetGo so I will stipulate let
+
+me open a few of these versions here
+
+that the very first thing I did was
+
+pretty much just implement the stage
+
+right I was kind of procrastinating so I
+
+poked around I found the Sesame Street
+
+Lamp Post and I like dragged it into the
+
+world and done version one is done it
+
+didn't do anything thing but at least I
+
+had the world sort of laid out that is
+
+to say I took a baby step toward my goal
+
+then I started thinking about all right
+
+how do I bring the trash to life even if
+
+it doesn't do much of anything else and
+
+so I created another Sprite by clicking
+
+the appropriate button in that bottom
+
+right hand corner and I thought about
+
+well what do I want this trash to do I
+
+want it to just kind of fall from the
+
+sky and so what I did here was the
+
+following if I go to this trash piece
+
+here or actually sorry out of order what
+
+I actually did first was I didn't even
+
+have the trash fall if I play this game
+
+the trash just stays there in the air
+
+but I can do this I can drag it and as
+
+before as I touch the other Sprite I get
+
+the trash can lid to go up so how do I
+
+do that well let me click on Oscar down
+
+there my first Sprite and here are the
+
+puzzle pieces via which I implemented
+
+this idea I changed Oscar's costume his
+
+appearance to be just number one which I
+
+was one of the images I imported into
+
+the program and then I forever did this
+
+if Oscar is touching the mouse pointer
+
+then change Oscar's costume to number
+
+two otherwise change it back to one so
+
+it's super simple animation I'm just
+
+toggling between uh lid up lid down lid
+
+up lid down but it kind of feels
+
+interactive and if I wanted to really
+
+make this pretty I could have like 30
+
+different costumes where the lid is ever
+
+so slightly higher then it would look
+
+even more like a movie or fluid motion
+
+but this was enough to get the job done
+
+which is to say I didn't try to
+
+implement all of Oscar time together I
+
+just took a second baby step toward my
+
+goal and then my next version of Oscar
+
+time might have looked a little
+
+something like this where now the trash
+
+there's more going on here let's look at
+
+two of these uh blocks of code the first
+
+thing I did was I enabled drag mode to
+
+dragable and I had a Google to figure
+
+this out because otherwise it didn't let
+
+me drag the trash while playing the game
+
+but once I figured that out I tell the
+
+trash to go to a random X cordinate
+
+between 0 and 240 from left to right and
+
+then the Y location 180 cuz I always
+
+want the trash falling from the sky and
+
+then what do I do I told the trash to
+
+Forever change its y-coordinate its
+
+vertical coordinate by negative 1
+
+negative 1 negative 1 so like one pixel
+
+at a time which creates the illusion of
+
+it falling from the sky but I needed to
+
+do one other thing and let me scroll up
+
+each of your Sprites can have multiple
+
+programs multiple scripts so to speak
+
+that are not attached to one another
+
+they will happen in parallel for you the
+
+second one is saying this forever if the
+
+trash is touching ing Oscar what should
+
+it do go to a completely different X and
+
+Y location at the very top why well soon
+
+as I drag the trash over the Oscar I
+
+want it to disappear as though it's
+
+going into the can and I then want it to
+
+reappear at the top so more trash Falls
+
+so I just thought about like what would
+
+it mean for the trash to go into the
+
+trash can well who cares what really
+
+matters to the human user is that it
+
+just disappears and teleports elsewhere
+
+and so that's the idea I implemented
+
+here so if you can ruce sort of
+
+intuitive ideas to just basic building
+
+blocks like this you can start to make
+
+things much more interactive and lastly
+
+if I look at this version here you'll
+
+see that we've combined these and so
+
+indeed if I actually go ahead and play
+
+this now not only is it falling I can
+
+let it fall right on top of Oscar and
+
+watch it disappear but notice Oscar
+
+doesn't pop out yet because that was the
+
+fourth version and then the fifth
+
+version and then I added the annoying
+
+music and so forth but sort of compose
+
+this program step by step by step so as
+
+to accomplish my larger goal and this is
+
+going to be true of all of the code you
+
+write be it in scratch or C or python in
+
+the like trying to come up with or
+
+rather trying to reduce your ideas your
+
+Grand Vision to just baby steps building
+
+blocks so that you start with version
+
+one and maybe you submit version 10 or
+
+20 but you don't try to implement
+
+version 10 or 20 at the get-go you take
+
+those incremental steps all right how
+
+about one other well let me propose this
+
+uh let me go ahead and open three games
+
+that represent one that your
+
+predecessors also implemented which
+
+looks a little something like this in
+
+verion zero suppose I wanted to
+
+Ivy's Hardest Game
+implement a game that simply has these
+
+kinds of mechanics I'm touching my arrow
+
+keys on my keyboard up down left and
+
+right and I'm moving the Harvard logo
+
+let me zoom in a bit so if I hit the up
+
+Arrow the Harvard Shield goes up if I
+
+hit the down arrow The Shield goes down
+
+if I go all the way to the left it goes
+
+left until it hits the wall and same
+
+thing on the right so this is is like
+
+the beginnings of a game or a beginning
+
+of a maze something like that well how
+
+might I implement this well let me look
+
+inside this one and there's a lot going
+
+on but again I sort of took simple steps
+
+notice that I've got three Sprites a
+
+left wall which is just a straight line
+
+the right wall which is a straight line
+
+and just intuitively why did I Implement
+
+those as Sprites why do they need to
+
+exist as entities
+
+themselves yeah in front yeah I want it
+
+to interact with the shield so I need to
+
+be able to ask that Boolean expression
+
+like not touching Mouse pointer but
+
+touching shield for instance a different
+
+type of yes no question and so what is
+
+the code for the shield actually doing
+
+well there's a lot of duplication and
+
+let me focus on the abstraction first
+
+notice that I've got this one green flag
+
+clicked I want the shield to go dead
+
+center 0 comma 0er and then forever
+
+listen for the human's keyboard and feel
+
+for the wall so I decided to implement
+
+my own pink puzzle pieces that
+
+implemented two separate ideas one just
+
+listen for the keyboard up down left
+
+right and then do do something and then
+
+feel for walls is this idea of whatever
+
+I go up down left or right if I touch a
+
+wall I need to stop doing whatever the
+
+key strokes are telling me to do so now
+
+if we dive into those implementation
+
+details listen and feel our abstractions
+
+custom puzzle pieces let's look at the
+
+implementation details well here's the
+
+keyboard if the key Arrow up is pressed
+
+change y by one if key down arrow is
+
+pressed change y by negative 1 and you
+
+can probably see where this is going
+
+right arrow is X by one left arrow is X
+
+by negative 1 and that's sort of all
+
+that's involved with up down left right
+
+but wait a minute why is there no Loop
+
+in this listen for keyboard puzzle
+
+piece I needed a loop last time so it
+
+constantly
+
+works exactly I put the loop in my main
+
+part of my program up top so something
+
+is telling me to keep listening again
+
+and again so it's got to be somewhere
+
+but it doesn't have to be in the
+
+actual implementation and lastly how
+
+about this feel for walls well if
+
+touching left wall which is just another
+
+Sprite change X by one so that is to say
+
+if I'm touching the left wall I want to
+
+kind of bounce it back the other
+
+direction and same thing on the right
+
+wall if I'm touching the right wall I
+
+want to bounce it back to the left which
+
+effectively means that even if the
+
+human's hitting the key it's like
+
+fighting with this code but it's never
+
+going to go through the wall based on
+
+that math it's going to stop it right
+
+there all right let's add something else
+
+to the mix suppose I want the game to
+
+change to be a little something like
+
+this where Yale is some kind of block in
+
+between me and like the exit so some
+
+dramatic you know race here okay I just
+
+got by but the Yale logo doesn't seem to
+
+be doing all that much except bouncing
+
+so I'm guessing there's a loop maybe a
+
+conditional like checking for those
+
+walls too so let's go ahead and zoom out
+
+see inside let's not worry about
+
+because it's pretty much the same let's
+
+look at the Yale puzzle pieces and sure
+
+enough go to the middle 0 comma 0 point
+
+in Direction 90 so Point horizontally on
+
+the grid and then if touching left wall
+
+or touching right wall I'm kind of
+
+cheating this time but cleverly just
+
+spin around and do 180 so you
+
+effectively Bounce Off the Wall this
+
+just tightened up my code I don't need
+
+to do the negative one or the plus one I
+
+just say bounce in this form of code
+
+otherwise just constantly move one step
+
+now if this is a game where Yale is
+
+supposed to be better and faster well
+
+let's change the one to five move five
+
+pixels at a time let's may it 10 back
+
+and forth let's maybe a 100
+
+so what just happened that is a bug
+
+which we can avoid by just not doing
+
+that but why did it break out of the
+
+wall
+
+yeah exactly because I'm doing a hundred
+
+steps at a time I'm never actually
+
+touching the other spray because I'm
+
+sort of stepping way over it so there's
+
+never a moment where they're actually
+
+touching so previously I was just
+
+getting lucky by doing fewer steps
+
+because it's gradually going over the
+
+wall which gives me just enough time to
+
+detect as much so I would have to kind
+
+of Tinker and he handle this a little
+
+bit differently so it's a bug if it's
+
+too fast but at least if I keep it slow
+
+and reasonable the math actually does
+
+work out so long as it starts again in
+
+the middle well let's do one final
+
+flourish here whereby uh let's bring MIT
+
+into the mix right they're super smart
+
+so maybe they can kind of track US and
+
+follow wherever I'm going so how might
+
+this work all right so nothing happens
+
+yet because we haven't finished
+
+composing the game and notice here okay
+
+now MIT is struggling like it's kind of
+
+switching there because it's going just
+
+above then below then above and below so
+
+we could fix that too if we want but
+
+that's just a function of my math one
+
+pixel at a time let me open up this one
+
+see inside and click on
+
+MIT and you know it doesn't take much to
+
+implement MIT it seems so go to random
+
+position forever Point towards the
+
+Harvard logo outline aka the shield and
+
+then move one step so if I wanted to
+
+make MIT even smarter even faster what
+
+do I change
+
+here yeah change one step to like two
+
+steps to double their speed or five
+
+steps 10 steps or 100 steps and the game
+
+is going to be over like that but that's
+
+all it takes to now make these kinds of
+
+elements so if you are a game player on
+
+your phone or consoles or computer or
+
+whatever if you think about almost any
+
+game you can probably now start to think
+
+about how they implemented those
+
+mechanics because it's just being
+
+reduced to functions conditionals Loops
+
+variables and the like in this case so
+
+let's go ahead here and have um maybe
+
+one final volunteer we've got one more
+
+bag of Oreos here okay that was super
+
+fast you want to come on up all right
+
+very volunteer come on
+
+[Applause]
+
+up all right let me find the
+
+full-fledged version of this that one of
+
+your predecessors made and let me get
+
+the right
+
+one okay here we go we'll see some
+
+instructions on the screen in just a
+
+moment and when uh when we hit play
+
+you'll see that the mechanics are all
+
+combined now into one full-fledged game
+
+but first an
+
+introduction it's on uh hi everyone
+
+I am Sam uh I live in apple coot I'm a
+
+freshman and I'm from Nepal all right
+
+welcome to the
+
+stage all right so here we go yep go
+
+ahead and click the green
+
+flag You Can't Touch
+
+This you see the grid is just bigger
+
+this
+
+time can't this nice now there's
+
+that Yale
+
+[Music]
+
+element makes me say oh my Lord thank
+
+you for blessing me when a mind to and
+
+ feel good when you know you're down
+
+super
+
+[Music]
+
+third all started at slightly different
+
+positions can't  this all right
+
+there's you know can't touch this look
+
+at my eyes
+
+man can't
+
+this
+
+ got like that you know
+
+you out of your seat get and catch while
+
+rolling hold on p a little bit and let
+
+ like that like that fall back let
+
+them know that you're too much and
+
+ is they can't touch
+
+nice no more walls but two
+
+my now they know you're talking about
+
+the you're talking about a show that's H
+
+and tight singles are so fast in
+
+white or
+
+[Music]
+
+tap you can't touch
+
+this you can't touch this
+
+[Music]
+
+oh break it down all right
+
+clear there we go ni oh
+
+[Music]
+
+oh few more
+
+[Music]
+
+lives there we go there we
+
+go all couple more
+
+[Music]
+
+tries when dance going to get the slide
+
+your getting
+
+[Music]
+
+stress can't touch
+
+this look man can't touch this get one
+
+more try this bring the Bell back oh all
+
+right round of applause nonetheless
+
+nicely done thank
+
+you so as you might have noticed if your
+
+eyes started to wander to the light
+
+bulbs here there's actually 64 four of
+
+these light bulbs and I'm wondering if
+
+you divide 64 by8 that's eight  of
+
+light bulbs and we now have some Unicode
+
+in our vocabulary so might very well be
+
+the case that we've been spelling
+
+something out on the stage here for you
+
+all of this time but before we adjourn
+
+The Harvard  and The Radcliffe Pitches
+for cake to be served in the 
+
+allow me to introduce some of cs50's
+
+human friends uh the uh Harvard
+
+ and the Radcliffe pitches to
+
+give us this exciting and
+
+this is
+
+[Music]
+
+[Applause]
+
+[Music]
+
+cs50 there's a certain
+
+someone who I'm indeed to
+
+too and since the all be in
+
+cs50 I have this friend for
+
+you two three
+
+four rubber ducky you're the one you
+
+make said so much fun rubber ducky I'm
+
+awfully fond of you a
+
+rubber ducky you make me smile and you
+
+help my code compile rubber ducky you're
+
+my very best friend it's
+
+true when I'm at a stand still your
+
+debugging stun me when I'm at
+
+the end of my rope you just snapping my
+
+codes up and
+
+running rubber ducky you're so fine and
+
+I'm lucky that you're mine rubber duck
+
+you're my very best friend it's true
+
+you're my best friend it's
+
+true ducky rubber ducky I'm awfully fond
+
+of
+
+you good afternoon cs50 we are the
+
+Harvard  Harvard's oldest AC
+
+ group founded way back in 1946 at
+
+the historic Casey pudding Club we'd
+
+love to make a big thank you to cs50
+
+staff and David  for having us
+
+perform here at Sanders Theater and if
+
+you perform if you'll enjoy this
+
+performance please come audition for us
+
+this weekend at
+[Applause]
+
+[Music]
+
+[Applause]
+
+Hall hello everyone we are some of the
+
+Radcliff pitches and we are also hosting
+
+auditions this weekend you can find more
+
+information at our Instagram at Radcliff
+
+pitches now let me tell you a little bit
+
+about just about a year ago today when I
+
+was sitting in your very seats on my
+
+first day of cs50 lecture and this is
+
+just about how I was
+
+[Music]
+
+feeling it's the first day of class and
+
+I'm brand new to
+
+code is this for me so many people
+
+around can I get through the
+
+workload but it's my dream I tend to
+
+stick to English not science but my f
+
+friends told me to try this hey dancing
+
+robot dog you kind of look like you have
+
+your life together I guess I really need
+
+some
+
+advice know you're feeling this is the
+
+right in
+
+CS you'll friends get you'll be for
+
+this
+
+you
+
+have you'll get
+
+chin and you can always take this class
+
+as
+
+sad this is cs50 It's
+
+[Applause]
+
+boom thank you to the Crocs thank you to
+
+the pitches cake is now served cut them
+
+up to say hi if you'd like or meet spot
+
+see you next

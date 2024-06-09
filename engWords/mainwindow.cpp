@@ -139,6 +139,7 @@ MainWindow::MainWindow(QWidget *parent)
                                             })");
 
                 ui->wordLabel->setText("Are you ready?");
+                ui->wordLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
 
                 ui->source->setEnabled(false);
                 ui->source->setStyleSheet(R"(QPushButton {
