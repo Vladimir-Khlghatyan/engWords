@@ -25,7 +25,6 @@ addictive
 addition
 additional
 adjourn
-adjust
 admittedly
 advance
 advice
@@ -133,7 +132,6 @@ bandy
 bar
 base
 basic
-beach
 beautiful
 became
 because
@@ -171,7 +169,6 @@ blank
 blessing
 block
 blow
-blue
 boils
 bond
 book
@@ -226,7 +223,6 @@ capture
 capturing
 care
 careful
-cares
 case
 casually
 cat
@@ -376,7 +372,6 @@ cycle
 dabbled
 damn
 dance
-dancing
 dark
 darker
 darn
@@ -388,9 +383,7 @@ dead
 deal
 debugging
 decide
-deciding
 decimal
-decision
 deck
 decouple
 def
@@ -420,7 +413,6 @@ digitally
 dimensional
 direction
 dirtily
-disappear
 disconnect
 discuss
 discussion
@@ -536,7 +528,6 @@ exhibition
 exist
 existing
 exit
-expand
 expect
 experience
 explain
@@ -563,7 +554,6 @@ fair
 fairly
 fall
 fallible
-falling
 false
 familiar
 fan
@@ -594,12 +584,10 @@ find
 fine
 finger
 finish
-fire
 first
 fit
 five
 fix
-flag
 flame
 flat
 flatten
@@ -640,7 +628,6 @@ freshman
 friend
 from
 front
-full
 fun
 function
 functionality
@@ -746,7 +733,6 @@ hint
 his
 historic
 hit
-hitting
 hold
 holding
 home
@@ -804,7 +790,6 @@ inevitable
 infers
 information
 inhuman
-input
 insensitive
 inside
 inspired
@@ -812,7 +797,6 @@ install
 instance
 instead
 instinct
-instruction
 intel
 intellectual
 intellectually
@@ -823,10 +807,8 @@ interchange
 interconnected
 interesting
 interestingly
-interface
 internationally
 internet
-interpolate
 interpret
 into
 introduce
@@ -942,7 +924,6 @@ majoring
 make
 makes
 man
-many
 
 map
 mapped
@@ -1101,23 +1082,19 @@ overbid
 overlook
 oversimplification
 own
-packet
 page
 pages
 painful
 painted
 pair
-pancakes
 paper
 parallel
-parameter
 part
 particular
 particularly
 parting
 partners
 pass
-past
 paste
 path
 patience
@@ -1128,7 +1105,6 @@ per
 perfect
 perfectly
 perform
-performance
 perhaps
 period
 permutations
@@ -1249,7 +1225,6 @@ quoted
 quotes
 race
 rails
-rainbow
 raise
 raising
 random
@@ -1325,7 +1300,6 @@ round
 rounding
 rubber
 running
-sad
 safe
 said
 same
@@ -1477,7 +1451,6 @@ spray
 sprinkled
 sprite
 sprites
-squares
 stab
 stacking
 staff
@@ -1622,7 +1595,6 @@ track
 training
 transistors
 translate
-translation
 trash
 treating
 trick
@@ -1690,13 +1662,11 @@ volume
 volunteer
 volunteering
 wait
-waiting
 walk
 wall
 wander
 wasting
 watch
-wave
 way
 wear
 web
