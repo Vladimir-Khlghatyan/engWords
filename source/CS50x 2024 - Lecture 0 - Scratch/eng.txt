@@ -34,7 +34,6 @@ afternoon
 again
 age
 ago
-agree
 ahead
 aka
 albeit
@@ -84,8 +83,6 @@ apply
 applying
 approach
 appropriate
-arbitrarily
-arbitrary
 are
 area
 arguably
@@ -144,7 +141,6 @@ begin
 beginner
 beginning
 behavior
-behind
 being
 bell
 below
@@ -209,12 +205,10 @@ bytes
 cake
 calculator
 call
-calling
 came
 camera
 campus
 can
-candy
 canonical
 canvas
 capital
@@ -249,7 +243,6 @@ check
 checking
 chin
 choose
-circle
 claim
 claiming
 class
@@ -281,7 +274,6 @@ combine
 come
 comes
 comfort
-comfortable
 coming
 comma
 command
@@ -332,7 +324,6 @@ cookies
 coordinate
 coordinates
 coot
-copy
 corner
 correct
 correctly
@@ -343,7 +334,6 @@ could
 count
 counting
 couple
-course
 courses
 covered
 crash
@@ -393,7 +383,6 @@ definitely
 deleted
 deleting
 department
-depend
 depending
 describe
 design
@@ -413,7 +402,6 @@ digitally
 dimensional
 direction
 dirtily
-disconnect
 discuss
 discussion
 display
@@ -425,7 +413,6 @@ divide
 dog
 doing
 don
-done
 dos
 dot
 double
@@ -437,7 +424,6 @@ dragged
 dragging
 dramatic
 draw
-drawn
 dream
 drew
 drinking
@@ -504,7 +490,6 @@ especially
 essentially
 eth
 evaluation
-even
 evening
 events
 eventually
@@ -536,7 +521,6 @@ explore
 explosion
 exponents
 express
-expression
 expressively
 extends
 extensions
@@ -548,10 +532,8 @@ face
 faces
 fact
 faculty
-fail
 failure
 fair
-fairly
 fall
 fallible
 false
@@ -626,7 +608,6 @@ freeze
 frequently
 freshman
 friend
-from
 front
 fun
 function
@@ -706,26 +687,22 @@ hardest
 hardware
 has
 hash
-hate
 have
 haven
 having
 head
 headaches
 headlines
-hear
 heard
 hearing
 heart
 hello
 help
-helpful
 helping
 her
 here
 hexadecimal
 hey
-high
 higher
 highlight
 him
@@ -736,7 +713,6 @@ hit
 hold
 holding
 home
-homework
 hood
 hooked
 hope
@@ -806,7 +782,6 @@ interactive
 interchange
 interconnected
 interesting
-interestingly
 internationally
 internet
 interpret
@@ -847,7 +822,6 @@ knock
 know
 knowing
 knowledge
-known
 lab
 laid
 lam
@@ -882,7 +856,6 @@ lighter
 like
 likes
 line
-lines
 listen
 listening
 literally
@@ -895,10 +868,8 @@ log
 logic
 logical
 logically
-logo
 long
 longest
-look
 looking
 loom
 looming
@@ -915,7 +886,6 @@ lower
 lowercase
 lucky
 lunch
-mac
 made
 magnetically
 main
@@ -965,7 +935,6 @@ meta
 metaphorically
 methodical
 methodology
-middle
 might
 million
 mind
@@ -1002,7 +971,6 @@ movements
 movie
 moving
 much
-multimedia
 multiple
 multiply
 music
@@ -1071,7 +1039,6 @@ other
 otherwise
 our
 ourself
-ourselves
 out
 outcomes
 outline
@@ -1109,11 +1076,9 @@ perhaps
 period
 permutations
 person
-personal
 personality
 perspective
 perturb
-pet
 petting
 phone
 phones
@@ -1122,12 +1087,10 @@ photos
 photoshop
 phrase
 physical
-physically
 piano
 pick
 pictograms
 pictorially
-picture
 pictures
 piece
 pieces
@@ -1316,7 +1279,6 @@ saying
 scale
 scenario
 school
-science
 sciences
 scientist
 scooch
@@ -1333,26 +1295,22 @@ second
 secret
 section
 see
-seeing
 seem
 seen
 selected
 semantically
 semester
 semicolon
-send
 sending
 sense
 sensing
 sensitive
-sensors
 sentence
 separate
 sequence
 served
 sesame
 set
-setting
 seven
 several
 shake
@@ -1407,15 +1365,11 @@ smile
 snap
 snapping
 social
-software
 sol
 solution
-solve
-solver
 solving
 some
 somehow
-someone
 something
 sometime
 sometimes
@@ -1425,7 +1379,6 @@ song
 soon
 sophisticated
 sophomore
-sorry
 sort
 sound
 source
@@ -1433,7 +1386,6 @@ space
 spaces
 speak
 speaking
-special
 specific
 specifically
 specification
@@ -1486,10 +1438,8 @@ stuff
 stun
 stupid
 stupidest
-stupidly
 style
 submit
-subtract
 subtraction
 succinctly
 such
@@ -1519,7 +1469,6 @@ tap
 taught
 teach
 teachers
-teaching
 team
 tear
 tearing
@@ -1560,7 +1509,6 @@ this
 those
 though
 thought
-thousand
 three
 threshold
 through
@@ -1614,7 +1562,6 @@ two
 type
 types
 typical
-typically
 ultimately
 unary
 unblocked
@@ -1631,7 +1578,6 @@ unit
 universe
 university
 unless
-until
 upon
 uppercase
 use
@@ -1719,8 +1665,6 @@ worldwide
 worries
 worry
 worse
-worst
-would
 wow
 wrap
 write
