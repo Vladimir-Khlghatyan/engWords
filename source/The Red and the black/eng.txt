@@ -188,7 +188,6 @@ coat
 cold
 coldly
 coldness
-colourful
 come
 comes
 companion
@@ -203,7 +202,6 @@ contempt
 continue
 contradicted
 controlled
-conversation
 cool
 copied
 copies
@@ -213,7 +211,6 @@ corrupt
 cost
 could
 couldn
-count
 courage
 course
 court
@@ -259,7 +256,6 @@ dishonest
 dislike
 dismiss
 dismissing
-doctor
 doesn
 doing
 don
@@ -357,7 +353,6 @@ find
 fine
 fingers
 first
-fiveteen
 flashes
 flew
 floor
@@ -418,7 +413,6 @@ greater
 greatest
 greedy
 greek
-greet
 grew
 grey
 ground
@@ -492,7 +486,6 @@ huge
 hundred
 hurt
 husband
-idea
 ill
 illnesses
 immediately
@@ -540,7 +533,6 @@ jump
 jura
 just
 keep
-key
 kill
 killing
 kind
@@ -788,7 +780,6 @@ private
 probably
 problem
 procession
-products
 promise
 promises
 pronoun
@@ -813,7 +804,6 @@ quite
 rain
 ran
 rang
-reader
 reading
 ready
 real
@@ -1099,7 +1089,6 @@ two
 ultra
 under
 understand
-understood
 unfaithful
 unfriendly
 unhappiness
@@ -1151,7 +1140,6 @@ which
 while
 whispered
 white
-who
 whose
 why
 widow

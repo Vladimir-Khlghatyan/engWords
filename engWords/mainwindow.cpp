@@ -39,43 +39,27 @@ MainWindow::MainWindow(QWidget *parent)
                             font-weight:      bold;
                         })");
 
-    ui->source->setStyleSheet(R"(QPushButton {
-                                    font-size:  12px;
-                                })");
+    ui->source->setStyleSheet("QPushButton { font-size: 12px; }");
 
     ui->clear->setEnabled(false);
-    ui->clear->setStyleSheet(R"(QPushButton {
-                                    font-size:  14px;
-                                    color:      gray;
-                                })");
+    ui->clear->setStyleSheet("QPushButton { font-size: 14px; color: gray; }");
 
     ui->dlt->setEnabled(false);
-    ui->dlt->setStyleSheet(R"(QPushButton {
-                                    font-size:  14px;
-                                    color:      gray;
-                                })");
+    ui->dlt->setStyleSheet("QPushButton { font-size: 14px; color: gray; }");
 
-    ui->countLabel->setStyleSheet(R"(QLabel {
-                                        font-size:  20px;
-                                        color:      gray;
-                                    })");
+    ui->countLabel->setStyleSheet("QLabel { font-size: 20px; color: gray; }");
 
     ui->newWord->setEnabled(false);
-    ui->newWord->setStyleSheet(R"(QPushButton {
-                                    color: gray;
-                                })");
+    ui->newWord->setStyleSheet("QPushButton { color: gray; }");
+
+    ui->show->setEnabled(false);
+    ui->show->setStyleSheet("QPushButton { color: gray; }");
+
 
     ui->dltLabel->hide();
-    ui->dltLabel->setStyleSheet(R"(QLabel {
-                                        font-size:  20px;
-                                        color:      #FF3333;
-                                    })");
+    ui->dltLabel->setStyleSheet("QLabel { font-size: 20px; color: #FF3333; }");
 
-    ui->wordCount->setStyleSheet(R"(QLabel {
-                                        font-size:  14px;
-                                        color:      gray;
-                                    })");
-
+    ui->wordCount->setStyleSheet("QLabel { font-size: 14px; color: gray; }");
 
     _button.push_back(ui->pushButton_0);
     _button.push_back(ui->pushButton_1);
@@ -148,9 +132,10 @@ MainWindow::MainWindow(QWidget *parent)
                                             })");
             });
 
-    connect(ui->newWord, &QToolButton::clicked, this, [&](void) { this->newWordButtonPushAction(); });
-    connect(ui->clear, &QToolButton::clicked, this, [&](void) { this->clearButtonPushAction(); });
-    connect(ui->dlt, &QToolButton::clicked, this, [&](void) { this->deleteButtonPushAction(); });
+    connect(ui->newWord, &QToolButton::clicked, this, [this](void) { this->newWordButtonPushAction(); });
+    connect(ui->show, &QToolButton::clicked, this, [this](void) { this->showButtonPushAction(); });
+    connect(ui->clear, &QToolButton::clicked, this, [this](void) { this->clearButtonPushAction(); });
+    connect(ui->dlt, &QToolButton::clicked, this, [this](void) { this->deleteButtonPushAction(); });
 
     for (int i{}; i < _button.size(); ++i){
         connect(_button[i], &QToolButton::clicked, this, [this, i] { this->buttonPushAction(i); });
@@ -328,6 +313,24 @@ void MainWindow::parse(QStringList& source)
 void MainWindow::newWordButtonPushAction(void)
 {
     for (auto& button : _button){
+        button->setStyleSheet("QPushButton { background-color: #52606E; }");
+        button->setText("");
+        button->setEnabled(false);
+    }
+
+    _currentWordIndex = getRandomNumber(0, _engWords.size() - 1);
+    ui->wordLabel->setText(_engWords[_currentWordIndex]);
+
+    ui->newWord->setEnabled(false);
+    ui->newWord->setStyleSheet("QPushButton { color: gray; }");
+
+    ui->show->setEnabled(true);
+    ui->show->setStyleSheet("QPushButton { color: white; }");
+}
+
+void MainWindow::showButtonPushAction(void)
+{
+    for (auto& button : _button){
         button->setStyleSheet(R"(QPushButton {
                                     background-color: #52606E;
                                     color:            white;
@@ -342,9 +345,6 @@ void MainWindow::newWordButtonPushAction(void)
                                 })");
         button->setEnabled(true);
     }
-
-    _currentWordIndex = getRandomNumber(0, _engWords.size() - 1);
-    ui->wordLabel->setText(_engWords[_currentWordIndex]);
 
     _correctIndex = getRandomNumber(0, 3);
     _button[_correctIndex]->setText(_armWords[_currentWordIndex]);
@@ -365,10 +365,9 @@ void MainWindow::newWordButtonPushAction(void)
         _button[*it]->setText(_armWords[index]);
         buttonIndexes.erase(it);
     }
-    ui->newWord->setStyleSheet(R"(QPushButton {
-                                    color: gray;
-                                })");
-    ui->newWord->setEnabled(false);
+
+    ui->show->setEnabled(false);
+    ui->show->setStyleSheet("QPushButton { color: gray; }");
 }
 
 void MainWindow::clearButtonPushAction(void)
@@ -383,6 +382,8 @@ void MainWindow::deleteButtonPushAction(void)
 {
     if (_currentWordIndex == -1)
         return;
+
+    this->showButtonPushAction();
 
     _engWords.removeAt(_currentWordIndex);
     _armWords.removeAt(_currentWordIndex);
@@ -420,11 +421,15 @@ void MainWindow::buttonPushAction(int index)
                                     color: white;
                                 })");
     ui->newWord->setEnabled(true);
+    ui->show->setEnabled(true);
 
-    _nextTimer->start();
-    QObject::connect(_nextTimer, &QTimer::timeout, this, [&]() {
-        newWordButtonPushAction();
-    });
+    if (index == _correctIndex)
+    {
+        _nextTimer->start();
+        QObject::connect(_nextTimer, &QTimer::timeout, this, [this]() {
+            newWordButtonPushAction();
+        });
+    }
 }
 
 

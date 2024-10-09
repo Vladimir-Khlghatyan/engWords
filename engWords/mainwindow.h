@@ -28,6 +28,7 @@ public:
     void        writeToFileInTranscateMode(const QString& filePath, const QStringList& source);
     void        parse(QStringList& source);
     void        newWordButtonPushAction(void);
+    void        showButtonPushAction(void);
     void        clearButtonPushAction(void);
     void        deleteButtonPushAction(void);
     void        buttonPushAction(int index);
