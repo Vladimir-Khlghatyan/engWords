@@ -17,6 +17,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    setWindowTitle("Eng/Arm wors");
+    setWindowIcon(QIcon(":/icon.png"));
+
     this->setStyleSheet(R"(QMainWindow {
                             background: solid black;
                         }
