@@ -1,6 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "define.hpp"
+#include "texttospeech.hpp"
+
 #include <QMainWindow>
 #include <QString>
 #include <QStringList>
@@ -46,6 +49,10 @@ private:
     int                     _currentWordIndex;
     QTimer*                 _dltTimer;
     QTimer*                 _nextTimer;
+
+#ifdef _PLAY_SOUND_
+    TextToSpeech*           m_textToSpeech;
+#endif // _PLAY_SOUND_
 
 };
 #endif // MAINWINDOW_H

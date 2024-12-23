@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>icon.png</file>
+        <file>soundPlay.png</file>
     </qresource>
 </RCC>

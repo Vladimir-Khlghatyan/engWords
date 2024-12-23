@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
+#include "define.hpp"
 #include <QDir>
 #include <QFile>
 #include <QFileDialog>
@@ -147,7 +148,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
     connect(ui->checkBox, &QCheckBox::stateChanged, this,
-            [&](void)
+            [this](void)
             {
                 if (ui->checkBox->isChecked())
                 {
@@ -168,6 +169,25 @@ MainWindow::MainWindow(QWidget *parent)
                     ui->dltLabel->hide();
                 }
             });
+
+#ifdef _PLAY_SOUND_
+
+    m_textToSpeech = new TextToSpeech(this);
+
+    ui->soundPlayBtn->setIcon(QIcon(":/soundPlay.png"));
+    ui->soundPlayBtn->setFixedSize(QSize(30, 30));
+    ui->soundPlayBtn->setIconSize(QSize(20, 20));
+    ui->soundPlayBtn->setCursor(Qt::PointingHandCursor);
+    ui->soundPlayBtn->setToolTip("Listen");
+    ui->soundPlayBtn->setStyleSheet("QPushButton { border-radius: 15px; border: 2px solid #006699; background: #B9E8E2;} \
+                                      QPushButton:hover { border-radius: 15px; border: 3px solid #006699; background: white;}");
+
+    connect(ui->soundPlayBtn, &QPushButton::clicked, this,
+            [this] { m_textToSpeech->fetchAudio(_engWords[_currentWordIndex]); });
+
+#else
+    ui->soundPlayBtn->hide();
+#endif
 }
 
 MainWindow::~MainWindow()
