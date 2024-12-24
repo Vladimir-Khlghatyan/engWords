@@ -20,39 +20,32 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     setWindowTitle("Eng/Arm wors");
-    setWindowIcon(QIcon(":/icon.png"));
+    setWindowIcon(QIcon(":/icons/logo.png"));
+    setStyleSheet(MAIN_WINDOW_STYLE);
+    setFixedSize(QSize(600, 350));
 
-    this->setStyleSheet(R"(QMainWindow {
-                            background: solid black;
-                        }
-                        QLabel {
-                            font-size:   32px;
-                            font-weight: bold;
-                            color:       white;
-                        }
-                        QPushButton {
-                            background-color: #52606E;
-                            color:            white;
-                            font-size:        20px;
-                            font-weight:      bold;
-                            border-radius:    10px;
-                        }
-                        QPushButton:hover {
-                            background-color: #708294;
-                            color:            white;
-                            font-size:        20px;
-                            font-weight:      bold;
-                        })");
+    ui->sourceBtn->setIcon(QIcon(":/icons/source.png"));
+    ui->sourceBtn->setFixedSize(QSize(30, 30));
+    ui->sourceBtn->setIconSize(QSize(24, 24));
+    ui->sourceBtn->setCursor(Qt::PointingHandCursor);
+    ui->sourceBtn->setToolTip("Choose the Source");
 
-    ui->source->setStyleSheet("QPushButton { font-size: 12px; }");
+    ui->resetBtn->setIcon(QIcon(":/icons/reset_disabled.png"));
+    ui->resetBtn->setFixedSize(QSize(30, 30));
+    ui->resetBtn->setIconSize(QSize(24, 24));
+    ui->resetBtn->setCursor(Qt::PointingHandCursor);
+    ui->resetBtn->setToolTip("Reset the Counter");
+    ui->resetBtn->setEnabled(false);
 
-    ui->clear->setEnabled(false);
-    ui->clear->setStyleSheet("QPushButton { font-size: 14px; color: gray; }");
+    ui->deleteBtn->setIcon(QIcon(":/icons/delete_disabled.png"));
+    ui->deleteBtn->setFixedSize(QSize(30, 30));
+    ui->deleteBtn->setIconSize(QSize(24, 24));
+    ui->deleteBtn->setCursor(Qt::PointingHandCursor);
+    ui->deleteBtn->setToolTip("Delete the Word from the Database");
+    ui->deleteBtn->setEnabled(false);
 
-    ui->dlt->setEnabled(false);
-    ui->dlt->setStyleSheet("QPushButton { font-size: 14px; color: gray; }");
-
-    ui->countLabel->setStyleSheet("QLabel { font-size: 20px; color: gray; }");
+    ui->countLabel->setStyleSheet("QLabel { font-size: 20px; color: white; }");
+    ui->countLabel->hide();
 
     ui->newWord->setEnabled(false);
     ui->newWord->setStyleSheet("QPushButton { color: gray; }");
@@ -60,9 +53,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->show->setEnabled(false);
     ui->show->setStyleSheet("QPushButton { color: gray; }");
 
-
+    ui->dltLabel->setStyleSheet("QLabel { font-size: 20px; color: #FF7171; }");
     ui->dltLabel->hide();
-    ui->dltLabel->setStyleSheet("QLabel { font-size: 20px; color: #FF3333; }");
 
     ui->wordCount->setStyleSheet("QLabel { font-size: 14px; color: gray; }");
 
@@ -84,8 +76,7 @@ MainWindow::MainWindow(QWidget *parent)
     _nextTimer->setSingleShot(true);
     _nextTimer->setInterval(1000);
 
-    ui->checkBox->hide();
-    connect(ui->source, &QToolButton::clicked, this,
+    connect(ui->sourceBtn, &QPushButton::clicked, this,
             [&](void)
             {
                 QString startDir = getExecutableGrandparentDirPath() + "/source";
@@ -109,81 +100,46 @@ MainWindow::MainWindow(QWidget *parent)
 
                 ui->wordCount->setText(QString("Words in base: ") + QString::number(_engWords.size()));
 
-                ui->clear->setEnabled(true);
-                ui->clear->setStyleSheet(R"(QPushButton {
-                                            font-size:  14px;
-                                            color:      white;
-                                        })");
+                ui->resetBtn->setIcon(QIcon(":/icons/reset.png"));
+                ui->resetBtn->setEnabled(true);
+                ui->countLabel->show();
 
-                ui->countLabel->setStyleSheet(R"(QLabel {
-                                                    font-size:  20px;
-                                                    color:      white;
-                                                })");
-
-                ui->checkBox->show();
+                ui->deleteBtn->setIcon(QIcon(":/icons/delete.png"));
+                ui->deleteBtn->setEnabled(true);
+                ui->dltLabel->show();
 
                 ui->newWord->setEnabled(true);
-                ui->newWord->setStyleSheet(R"(QPushButton {
-                                                color: white;
-                                            })");
+                ui->newWord->setStyleSheet("QPushButton { color: white; }");
 
                 ui->wordLabel->setText("Are you ready?");
                 ui->wordLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
 
-                ui->source->setEnabled(false);
-                ui->source->setStyleSheet(R"(QPushButton {
-                                                font-size:  14px;
-                                                color:      gray;
-                                            })");
+                ui->sourceBtn->setIcon(QIcon(":/icons/source_disabled.png"));
+                ui->sourceBtn->setEnabled(false);
             });
 
-    connect(ui->newWord, &QToolButton::clicked, this, [this](void) { this->newWordButtonPushAction(); });
-    connect(ui->show, &QToolButton::clicked, this, [this](void) { this->showButtonPushAction(); });
-    connect(ui->clear, &QToolButton::clicked, this, [this](void) { this->clearButtonPushAction(); });
-    connect(ui->dlt, &QToolButton::clicked, this, [this](void) { this->deleteButtonPushAction(); });
+    connect(ui->newWord, &QPushButton::clicked, this, [this]() { newWordButtonPushAction(); });
+    connect(ui->show, &QPushButton::clicked, this, [this]() { showButtonPushAction(); });
+    connect(ui->resetBtn, &QPushButton::clicked, this, [this]() { clearButtonPushAction(); });
+    connect(ui->deleteBtn, &QPushButton::clicked, this, [this]() { deleteButtonPushAction(); });
 
     for (int i{}; i < _button.size(); ++i){
-        connect(_button[i], &QToolButton::clicked, this, [this, i] { this->buttonPushAction(i); });
+        connect(_button[i], &QPushButton::clicked, this, [this, i] { buttonPushAction(i); });
         _button[i]->setEnabled(false);
     }
-
-    connect(ui->checkBox, &QCheckBox::stateChanged, this,
-            [this](void)
-            {
-                if (ui->checkBox->isChecked())
-                {
-                    ui->dlt->setEnabled(true);
-                    ui->dlt->setStyleSheet(R"(QPushButton {
-                                                font-size:  14px;
-                                                color:      white;
-                                            })");
-                    ui->dltLabel->show();
-                }
-                else
-                {
-                    ui->dlt->setEnabled(false);
-                    ui->dlt->setStyleSheet(R"(QPushButton {
-                                                font-size:  14px;
-                                                color:      gray;
-                                            })");
-                    ui->dltLabel->hide();
-                }
-            });
 
 #ifdef _PLAY_SOUND_
 
     m_textToSpeech = new TextToSpeech(this);
 
-    ui->soundPlayBtn->setIcon(QIcon(":/soundPlay.png"));
+    ui->soundPlayBtn->setIcon(QIcon(":/icons/soundPlay.png"));
     ui->soundPlayBtn->setFixedSize(QSize(30, 30));
-    ui->soundPlayBtn->setIconSize(QSize(20, 20));
+    ui->soundPlayBtn->setIconSize(QSize(24, 24));
     ui->soundPlayBtn->setCursor(Qt::PointingHandCursor);
     ui->soundPlayBtn->setToolTip("Listen");
-    ui->soundPlayBtn->setStyleSheet("QPushButton { border-radius: 15px; border: 2px solid #006699; background: #B9E8E2;} \
-                                      QPushButton:hover { border-radius: 15px; border: 3px solid #006699; background: white;}");
 
     connect(ui->soundPlayBtn, &QPushButton::clicked, this,
-            [this] { m_textToSpeech->fetchAudio(_engWords[_currentWordIndex]); });
+            [this] { m_textToSpeech->fetchAudio(ui->wordLabel->text()); });
 
 #else
     ui->soundPlayBtn->hide();

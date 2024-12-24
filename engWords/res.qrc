@@ -1,6 +1,12 @@
 <RCC>
     <qresource prefix="/">
-        <file>icon.png</file>
-        <file>soundPlay.png</file>
+        <file>icons/soundPlay.png</file>
+        <file>icons/logo.png</file>
+        <file>icons/reset.png</file>
+        <file>icons/reset_disabled.png</file>
+        <file>icons/delete.png</file>
+        <file>icons/delete_disabled.png</file>
+        <file>icons/source.png</file>
+        <file>icons/source_disabled.png</file>
     </qresource>
 </RCC>
