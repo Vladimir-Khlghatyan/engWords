@@ -8,5 +8,6 @@
         <file>icons/delete_disabled.png</file>
         <file>icons/source.png</file>
         <file>icons/source_disabled.png</file>
+        <file>icons/split.png</file>
     </qresource>
 </RCC>

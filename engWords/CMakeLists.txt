@@ -18,6 +18,7 @@ set(PROJECT_SOURCES
         mainwindow.h
         mainwindow.ui
 		texttospeech.hpp texttospeech.cpp
+		splitdialog.hpp splitdialog.cpp
 		define.hpp
 		res.qrc
 )

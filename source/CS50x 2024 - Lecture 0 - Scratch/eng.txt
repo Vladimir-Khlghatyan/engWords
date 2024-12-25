@@ -265,7 +265,6 @@ code
 codes
 cognitively
 coke
-color
 colorfully
 column
 combination
@@ -362,7 +361,6 @@ cycle
 dabbled
 damn
 dance
-dark
 darker
 darn
 data

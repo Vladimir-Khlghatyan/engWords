@@ -206,6 +206,9 @@
       </property>
      </widget>
     </item>
+    <item row="8" column="0">
+     <widget class="QPushButton" name="splitBtn"/>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">

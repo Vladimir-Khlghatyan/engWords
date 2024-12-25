@@ -2,6 +2,7 @@
 #include "./ui_mainwindow.h"
 
 #include "define.hpp"
+#include "splitdialog.hpp"
 #include <QDir>
 #include <QFile>
 #include <QFileDialog>
@@ -48,10 +49,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->countLabel->hide();
 
     ui->newWord->setEnabled(false);
-    ui->newWord->setStyleSheet("QPushButton { color: gray; }");
-
     ui->show->setEnabled(false);
-    ui->show->setStyleSheet("QPushButton { color: gray; }");
 
     ui->dltLabel->setStyleSheet("QLabel { font-size: 20px; color: #FF7171; }");
     ui->dltLabel->hide();
@@ -80,11 +78,12 @@ MainWindow::MainWindow(QWidget *parent)
             [&](void)
             {
                 QString startDir = getExecutableGrandparentDirPath() + "/source";
-                qDebug() << "startDir:" << startDir;
+                // qDebug() << "startDir:" << startDir;
                 _sourcePath = QFileDialog::getExistingDirectory(nullptr, "Select Directory", startDir, QFileDialog::ShowDirsOnly);
 
-                if (_sourcePath.isEmpty())
+                if (_sourcePath.isEmpty()) {
                     return;
+                }
 
                 auto source = readFromFile(_sourcePath + "/source.txt");
                 parse(source);
@@ -109,7 +108,6 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->dltLabel->show();
 
                 ui->newWord->setEnabled(true);
-                ui->newWord->setStyleSheet("QPushButton { color: white; }");
 
                 ui->wordLabel->setText("Are you ready?");
                 ui->wordLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
@@ -144,6 +142,19 @@ MainWindow::MainWindow(QWidget *parent)
 #else
     ui->soundPlayBtn->hide();
 #endif
+
+    ui->splitBtn->setIcon(QIcon(":/icons/split.png"));
+    ui->splitBtn->setFixedSize(QSize(30, 30));
+    ui->splitBtn->setIconSize(QSize(24, 24));
+    ui->splitBtn->setCursor(Qt::PointingHandCursor);
+    ui->splitBtn->setToolTip("Split a file in 'eng-arm' format into separate files:\n - eng.txt\n - arm.txt");
+
+    connect(ui->splitBtn, &QPushButton::clicked, this,
+            [this] {
+                SplitDialog dlg(getExecutableGrandparentDirPath() + "/fileToSplit", this);
+                dlg.exec();
+            });
+
 }
 
 MainWindow::~MainWindow()
@@ -302,10 +313,7 @@ void MainWindow::newWordButtonPushAction(void)
     ui->wordLabel->setText(_engWords[_currentWordIndex]);
 
     ui->newWord->setEnabled(false);
-    ui->newWord->setStyleSheet("QPushButton { color: gray; }");
-
     ui->show->setEnabled(true);
-    ui->show->setStyleSheet("QPushButton { color: white; }");
 }
 
 void MainWindow::showButtonPushAction(void)
@@ -347,7 +355,6 @@ void MainWindow::showButtonPushAction(void)
     }
 
     ui->show->setEnabled(false);
-    ui->show->setStyleSheet("QPushButton { color: gray; }");
 }
 
 void MainWindow::clearButtonPushAction(void)
@@ -371,7 +378,7 @@ void MainWindow::deleteButtonPushAction(void)
     writeToFileInTranscateMode(_sourcePath + "/arm.txt", _armWords);
     ui->dltLabel->setText(QString::number(++_deletedWords));
 
-    _button[_correctIndex]->setStyleSheet("QPushButton { background-color: green;}");
+    _button[_correctIndex]->setStyleSheet("QPushButton { background-color: green; color: white; }");
    _dltTimer->start();
     QObject::connect(_dltTimer, &QTimer::timeout, this, [&]() {
         newWordButtonPushAction();
@@ -388,18 +395,15 @@ void MainWindow::buttonPushAction(int index)
     }
 
     if (index != _correctIndex) {
-        _button[index]->setStyleSheet("QPushButton { background-color: red;}");
+        _button[index]->setStyleSheet("QPushButton { background-color: red; color: white; }");
     } else {
         ++_rightAnswers;
     }
-    _button[_correctIndex]->setStyleSheet("QPushButton { background-color: green;}");
+    _button[_correctIndex]->setStyleSheet("QPushButton { background-color: green; color: white; }");
 
     QString text = QString::number(_rightAnswers) + " of " + QString::number(_totalAnswers);
     ui->countLabel->setText(text);
 
-    ui->newWord->setStyleSheet(R"(QPushButton {
-                                    color: white;
-                                })");
     ui->newWord->setEnabled(true);
     ui->show->setEnabled(true);
 
