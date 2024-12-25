@@ -319,18 +319,7 @@ void MainWindow::newWordButtonPushAction(void)
 void MainWindow::showButtonPushAction(void)
 {
     for (auto& button : _button){
-        button->setStyleSheet(R"(QPushButton {
-                                    background-color: #52606E;
-                                    color:            white;
-                                    font-size:        20px;
-                                    font-weight:      bold;
-                                }
-                                QPushButton:hover {
-                                    background-color: #708294;
-                                    color:            white;
-                                    font-size:        20px;
-                                    font-weight:      bold;
-                                })");
+        button->setStyleSheet(MAIN_WINDOW_STYLE);
         button->setEnabled(true);
     }
 

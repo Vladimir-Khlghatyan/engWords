@@ -1049,7 +1049,6 @@ page
 pages
 painful
 painted
-pair
 paper
 parallel
 part

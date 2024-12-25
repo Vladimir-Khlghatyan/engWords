@@ -14,11 +14,11 @@ SplitDialog::SplitDialog(const QString& path, QWidget* parent)
     setWindowTitle("Split file");
     setMinimumSize(400,100);
 
-    QVBoxLayout* vLayout = new QVBoxLayout(this);
+    QVBoxLayout* vLayout = new QVBoxLayout();
     QLabel* text = new QLabel("Choose a file in 'eng-arm' format for splitting.", this);
     text->setObjectName("SplitDialog");
 
-    QHBoxLayout* hLayout = new QHBoxLayout(this);
+    QHBoxLayout* hLayout = new QHBoxLayout();
 
     m_browsBtl = new QPushButton("", this);
     m_browsBtl->setIcon(QIcon(":/icons/source.png"));
