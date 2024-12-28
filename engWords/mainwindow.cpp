@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->sourceBtn->setFixedSize(QSize(30, 30));
     ui->sourceBtn->setIconSize(QSize(24, 24));
     ui->sourceBtn->setCursor(Qt::PointingHandCursor);
-    ui->sourceBtn->setToolTip("Choose the Source");
+    ui->sourceBtn->setToolTip("Choose a Source");
 
     ui->resetBtn->setIcon(QIcon(":/icons/reset_disabled.png"));
     ui->resetBtn->setFixedSize(QSize(30, 30));

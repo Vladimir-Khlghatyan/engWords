@@ -121,7 +121,7 @@
     <item row="1" column="2" rowspan="5" colspan="3">
      <widget class="QLabel" name="wordLabel">
       <property name="text">
-       <string>Choose the source!</string>
+       <string>Choose a source!</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
