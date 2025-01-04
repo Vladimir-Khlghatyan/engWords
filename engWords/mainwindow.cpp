@@ -49,10 +49,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->countLabel->setStyleSheet("QLabel { font-size: 20px; color: white; }");
     ui->countLabel->hide();
 
-    ui->nextBtn->setStyleSheet("QPushButton { font-weight: normal; font-size: 18px; border-radius: 5px; }");
+    ui->nextBtn->setObjectName("dialog");
     ui->nextBtn->setEnabled(false);
 
-    ui->showBtn->setStyleSheet("QPushButton { font-weight: normal; font-size: 18px; border-radius: 5px; }");
+    ui->showBtn->setObjectName("dialog");
     ui->showBtn->setEnabled(false);
 
     ui->nextBtn->setCursor(Qt::PointingHandCursor);

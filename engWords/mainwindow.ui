@@ -168,7 +168,7 @@
          <enum>Qt::RightToLeft</enum>
         </property>
         <property name="text">
-         <string>next</string>
+         <string>Next</string>
         </property>
        </widget>
       </item>
@@ -191,7 +191,7 @@
          </size>
         </property>
         <property name="text">
-         <string>show</string>
+         <string>Show</string>
         </property>
        </widget>
       </item>
