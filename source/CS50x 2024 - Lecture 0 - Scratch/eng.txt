@@ -17,7 +17,6 @@ accurate
 acknowledgement
 acquiring
 across
-actions
 actual
 actually
 add
@@ -326,7 +325,6 @@ coot
 corner
 correct
 correctly
-correctness
 costume
 costumes
 could

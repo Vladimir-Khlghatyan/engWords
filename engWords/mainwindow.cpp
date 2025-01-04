@@ -49,17 +49,20 @@ MainWindow::MainWindow(QWidget *parent)
     ui->countLabel->setStyleSheet("QLabel { font-size: 20px; color: white; }");
     ui->countLabel->hide();
 
-    ui->newWordBtn->setEnabled(false);
+    ui->nextBtn->setStyleSheet("QPushButton { font-weight: normal; font-size: 18px; }");
+    ui->nextBtn->setEnabled(false);
+
+    ui->showBtn->setStyleSheet("QPushButton { font-weight: normal; font-size: 18px; }");
     ui->showBtn->setEnabled(false);
 
-    ui->newWordBtn->setCursor(Qt::PointingHandCursor);
+    ui->nextBtn->setCursor(Qt::PointingHandCursor);
     ui->showBtn->setCursor(Qt::PointingHandCursor);
 
-    ui->dltLabel->setStyleSheet("QLabel { font-size: 20px; color: #FF7171; }");
+    ui->dltLabel->setStyleSheet("QLabel { font-size: 20px; color: #FF8080; }");
     ui->dltLabel->hide();
 
     ui->wordCount->setStyleSheet("QLabel { font-size: 14px; color: gray; }");
-    ui->audioErrorMsg->setStyleSheet("QLabel { font-size: 14px; color: #FF7171; font-weight: normal; font-style: italic; }");
+    ui->audioErrorMsg->setStyleSheet("QLabel { font-size: 14px; color: #FF8080; font-weight: normal; font-style: italic; }");
 
     _button.push_back(ui->pushButton_0);
     _button.push_back(ui->pushButton_1);
@@ -111,7 +114,7 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->deleteBtn->setEnabled(true);
                 ui->dltLabel->show();
 
-                ui->newWordBtn->setEnabled(true);
+                ui->nextBtn->setEnabled(true);
 
                 ui->wordLabel->setText("Are you ready?");
                 ui->wordLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
@@ -120,7 +123,7 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->sourceBtn->setEnabled(false);
             });
 
-    connect(ui->newWordBtn, &QPushButton::clicked, this, [this]() { newWordButtonPushAction(); });
+    connect(ui->nextBtn, &QPushButton::clicked, this, [this]() { newWordButtonPushAction(); });
     connect(ui->showBtn, &QPushButton::clicked, this, [this]() { showButtonPushAction(); });
     connect(ui->resetBtn, &QPushButton::clicked, this, [this]() { clearButtonPushAction(); });
     connect(ui->deleteBtn, &QPushButton::clicked, this, [this]() { deleteButtonPushAction(); });
@@ -336,7 +339,7 @@ void MainWindow::newWordButtonPushAction(void)
     _currentWordIndex = getRandomNumber(0, _engWords.size() - 1);
     ui->wordLabel->setText(_engWords[_currentWordIndex]);
 
-    ui->newWordBtn->setEnabled(false);
+    ui->nextBtn->setEnabled(false);
     ui->showBtn->setEnabled(true);
 }
 
@@ -417,7 +420,7 @@ void MainWindow::buttonPushAction(int index)
     QString text = QString::number(_rightAnswers) + " of " + QString::number(_totalAnswers);
     ui->countLabel->setText(text);
 
-    ui->newWordBtn->setEnabled(true);
+    ui->nextBtn->setEnabled(true);
     ui->showBtn->setEnabled(true);
 
     if (index == _correctIndex)
