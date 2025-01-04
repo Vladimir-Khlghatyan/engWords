@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>633</width>
+    <width>668</width>
     <height>400</height>
    </rect>
   </property>
@@ -180,19 +180,6 @@
       </property>
      </widget>
     </item>
-    <item row="8" column="5">
-     <spacer name="horizontalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
     <item row="0" column="4">
      <widget class="QLabel" name="dltLabel">
       <property name="maximumSize">
@@ -216,6 +203,9 @@
       </property>
      </widget>
     </item>
+    <item row="8" column="5">
+     <widget class="QPushButton" name="settingsBtn"/>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -223,7 +213,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>633</width>
+     <width>668</width>
      <height>25</height>
     </rect>
    </property>

@@ -17,34 +17,35 @@ SplitDialog::SplitDialog(const QString& path, QWidget* parent)
     setWindowTitle("Split file");
     setMinimumSize(400,100);
 
-    QVBoxLayout* vLayout = new QVBoxLayout();
     m_text = new QLabel("Choose a file in 'eng-arm' format for splitting.", this);
-    m_text->setObjectName("SplitDialog");
+    m_text->setObjectName("dialog");
+
+    m_browsBtn = new QPushButton("", this);
+    m_browsBtn->setIcon(QIcon(":/icons/source.png"));
+    m_browsBtn->setFixedSize(QSize(30, 30));
+    m_browsBtn->setIconSize(QSize(24, 24));
+    m_browsBtn->setCursor(Qt::PointingHandCursor);
+    m_browsBtn->setToolTip("Choose a file.");
+    connect(m_browsBtn, &QPushButton::clicked, this, &SplitDialog::onBrows);
+
+    m_cancelBtn = new QPushButton("Cancel", this);
+    m_cancelBtn->setCursor(Qt::PointingHandCursor);
+    m_cancelBtn->setObjectName("dialog");
+    connect(m_cancelBtn, &QPushButton::clicked, this, &SplitDialog::onCencel);
+
+    m_splitBtn = new QPushButton("Split", this);
+    m_splitBtn->setCursor(Qt::PointingHandCursor);
+    m_splitBtn->setObjectName("dialog");
+    m_splitBtn->setEnabled(false);
+    connect(m_splitBtn, &QPushButton::clicked, this, &SplitDialog::onSplit);
 
     QHBoxLayout* hLayout = new QHBoxLayout();
-
-    m_browsBtl = new QPushButton("", this);
-    m_browsBtl->setIcon(QIcon(":/icons/source.png"));
-    m_browsBtl->setFixedSize(QSize(30, 30));
-    m_browsBtl->setIconSize(QSize(24, 24));
-    m_browsBtl->setCursor(Qt::PointingHandCursor);
-    m_browsBtl->setToolTip("Choose a file.");
-    connect(m_browsBtl, &QPushButton::clicked, this, &SplitDialog::onBrows);
-
-    m_cancelBtl = new QPushButton("Cancel", this);
-    m_cancelBtl->setObjectName("SplitDialog");
-    connect(m_cancelBtl, &QPushButton::clicked, this, &SplitDialog::onCencel);
-
-    m_splitBtl = new QPushButton("Split", this);
-    m_splitBtl->setObjectName("SplitDialog");
-    m_splitBtl->setEnabled(false);
-    connect(m_splitBtl, &QPushButton::clicked, this, &SplitDialog::onSplit);
-
-    hLayout->addWidget(m_browsBtl, 0, Qt::AlignLeft);
+    hLayout->addWidget(m_browsBtn, 0, Qt::AlignLeft);
     hLayout->addSpacerItem(new QSpacerItem(40,20));
-    hLayout->addWidget(m_cancelBtl);
-    hLayout->addWidget(m_splitBtl);
+    hLayout->addWidget(m_cancelBtn);
+    hLayout->addWidget(m_splitBtn);
 
+    QVBoxLayout* vLayout = new QVBoxLayout();
     vLayout->addWidget(m_text, 0, Qt::AlignCenter);
     vLayout->addLayout(hLayout);
 
@@ -62,7 +63,7 @@ void SplitDialog::onBrows()
     }
 
     m_text->setStyleSheet("color: white;");
-    m_splitBtl->setEnabled(!m_filePath.isEmpty());
+    m_splitBtn->setEnabled(!m_filePath.isEmpty());
 }
 
 void SplitDialog::onCencel()

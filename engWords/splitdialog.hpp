@@ -28,9 +28,9 @@ private slots:
 
 private:
     QLabel*      m_text;
-    QPushButton* m_browsBtl;
-    QPushButton* m_cancelBtl;
-    QPushButton* m_splitBtl;
+    QPushButton* m_browsBtn;
+    QPushButton* m_cancelBtn;
+    QPushButton* m_splitBtn;
     QString      m_path;
     QString      m_filePath;
     std::string  m_errorText;

@@ -3,6 +3,7 @@
 
 #include "define.hpp"
 #include "splitdialog.hpp"
+#include "settingsdialog.hpp"
 #include <QDir>
 #include <QFile>
 #include <QFileDialog>
@@ -157,11 +158,25 @@ MainWindow::MainWindow(QWidget *parent)
     ui->splitBtn->setIconSize(QSize(24, 24));
     ui->splitBtn->setCursor(Qt::PointingHandCursor);
     ui->splitBtn->setToolTip("Split a file in 'eng-arm' format into separate files:\n - eng.txt\n - arm.txt");
-
     connect(ui->splitBtn, &QPushButton::clicked, this,
             [this] {
                 SplitDialog dlg(getExecutableGrandparentDirPath() + "/fileToSplit", this);
                 dlg.exec();
+            });
+
+    ui->settingsBtn->setIcon(QIcon(":/icons/settings.png"));
+    ui->settingsBtn->setFixedSize(QSize(30, 30));
+    ui->settingsBtn->setIconSize(QSize(24, 24));
+    ui->settingsBtn->setCursor(Qt::PointingHandCursor);
+    ui->settingsBtn->setToolTip("Settings.");
+    connect(ui->settingsBtn, &QPushButton::clicked, this,
+            [this] {
+                SettingsDialog dlg(this);
+                if (dlg.exec() == QDialog::Accepted) {
+                    qDebug() << "QDialog::Accepted";
+                } else {
+                    qDebug() << "QDialog::Rejected";
+                }
             });
 
 }

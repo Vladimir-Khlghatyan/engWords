@@ -16,7 +16,7 @@ QLabel { \
     font-weight: bold; \
     color:       white; \
 } \
-QLabel#SplitDialog { \
+QLabel#dialog { \
     font-size:   18px; \
     font-weight: normal; \
 } \
@@ -36,7 +36,7 @@ QPushButton:hover { \
 QPushButton:disabled { \
     color:            gray; \
 } \
-QPushButton#SplitDialog { \
+QPushButton#dialog { \
     background-color: #52606E; \
     color:            white; \
     font-size:        16px; \
@@ -47,13 +47,13 @@ QPushButton#SplitDialog { \
     min-height:       30px; \
     max-height:       30px; \
 } \
-QPushButton#SplitDialog:hover { \
+QPushButton#dialog:hover { \
     background-color: #708294; \
     color:            white; \
     font-size:        16px; \
     font-weight:      normal; \
 } \
-QPushButton#SplitDialog:disabled { \
+QPushButton#dialog:disabled { \
     color:            gray; \
 }"
 

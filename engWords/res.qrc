@@ -9,5 +9,8 @@
         <file>icons/source.png</file>
         <file>icons/source_disabled.png</file>
         <file>icons/split.png</file>
+        <file>icons/settings.png</file>
+        <file>icons/toggle_arm.png</file>
+        <file>icons/toggle_eng.png</file>
     </qresource>
 </RCC>
