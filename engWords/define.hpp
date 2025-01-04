@@ -36,6 +36,11 @@ QPushButton:hover { \
 QPushButton:disabled { \
     color:            gray; \
 } \
+QToolTip { \
+    border:           1px solid white; \
+    background:       #000000; \
+    color:            white; \
+} \
 QPushButton#dialog { \
     background-color: #52606E; \
     color:            white; \
