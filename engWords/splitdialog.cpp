@@ -133,8 +133,17 @@ void SplitDialog::parseTheFile()
 
     assert(engWords.size() == armWords.size());
 
-    std::ofstream engFile(m_path.toStdString() + "/eng.txt", std::ios::app); // std::ios::app[end]
-    std::ofstream armFile(m_path.toStdString() + "/arm.txt", std::ios::app); // std::ios::app[end]
+    std::string savePath(m_filePath.toStdString());
+    for (int i = savePath.size() - 1; i >= 0; --i)
+    {
+        if (savePath[i] == '/' || savePath[i] == '\\') {
+            break;
+        }
+        savePath.pop_back();
+    }
+
+    std::ofstream engFile(savePath + "eng.txt", std::ios::app); // std::ios::app/end/
+    std::ofstream armFile(savePath + "arm.txt", std::ios::app); // std::ios::app/end/
     if (!engFile.is_open() || !armFile.is_open())
     {
         m_errorText = "Failed to open or create new file.";
@@ -166,13 +175,43 @@ std::pair<std::string, std::string> SplitDialog::getWordsPair(const std::string&
         start = str.find_first_not_of(" ", end + 1);
     }
 
-    if (words.size() < 3 || words[1] != "-") {
-        return {"",""};
+    return errorHandler(words) ? std::make_pair(words[0], words[1])
+                               : std::make_pair("", "");
+}
+
+bool SplitDialog::errorHandler(std::vector<std::string>& words)
+{
+    if (words.size() < 3) {
+        return false;
     }
 
-    for (int i{3}; i < words.size(); ++i) {
-        words[2] += " " + words[i];
+    const int lastIndex = words.size() - 1;
+    int dashIndex{};
+    while (dashIndex < lastIndex)
+    {
+        if (words[dashIndex] == "-" || words[dashIndex] == "–") {
+            break;
+        }
+        ++dashIndex;
     }
 
-    return {words[0], words[2]};
+    if (dashIndex == 0 || dashIndex == lastIndex) {
+        return false;
+    }
+
+    std::string engWord = words[0];
+    for (int i{1}; i < dashIndex; ++i) {
+        engWord += " " + words[i];
+    }
+
+    std::string armWord = words[dashIndex + 1];
+    for (int i{dashIndex + 2}; i <= lastIndex; ++i) {
+        armWord += " " + words[i];
+    }
+
+    words[0] = engWord;
+    words[1] = armWord;
+    words.resize(2);
+
+    return true;
 }

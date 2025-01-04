@@ -2,6 +2,7 @@
 #define SPLITDIALOG_HPP
 
 #include <string>
+#include <vector>
 #include <QDialog>
 #include <QString>
 
@@ -18,6 +19,7 @@ public:
 private:
     void parseTheFile();
     std::pair<std::string, std::string> getWordsPair(const std::string& str);
+    bool errorHandler(std::vector<std::string>& words);
 
 private slots:
     void onBrows();
