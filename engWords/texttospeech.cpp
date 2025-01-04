@@ -12,6 +12,7 @@ TextToSpeech::TextToSpeech(QWidget* parent)
     m_audioOutput->setVolume(1.0);
 
     connect(m_manager, &QNetworkAccessManager::finished, this, &TextToSpeech::playAudio);
+    connect(m_player, &QMediaPlayer::errorOccurred, this, &TextToSpeech::onError);
 }
 
 void TextToSpeech::fetchAudio(const QString& text)
@@ -39,7 +40,7 @@ void TextToSpeech::playAudio(QNetworkReply *reply)
 {
     if (reply->error() != QNetworkReply::NoError)
     {
-        qDebug() << "Network error:" << reply->errorString();
+        emit errorOccurred("Network error:   " + reply->errorString() + ".");
         reply->deleteLater();
         return;
     }
@@ -47,7 +48,7 @@ void TextToSpeech::playAudio(QNetworkReply *reply)
     QTemporaryFile tempFile;
     if (!tempFile.open())
     {
-        qDebug() << "Failed to create temporary file.";
+        emit errorOccurred("Failed to create temporary file.");
         reply->deleteLater();
         return;
     }
@@ -60,6 +61,13 @@ void TextToSpeech::playAudio(QNetworkReply *reply)
     m_player->setSource(QUrl::fromLocalFile(filePath));
     m_player->play();
     reply->deleteLater();
+}
+
+void TextToSpeech::onError(QMediaPlayer::Error error)
+{
+    Q_UNUSED(error);
+     emit errorOccurred(m_player->errorString() + "  Try again.");
+//    emit errorOccurred("Failed to load audio. Try again.");
 }
 
 #endif // _PLAY_SOUND_

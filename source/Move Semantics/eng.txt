@@ -261,7 +261,6 @@ daniel
 data
 day
 dbl
-dck
 dead
 deallocate
 deallocates

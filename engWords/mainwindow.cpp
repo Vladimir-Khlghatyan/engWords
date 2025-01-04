@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    setWindowTitle("Eng/Arm wors");
+    setWindowTitle("Eng/Arm words");
     setWindowIcon(QIcon(":/icons/logo.png"));
     setStyleSheet(MAIN_WINDOW_STYLE);
     setFixedSize(QSize(600, 350));
@@ -48,13 +48,17 @@ MainWindow::MainWindow(QWidget *parent)
     ui->countLabel->setStyleSheet("QLabel { font-size: 20px; color: white; }");
     ui->countLabel->hide();
 
-    ui->newWord->setEnabled(false);
-    ui->show->setEnabled(false);
+    ui->newWordBtn->setEnabled(false);
+    ui->showBtn->setEnabled(false);
+
+    ui->newWordBtn->setCursor(Qt::PointingHandCursor);
+    ui->showBtn->setCursor(Qt::PointingHandCursor);
 
     ui->dltLabel->setStyleSheet("QLabel { font-size: 20px; color: #FF7171; }");
     ui->dltLabel->hide();
 
     ui->wordCount->setStyleSheet("QLabel { font-size: 14px; color: gray; }");
+    ui->audioErrorMsg->setStyleSheet("QLabel { font-size: 14px; color: #FF7171; font-weight: normal; font-style: italic; }");
 
     _button.push_back(ui->pushButton_0);
     _button.push_back(ui->pushButton_1);
@@ -78,7 +82,6 @@ MainWindow::MainWindow(QWidget *parent)
             [&](void)
             {
                 QString startDir = getExecutableGrandparentDirPath() + "/source";
-                // qDebug() << "startDir:" << startDir;
                 _sourcePath = QFileDialog::getExistingDirectory(nullptr, "Select Directory", startDir, QFileDialog::ShowDirsOnly);
 
                 if (_sourcePath.isEmpty()) {
@@ -107,7 +110,7 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->deleteBtn->setEnabled(true);
                 ui->dltLabel->show();
 
-                ui->newWord->setEnabled(true);
+                ui->newWordBtn->setEnabled(true);
 
                 ui->wordLabel->setText("Are you ready?");
                 ui->wordLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
@@ -116,13 +119,14 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->sourceBtn->setEnabled(false);
             });
 
-    connect(ui->newWord, &QPushButton::clicked, this, [this]() { newWordButtonPushAction(); });
-    connect(ui->show, &QPushButton::clicked, this, [this]() { showButtonPushAction(); });
+    connect(ui->newWordBtn, &QPushButton::clicked, this, [this]() { newWordButtonPushAction(); });
+    connect(ui->showBtn, &QPushButton::clicked, this, [this]() { showButtonPushAction(); });
     connect(ui->resetBtn, &QPushButton::clicked, this, [this]() { clearButtonPushAction(); });
     connect(ui->deleteBtn, &QPushButton::clicked, this, [this]() { deleteButtonPushAction(); });
 
     for (int i{}; i < _button.size(); ++i){
         connect(_button[i], &QPushButton::clicked, this, [this, i] { buttonPushAction(i); });
+        _button[i]->setCursor(Qt::PointingHandCursor);
         _button[i]->setEnabled(false);
     }
 
@@ -137,7 +141,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->soundPlayBtn->setToolTip("Listen");
 
     connect(ui->soundPlayBtn, &QPushButton::clicked, this,
-            [this] { m_textToSpeech->fetchAudio(ui->wordLabel->text()); });
+            [this] {
+                ui->audioErrorMsg->setText("");
+                m_textToSpeech->fetchAudio(ui->wordLabel->text());
+            });
+
+    connect(m_textToSpeech, &TextToSpeech::errorOccurred, this, &MainWindow::onTextToSpeechError);
 
 #else
     ui->soundPlayBtn->hide();
@@ -312,8 +321,8 @@ void MainWindow::newWordButtonPushAction(void)
     _currentWordIndex = getRandomNumber(0, _engWords.size() - 1);
     ui->wordLabel->setText(_engWords[_currentWordIndex]);
 
-    ui->newWord->setEnabled(false);
-    ui->show->setEnabled(true);
+    ui->newWordBtn->setEnabled(false);
+    ui->showBtn->setEnabled(true);
 }
 
 void MainWindow::showButtonPushAction(void)
@@ -343,7 +352,7 @@ void MainWindow::showButtonPushAction(void)
         buttonIndexes.erase(it);
     }
 
-    ui->show->setEnabled(false);
+    ui->showBtn->setEnabled(false);
 }
 
 void MainWindow::clearButtonPushAction(void)
@@ -393,8 +402,8 @@ void MainWindow::buttonPushAction(int index)
     QString text = QString::number(_rightAnswers) + " of " + QString::number(_totalAnswers);
     ui->countLabel->setText(text);
 
-    ui->newWord->setEnabled(true);
-    ui->show->setEnabled(true);
+    ui->newWordBtn->setEnabled(true);
+    ui->showBtn->setEnabled(true);
 
     if (index == _correctIndex)
     {
@@ -405,4 +414,13 @@ void MainWindow::buttonPushAction(int index)
     }
 }
 
+#ifdef _PLAY_SOUND_
+void MainWindow::onTextToSpeechError(const QString& msg)
+{
+    ui->audioErrorMsg->setText(msg);
+    QTimer::singleShot(3000, this, [this]() {
+        ui->audioErrorMsg->setText("");
+    });
+}
+#endif
 

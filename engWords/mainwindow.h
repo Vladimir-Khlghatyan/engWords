@@ -24,6 +24,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private:
     QString     getExecutableGrandparentDirPath(void);
     QStringList readFromFile(const QString& filepath);
     int         getRandomNumber(int lower, int upper);
@@ -35,6 +36,11 @@ public:
     void        clearButtonPushAction(void);
     void        deleteButtonPushAction(void);
     void        buttonPushAction(int index);
+
+#ifdef _PLAY_SOUND_
+private slots:
+    void onTextToSpeechError(const QString& msg);
+#endif
 
 private:
     Ui::MainWindow          *ui;

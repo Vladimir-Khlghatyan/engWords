@@ -25,11 +25,15 @@ public:
     TextToSpeech(QWidget* parent = nullptr);
     ~TextToSpeech(){}
 
+signals:
+    void errorOccurred(const QString& msg);
+
 public slots:
     void fetchAudio(const QString& text);
 
 private slots:
     void playAudio(QNetworkReply* reply);
+    void onError(QMediaPlayer::Error error);
 
 private:
     QNetworkAccessManager*  m_manager;

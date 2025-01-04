@@ -15,8 +15,60 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="4">
-     <widget class="QLabel" name="dltLabel">
+    <item row="6" column="4">
+     <widget class="QPushButton" name="pushButton_1">
+      <property name="minimumSize">
+       <size>
+        <width>250</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="2" colspan="2">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="minimumSize">
+       <size>
+        <width>250</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="3" colspan="3">
+     <widget class="QLabel" name="audioErrorMsg">
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5">
+     <widget class="QPushButton" name="deleteBtn"/>
+    </item>
+    <item row="8" column="4">
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="minimumSize">
+       <size>
+        <width>250</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QPushButton" name="sourceBtn"/>
+    </item>
+    <item row="0" column="2" colspan="2">
+     <widget class="QLabel" name="countLabel">
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -24,14 +76,30 @@
        </size>
       </property>
       <property name="text">
-       <string>0</string>
+       <string>0 of 0</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
     </item>
-    <item row="10" column="2" colspan="2">
+    <item row="6" column="5">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="8" column="0">
+     <widget class="QPushButton" name="splitBtn"/>
+    </item>
+    <item row="10" column="2">
      <widget class="QLabel" name="wordCount">
       <property name="minimumSize">
        <size>
@@ -50,8 +118,31 @@
       </property>
      </widget>
     </item>
-    <item row="8" column="4">
-     <widget class="QPushButton" name="pushButton_3">
+    <item row="1" column="2" rowspan="5" colspan="3">
+     <widget class="QLabel" name="wordLabel">
+      <property name="text">
+       <string>Choose a source!</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="5">
+     <widget class="QPushButton" name="soundPlayBtn">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2" colspan="2">
+     <widget class="QPushButton" name="pushButton_0">
       <property name="minimumSize">
        <size>
         <width>250</width>
@@ -60,6 +151,32 @@
       </property>
       <property name="text">
        <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="4">
+     <widget class="QPushButton" name="showBtn">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>show</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2" colspan="2">
+     <widget class="QPushButton" name="newWordBtn">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>next</string>
       </property>
      </widget>
     </item>
@@ -76,8 +193,8 @@
       </property>
      </spacer>
     </item>
-    <item row="0" column="2" colspan="2">
-     <widget class="QLabel" name="countLabel">
+    <item row="0" column="4">
+     <widget class="QLabel" name="dltLabel">
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -85,49 +202,10 @@
        </size>
       </property>
       <property name="text">
-       <string>0 of 0</string>
+       <string>0</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="4">
-     <widget class="QPushButton" name="show">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>show</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="2" colspan="2">
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="minimumSize">
-       <size>
-        <width>250</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2" rowspan="5" colspan="3">
-     <widget class="QLabel" name="wordLabel">
-      <property name="text">
-       <string>Choose a source!</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
     </item>
@@ -137,77 +215,6 @@
        <string/>
       </property>
      </widget>
-    </item>
-    <item row="9" column="5">
-     <widget class="QPushButton" name="soundPlayBtn">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="flat">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="4">
-     <widget class="QPushButton" name="pushButton_1">
-      <property name="minimumSize">
-       <size>
-        <width>250</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="5">
-     <widget class="QPushButton" name="deleteBtn"/>
-    </item>
-    <item row="9" column="0">
-     <widget class="QPushButton" name="sourceBtn"/>
-    </item>
-    <item row="6" column="5">
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="6" column="2" colspan="2">
-     <widget class="QPushButton" name="pushButton_0">
-      <property name="minimumSize">
-       <size>
-        <width>250</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="2" colspan="2">
-     <widget class="QPushButton" name="newWord">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>next</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="0">
-     <widget class="QPushButton" name="splitBtn"/>
     </item>
    </layout>
   </widget>
