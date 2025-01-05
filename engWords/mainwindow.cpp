@@ -79,14 +79,10 @@ MainWindow::MainWindow(QWidget *parent)
 
 #ifdef _PLAY_SOUND_
 
-    m_textToSpeech = new TextToSpeech(this);
     setUpButtonWithIcon(ui->soundPlayBtn, "soundPlay", "Listen");
-    connect(ui->soundPlayBtn, &QPushButton::clicked, this,
-            [this] {
-                ui->audioErrorMsg->setText("");
-                m_textToSpeech->fetchAudio(ui->wordLabel->text());
-            });
+    connect(ui->soundPlayBtn, &QPushButton::clicked, this, &MainWindow::onSoundPlayButtonClicked);
 
+    m_textToSpeech = new TextToSpeech(this);
     connect(m_textToSpeech, &TextToSpeech::errorOccurred, this, &MainWindow::onTextToSpeechError);
 
 #else
@@ -409,6 +405,12 @@ void MainWindow::onSourceButtonClicked()
 
     ui->sourceBtn->setIcon(QIcon(":/icons/source_disabled.png"));
     ui->sourceBtn->setEnabled(false);
+}
+
+void MainWindow::onSoundPlayButtonClicked()
+{
+    ui->audioErrorMsg->setText("");
+    m_textToSpeech->fetchAudio(ui->wordLabel->text());
 }
 
 void MainWindow::setUpButtonWithIcon(QPushButton* btn, const QString& iconName, const QString& tooltip,

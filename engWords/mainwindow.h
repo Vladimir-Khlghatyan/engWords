@@ -46,6 +46,7 @@ private:
 
 private slots:
     void onSourceButtonClicked();
+    void onSoundPlayButtonClicked();
 #ifdef _PLAY_SOUND_
     void onTextToSpeechError(const QString& msg);
 #endif
