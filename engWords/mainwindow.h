@@ -44,24 +44,25 @@ private:
     void        deleteButtonPushAction(void);
     void        buttonPushAction(int index);
 
-#ifdef _PLAY_SOUND_
 private slots:
+    void onSourceButtonClicked();
+#ifdef _PLAY_SOUND_
     void onTextToSpeechError(const QString& msg);
 #endif
 
 private:
     Ui::MainWindow          *ui;
-    QVector<QPushButton*>   _button;
-    QStringList             _engWords;
-    QStringList             _armWords;
-    QString                 _sourcePath;
-    int                     _correctIndex;
-    int                     _totalAnswers;
-    int                     _rightAnswers;
-    int                     _deletedWords;
-    int                     _currentWordIndex;
-    QTimer*                 _dltTimer;
-    QTimer*                 _nextTimer;
+    QVector<QPushButton*>   m_button;
+    QStringList             m_engWords;
+    QStringList             m_armWords;
+    QString                 m_sourcePath;
+    int                     m_correctIndex;
+    int                     m_totalAnswers;
+    int                     m_rightAnswers;
+    int                     m_deletedWords;
+    int                     m_currentWordIndex;
+    QTimer*                 m_dltTimer;
+    QTimer*                 m_nextTimer;
 
 #ifdef _PLAY_SOUND_
     TextToSpeech*           m_textToSpeech;

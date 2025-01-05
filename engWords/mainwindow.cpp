@@ -18,6 +18,10 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , m_totalAnswers(0)
+    , m_rightAnswers(0)
+    , m_deletedWords(0)
+    , m_currentWordIndex(-1)
 {
     ui->setupUi(this);
 
@@ -48,82 +52,35 @@ MainWindow::MainWindow(QWidget *parent)
     ui->wordCount->setStyleSheet("QLabel { font-size: 14px; color: gray; }");
     ui->audioErrorMsg->setStyleSheet("QLabel { font-size: 14px; color: #FF8080; font-weight: normal; font-style: italic; }");
 
-    _button.push_back(ui->pushButton_0);
-    _button.push_back(ui->pushButton_1);
-    _button.push_back(ui->pushButton_2);
-    _button.push_back(ui->pushButton_3);
+    m_button.push_back(ui->pushButton_0);
+    m_button.push_back(ui->pushButton_1);
+    m_button.push_back(ui->pushButton_2);
+    m_button.push_back(ui->pushButton_3);
 
-    _totalAnswers = 0;
-    _rightAnswers = 0;
-    _deletedWords = 0;
-    _currentWordIndex = -1;
+    m_dltTimer = new QTimer(this);
+    m_dltTimer->setSingleShot(true);
+    m_dltTimer->setInterval(500);
 
-    _dltTimer = new QTimer(this);
-    _dltTimer->setSingleShot(true);
-    _dltTimer->setInterval(500);
+    m_nextTimer = new QTimer(this);
+    m_nextTimer->setSingleShot(true);
+    m_nextTimer->setInterval(1000);
 
-    _nextTimer = new QTimer(this);
-    _nextTimer->setSingleShot(true);
-    _nextTimer->setInterval(1000);
-
-    connect(ui->sourceBtn, &QPushButton::clicked, this,
-            [&](void)
-            {
-                QString startDir = getExecutableGrandparentDirPath() + "/source";
-                _sourcePath = QFileDialog::getExistingDirectory(nullptr, "Select Directory", startDir, QFileDialog::ShowDirsOnly);
-
-                if (_sourcePath.isEmpty()) {
-                    return;
-                }
-
-                auto source = readFromFile(_sourcePath + "/source.txt");
-                parse(source);
-                writeToFileInAppendMode(_sourcePath + "/words.txt", source);
-                _engWords = readFromFile(_sourcePath + "/eng.txt");
-                _armWords = readFromFile(_sourcePath + "/arm.txt");
-
-                if (_engWords.size() < 4)
-                {
-                    ui->wordLabel->setText("Not enough words in eng.txt.\nSelect another source!");
-                    return;
-                }
-
-                ui->wordCount->setText(QString("Words in base: ") + QString::number(_engWords.size()));
-
-                ui->resetBtn->setIcon(QIcon(":/icons/reset.png"));
-                ui->resetBtn->setEnabled(true);
-                ui->countLabel->show();
-
-                ui->deleteBtn->setIcon(QIcon(":/icons/delete.png"));
-                ui->deleteBtn->setEnabled(true);
-                ui->dltLabel->show();
-
-                ui->nextBtn->setEnabled(true);
-
-                ui->wordLabel->setText("Are you ready?");
-                ui->wordLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
-
-                ui->sourceBtn->setIcon(QIcon(":/icons/source_disabled.png"));
-                ui->sourceBtn->setEnabled(false);
-            });
-
+    connect(ui->sourceBtn, &QPushButton::clicked, this, &MainWindow::onSourceButtonClicked);
     connect(ui->nextBtn, &QPushButton::clicked, this, [this]() { newWordButtonPushAction(); });
     connect(ui->showBtn, &QPushButton::clicked, this, [this]() { showButtonPushAction(); });
     connect(ui->resetBtn, &QPushButton::clicked, this, [this]() { clearButtonPushAction(); });
     connect(ui->deleteBtn, &QPushButton::clicked, this, [this]() { deleteButtonPushAction(); });
 
-    for (int i{}; i < _button.size(); ++i){
-        connect(_button[i], &QPushButton::clicked, this, [this, i] { buttonPushAction(i); });
-        _button[i]->setCursor(Qt::PointingHandCursor);
-        _button[i]->setEnabled(false);
+    for (int i{}; i < m_button.size(); ++i){
+        connect(m_button[i], &QPushButton::clicked, this, [this, i] { buttonPushAction(i); });
+        m_button[i]->setCursor(Qt::PointingHandCursor);
+        m_button[i]->setEnabled(false);
     }
 
 #ifdef _PLAY_SOUND_
 
     m_textToSpeech = new TextToSpeech(this);
-
     setUpButtonWithIcon(ui->soundPlayBtn, "soundPlay", "Listen");
-
     connect(ui->soundPlayBtn, &QPushButton::clicked, this,
             [this] {
                 ui->audioErrorMsg->setText("");
@@ -302,14 +259,14 @@ void MainWindow::parse(QStringList& source)
 
 void MainWindow::newWordButtonPushAction(void)
 {
-    for (auto& button : _button){
+    for (auto& button : m_button){
         button->setStyleSheet("QPushButton { background-color: #52606E; }");
         button->setText("");
         button->setEnabled(false);
     }
 
-    _currentWordIndex = getRandomNumber(0, _engWords.size() - 1);
-    ui->wordLabel->setText(_engWords[_currentWordIndex]);
+    m_currentWordIndex = getRandomNumber(0, m_engWords.size() - 1);
+    ui->wordLabel->setText(m_engWords[m_currentWordIndex]);
 
     ui->nextBtn->setEnabled(false);
     ui->showBtn->setEnabled(true);
@@ -317,28 +274,28 @@ void MainWindow::newWordButtonPushAction(void)
 
 void MainWindow::showButtonPushAction(void)
 {
-    for (auto& button : _button){
+    for (auto& button : m_button){
         button->setStyleSheet(MAIN_WINDOW_STYLE);
         button->setEnabled(true);
     }
 
-    _correctIndex = getRandomNumber(0, 3);
-    _button[_correctIndex]->setText(_armWords[_currentWordIndex]);
+    m_correctIndex = getRandomNumber(0, 3);
+    m_button[m_correctIndex]->setText(m_armWords[m_currentWordIndex]);
 
     set<int> buttonIndexes = {0,1,2,3};
-    buttonIndexes.erase(_correctIndex);
+    buttonIndexes.erase(m_correctIndex);
 
     set<int> usedIndexes;
-    usedIndexes.insert(_currentWordIndex);
+    usedIndexes.insert(m_currentWordIndex);
 
     for (int i{}; i < 3; ++i) {
-        int index = getRandomNumber(0, _engWords.size() - 1);
+        int index = getRandomNumber(0, m_engWords.size() - 1);
         while (usedIndexes.find(index) != usedIndexes.end()){
-            index = getRandomNumber(0, _engWords.size() - 1);
+            index = getRandomNumber(0, m_engWords.size() - 1);
         }
 
         auto it = buttonIndexes.begin();
-        _button[*it]->setText(_armWords[index]);
+        m_button[*it]->setText(m_armWords[index]);
         buttonIndexes.erase(it);
     }
 
@@ -347,58 +304,58 @@ void MainWindow::showButtonPushAction(void)
 
 void MainWindow::clearButtonPushAction(void)
 {
-    _totalAnswers = 0;
-    _rightAnswers = 0;
+    m_totalAnswers = 0;
+    m_rightAnswers = 0;
     ui->countLabel->setText("0 of 0");
     newWordButtonPushAction();
 }
 
 void MainWindow::deleteButtonPushAction(void)
 {
-    if (_currentWordIndex == -1)
+    if (m_currentWordIndex == -1)
         return;
 
     this->showButtonPushAction();
 
-    _engWords.removeAt(_currentWordIndex);
-    _armWords.removeAt(_currentWordIndex);
-    writeToFileInTranscateMode(_sourcePath + "/eng.txt", _engWords);
-    writeToFileInTranscateMode(_sourcePath + "/arm.txt", _armWords);
-    ui->dltLabel->setText(QString::number(++_deletedWords));
+    m_engWords.removeAt(m_currentWordIndex);
+    m_armWords.removeAt(m_currentWordIndex);
+    writeToFileInTranscateMode(m_sourcePath + "/eng.txt", m_engWords);
+    writeToFileInTranscateMode(m_sourcePath + "/arm.txt", m_armWords);
+    ui->dltLabel->setText(QString::number(++m_deletedWords));
 
-    _button[_correctIndex]->setStyleSheet("QPushButton { background-color: green; color: white; }");
-   _dltTimer->start();
-    QObject::connect(_dltTimer, &QTimer::timeout, this, [&]() {
+    m_button[m_correctIndex]->setStyleSheet("QPushButton { background-color: green; color: white; }");
+   m_dltTimer->start();
+    QObject::connect(m_dltTimer, &QTimer::timeout, this, [&]() {
         newWordButtonPushAction();
-        ui->wordCount->setText(QString("Words in base: ") + QString::number(_engWords.size()));
+        ui->wordCount->setText(QString("Words in base: ") + QString::number(m_engWords.size()));
     });
 
 }
 
 void MainWindow::buttonPushAction(int index)
 {
-    ++_totalAnswers;
-    for (auto& button : _button){
+    ++m_totalAnswers;
+    for (auto& button : m_button){
         button->setEnabled(false);
     }
 
-    if (index != _correctIndex) {
-        _button[index]->setStyleSheet("QPushButton { background-color: red; color: white; }");
+    if (index != m_correctIndex) {
+        m_button[index]->setStyleSheet("QPushButton { background-color: red; color: white; }");
     } else {
-        ++_rightAnswers;
+        ++m_rightAnswers;
     }
-    _button[_correctIndex]->setStyleSheet("QPushButton { background-color: green; color: white; }");
+    m_button[m_correctIndex]->setStyleSheet("QPushButton { background-color: green; color: white; }");
 
-    QString text = QString::number(_rightAnswers) + " of " + QString::number(_totalAnswers);
+    QString text = QString::number(m_rightAnswers) + " of " + QString::number(m_totalAnswers);
     ui->countLabel->setText(text);
 
     ui->nextBtn->setEnabled(true);
     ui->showBtn->setEnabled(true);
 
-    if (index == _correctIndex)
+    if (index == m_correctIndex)
     {
-        _nextTimer->start();
-        QObject::connect(_nextTimer, &QTimer::timeout, this, [this]() {
+        m_nextTimer->start();
+        QObject::connect(m_nextTimer, &QTimer::timeout, this, [this]() {
             newWordButtonPushAction();
         });
     }
@@ -413,6 +370,46 @@ void MainWindow::onTextToSpeechError(const QString& msg)
     });
 }
 #endif
+
+void MainWindow::onSourceButtonClicked()
+{
+    QString startDir = getExecutableGrandparentDirPath() + "/source";
+    m_sourcePath = QFileDialog::getExistingDirectory(nullptr, "Select Directory", startDir, QFileDialog::ShowDirsOnly);
+
+    if (m_sourcePath.isEmpty()) {
+        return;
+    }
+
+    auto source = readFromFile(m_sourcePath + "/source.txt");
+    parse(source);
+    writeToFileInAppendMode(m_sourcePath + "/words.txt", source);
+    m_engWords = readFromFile(m_sourcePath + "/eng.txt");
+    m_armWords = readFromFile(m_sourcePath + "/arm.txt");
+
+    if (m_engWords.size() < 4)
+    {
+        ui->wordLabel->setText("Not enough words in eng.txt.\nSelect another source!");
+        return;
+    }
+
+    ui->wordCount->setText(QString("Words in base: ") + QString::number(m_engWords.size()));
+
+    ui->resetBtn->setIcon(QIcon(":/icons/reset.png"));
+    ui->resetBtn->setEnabled(true);
+    ui->countLabel->show();
+
+    ui->deleteBtn->setIcon(QIcon(":/icons/delete.png"));
+    ui->deleteBtn->setEnabled(true);
+    ui->dltLabel->show();
+
+    ui->nextBtn->setEnabled(true);
+
+    ui->wordLabel->setText("Are you ready?");
+    ui->wordLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
+
+    ui->sourceBtn->setIcon(QIcon(":/icons/source_disabled.png"));
+    ui->sourceBtn->setEnabled(false);
+}
 
 void MainWindow::setUpButtonWithIcon(QPushButton* btn, const QString& iconName, const QString& tooltip,
                                         bool isEnabled, const QSize& buttonSize, const QSize& iconSize)
