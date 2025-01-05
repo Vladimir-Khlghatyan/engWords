@@ -6,9 +6,10 @@
 #include <QLabel>
 #include <QPushButton>
 
-SettingsDialog::SettingsDialog(QWidget* parent)
+SettingsDialog::SettingsDialog(bool& isEngArmMode, QWidget* parent)
     : baseClass(parent)
-    , m_isEngArmMode(true)
+    , m_isEngArmMode(isEngArmMode)
+    , m_parentMode(isEngArmMode)
 {
     setWindowIcon(QIcon(":/icons/settings.png"));
     setWindowTitle("Settings");
@@ -38,7 +39,6 @@ SettingsDialog::SettingsDialog(QWidget* parent)
     QHBoxLayout* hLayout0 = new QHBoxLayout();
     hLayout0->addWidget(m_toggleBtn);
     hLayout0->addWidget(m_toggleText, 0, Qt::AlignLeft);
-//    hLayout0->addSpacerItem(new QSpacerItem(40,20));
 
     QHBoxLayout* hLayout1 = new QHBoxLayout();
     hLayout1->addSpacerItem(new QSpacerItem(40,20));
@@ -66,5 +66,10 @@ void SettingsDialog::onCencel()
 
 void SettingsDialog::onSave()
 {
-    accept();
+    if (m_parentMode == m_isEngArmMode) {
+        reject();
+    } else {
+        m_parentMode = m_isEngArmMode;
+        accept();
+    }
 }

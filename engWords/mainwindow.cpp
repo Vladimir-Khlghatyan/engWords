@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     , m_rightAnswers(0)
     , m_deletedWords(0)
     , m_currentWordIndex(-1)
+    , m_isEngArmMode(true)
 {
     ui->setupUi(this);
 
@@ -50,7 +51,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->dltLabel->hide();
 
     ui->wordCount->setStyleSheet("QLabel { font-size: 14px; color: gray; }");
-    ui->audioErrorMsg->setStyleSheet("QLabel { font-size: 14px; color: #FF8080; font-weight: normal; font-style: italic; }");
+    ui->errorMsg->setStyleSheet("QLabel { font-size: 14px; color: #FF8080; font-weight: normal; font-style: italic; }");
 
     m_button.push_back(ui->pushButton_0);
     m_button.push_back(ui->pushButton_1);
@@ -66,10 +67,10 @@ MainWindow::MainWindow(QWidget *parent)
     m_nextTimer->setInterval(1000);
 
     connect(ui->sourceBtn, &QPushButton::clicked, this, &MainWindow::onSourceButtonClicked);
-    connect(ui->nextBtn, &QPushButton::clicked, this, [this]() { newWordButtonPushAction(); });
-    connect(ui->showBtn, &QPushButton::clicked, this, [this]() { showButtonPushAction(); });
-    connect(ui->resetBtn, &QPushButton::clicked, this, [this]() { clearButtonPushAction(); });
-    connect(ui->deleteBtn, &QPushButton::clicked, this, [this]() { deleteButtonPushAction(); });
+    connect(ui->nextBtn,   &QPushButton::clicked, this, &MainWindow::onNextButtonClicked);
+    connect(ui->showBtn,   &QPushButton::clicked, this, &MainWindow::onShowButtonClicked);
+    connect(ui->resetBtn,  &QPushButton::clicked, this, &MainWindow::onResetButtonClicked);
+    connect(ui->deleteBtn, &QPushButton::clicked, this, &MainWindow::onDeleteButtonClicked);
 
     for (int i{}; i < m_button.size(); ++i){
         connect(m_button[i], &QPushButton::clicked, this, [this, i] { buttonPushAction(i); });
@@ -83,7 +84,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->soundPlayBtn, &QPushButton::clicked, this, &MainWindow::onSoundPlayButtonClicked);
 
     m_textToSpeech = new TextToSpeech(this);
-    connect(m_textToSpeech, &TextToSpeech::errorOccurred, this, &MainWindow::onTextToSpeechError);
+    connect(m_textToSpeech, &TextToSpeech::errorOccurred, this, &MainWindow::onErrorMsg);
 
 #else
     ui->soundPlayBtn->hide();
@@ -97,16 +98,7 @@ MainWindow::MainWindow(QWidget *parent)
             });
 
     setUpButtonWithIcon(ui->settingsBtn, "settings", "Settings");
-    connect(ui->settingsBtn, &QPushButton::clicked, this,
-            [this] {
-                SettingsDialog dlg(this);
-                if (dlg.exec() == QDialog::Accepted) {
-                    qDebug() << "QDialog::Accepted";
-                } else {
-                    qDebug() << "QDialog::Rejected";
-                }
-            });
-
+    connect(ui->settingsBtn, &QPushButton::clicked, this, &MainWindow::onSettingsButtonClicked);
 }
 
 MainWindow::~MainWindow()
@@ -114,7 +106,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-QString MainWindow::getExecutableGrandparentDirPath(void)
+QString MainWindow::getExecutableGrandparentDirPath()
 {
     QString executableDirPath = QCoreApplication::applicationDirPath();
     QDir parentDir(executableDirPath);
@@ -124,8 +116,9 @@ QString MainWindow::getExecutableGrandparentDirPath(void)
     up += 3;
 #endif
 
-    while (up--)
+    while (up--) {
         parentDir.cdUp();
+    }
     QString grandparentDirPath = parentDir.absolutePath();
     return grandparentDirPath;
 }
@@ -136,7 +129,7 @@ QStringList MainWindow::readFromFile(const QString& filePath)
     QFile file(filePath);
 
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qDebug() << "Error opening file" << filePath << ":" << file.errorString();
+        onErrorMsg(file.errorString());
         return {};
     }
 
@@ -181,7 +174,7 @@ void MainWindow::writeToFileInAppendMode(const QString& filePath, const QStringL
         }
         file.close();
     } else {
-        qDebug() << "Failed to open file for writing:" << file.errorString();
+        onErrorMsg(file.errorString());
     }
 }
 
@@ -197,7 +190,7 @@ void MainWindow::writeToFileInTranscateMode(const QString& filePath, const QStri
             }
         file.close();
     } else {
-        qDebug() << "Failed to open file for writing:" << file.errorString();
+        onErrorMsg(file.errorString());
     }
 }
 
@@ -253,8 +246,12 @@ void MainWindow::parse(QStringList& source)
     }
 }
 
-void MainWindow::newWordButtonPushAction(void)
+void MainWindow::onNextButtonClicked()
 {
+    if (m_engWords.empty()) {
+        return;
+    }
+
     for (auto& button : m_button){
         button->setStyleSheet("QPushButton { background-color: #52606E; }");
         button->setText("");
@@ -262,13 +259,13 @@ void MainWindow::newWordButtonPushAction(void)
     }
 
     m_currentWordIndex = getRandomNumber(0, m_engWords.size() - 1);
-    ui->wordLabel->setText(m_engWords[m_currentWordIndex]);
+    ui->wordLabel->setText(m_isEngArmMode ? m_engWords[m_currentWordIndex] : m_armWords[m_currentWordIndex]);
 
     ui->nextBtn->setEnabled(false);
     ui->showBtn->setEnabled(true);
 }
 
-void MainWindow::showButtonPushAction(void)
+void MainWindow::onShowButtonClicked()
 {
     for (auto& button : m_button){
         button->setStyleSheet(MAIN_WINDOW_STYLE);
@@ -276,7 +273,7 @@ void MainWindow::showButtonPushAction(void)
     }
 
     m_correctIndex = getRandomNumber(0, 3);
-    m_button[m_correctIndex]->setText(m_armWords[m_currentWordIndex]);
+    m_button[m_correctIndex]->setText(m_isEngArmMode ? m_armWords[m_currentWordIndex] : m_engWords[m_currentWordIndex]);
 
     set<int> buttonIndexes = {0,1,2,3};
     buttonIndexes.erase(m_correctIndex);
@@ -291,27 +288,27 @@ void MainWindow::showButtonPushAction(void)
         }
 
         auto it = buttonIndexes.begin();
-        m_button[*it]->setText(m_armWords[index]);
+        m_button[*it]->setText(m_isEngArmMode ? m_armWords[index] : m_engWords[index]);
         buttonIndexes.erase(it);
     }
 
     ui->showBtn->setEnabled(false);
 }
 
-void MainWindow::clearButtonPushAction(void)
+void MainWindow::onResetButtonClicked()
 {
     m_totalAnswers = 0;
     m_rightAnswers = 0;
     ui->countLabel->setText("0 of 0");
-    newWordButtonPushAction();
+    onNextButtonClicked();
 }
 
-void MainWindow::deleteButtonPushAction(void)
+void MainWindow::onDeleteButtonClicked()
 {
     if (m_currentWordIndex == -1)
         return;
 
-    this->showButtonPushAction();
+    this->onShowButtonClicked();
 
     m_engWords.removeAt(m_currentWordIndex);
     m_armWords.removeAt(m_currentWordIndex);
@@ -322,10 +319,18 @@ void MainWindow::deleteButtonPushAction(void)
     m_button[m_correctIndex]->setStyleSheet("QPushButton { background-color: green; color: white; }");
    m_dltTimer->start();
     QObject::connect(m_dltTimer, &QTimer::timeout, this, [&]() {
-        newWordButtonPushAction();
+        onNextButtonClicked();
         ui->wordCount->setText(QString("Words in base: ") + QString::number(m_engWords.size()));
     });
 
+}
+
+void MainWindow::onSettingsButtonClicked()
+{
+    SettingsDialog dlg(m_isEngArmMode, this);
+    if (dlg.exec() == QDialog::Accepted) {
+        onNextButtonClicked();
+    }
 }
 
 void MainWindow::buttonPushAction(int index)
@@ -352,20 +357,18 @@ void MainWindow::buttonPushAction(int index)
     {
         m_nextTimer->start();
         QObject::connect(m_nextTimer, &QTimer::timeout, this, [this]() {
-            newWordButtonPushAction();
+            onNextButtonClicked();
         });
     }
 }
 
-#ifdef _PLAY_SOUND_
-void MainWindow::onTextToSpeechError(const QString& msg)
+void MainWindow::onErrorMsg(const QString& msg)
 {
-    ui->audioErrorMsg->setText(msg);
+    ui->errorMsg->setText(msg);
     QTimer::singleShot(3000, this, [this]() {
-        ui->audioErrorMsg->setText("");
+        ui->errorMsg->setText("");
     });
 }
-#endif
 
 void MainWindow::onSourceButtonClicked()
 {
@@ -409,7 +412,7 @@ void MainWindow::onSourceButtonClicked()
 
 void MainWindow::onSoundPlayButtonClicked()
 {
-    ui->audioErrorMsg->setText("");
+    ui->errorMsg->setText("");
     m_textToSpeech->fetchAudio(ui->wordLabel->text());
 }
 
@@ -423,4 +426,3 @@ void MainWindow::setUpButtonWithIcon(QPushButton* btn, const QString& iconName, 
     btn->setToolTip(tooltip);
     btn->setEnabled(isEnabled);
 }
-

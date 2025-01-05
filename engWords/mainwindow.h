@@ -38,18 +38,17 @@ private:
     void        writeToFileInAppendMode(const QString& filePath, const QStringList& source);
     void        writeToFileInTranscateMode(const QString& filePath, const QStringList& source);
     void        parse(QStringList& source);
-    void        newWordButtonPushAction(void);
-    void        showButtonPushAction(void);
-    void        clearButtonPushAction(void);
-    void        deleteButtonPushAction(void);
     void        buttonPushAction(int index);
 
 private slots:
     void onSourceButtonClicked();
     void onSoundPlayButtonClicked();
-#ifdef _PLAY_SOUND_
-    void onTextToSpeechError(const QString& msg);
-#endif
+    void onNextButtonClicked();
+    void onShowButtonClicked();
+    void onResetButtonClicked();
+    void onDeleteButtonClicked();
+    void onSettingsButtonClicked();
+    void onErrorMsg(const QString& msg);
 
 private:
     Ui::MainWindow          *ui;
@@ -64,6 +63,7 @@ private:
     int                     m_currentWordIndex;
     QTimer*                 m_dltTimer;
     QTimer*                 m_nextTimer;
+    bool                    m_isEngArmMode;
 
 #ifdef _PLAY_SOUND_
     TextToSpeech*           m_textToSpeech;

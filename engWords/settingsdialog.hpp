@@ -13,7 +13,7 @@ class SettingsDialog : public QDialog
 {
     using baseClass = QDialog;
 public:
-    SettingsDialog(QWidget* parent);
+    SettingsDialog(bool& isEngArmMode, QWidget* parent);
     ~SettingsDialog(){}
 
 private slots:
@@ -27,6 +27,7 @@ private:
     QPushButton* m_cancelBtn;
     QPushButton* m_saveBtn;
     bool         m_isEngArmMode;
+    bool&        m_parentMode;
 };
 
 #endif // SETTINGSDIALOG_HPP

@@ -737,7 +737,6 @@ msvc
 անհամար
 mysafewrapper
 ինքս ինձ
-myswapmove
 mywrapper
 Անուն
 անվանատարածք
