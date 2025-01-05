@@ -1,4 +1,5 @@
 #include "splitdialog.hpp"
+#include "mainwindow.h"
 
 #include <fstream>
 #include <vector>
@@ -18,14 +19,10 @@ SplitDialog::SplitDialog(const QString& path, QWidget* parent)
     setMinimumSize(400,100);
 
     m_text = new QLabel("Choose a file in 'eng-arm' format for splitting.", this);
-    m_text->setObjectName("dialog");
+    m_text->setObjectName("dialog");    
 
     m_browsBtn = new QPushButton("", this);
-    m_browsBtn->setIcon(QIcon(":/icons/source.png"));
-    m_browsBtn->setFixedSize(QSize(30, 30));
-    m_browsBtn->setIconSize(QSize(24, 24));
-    m_browsBtn->setCursor(Qt::PointingHandCursor);
-    m_browsBtn->setToolTip("Choose a file.");
+    qobject_cast<MainWindow*>(parent)->setUpButtonWithIcon(m_browsBtn, "source", "Choose a file.");
     connect(m_browsBtn, &QPushButton::clicked, this, &SplitDialog::onBrows);
 
     m_cancelBtn = new QPushButton("Cancel", this);

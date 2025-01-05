@@ -13,7 +13,7 @@ class SettingsDialog : public QDialog
 {
     using baseClass = QDialog;
 public:
-    SettingsDialog(QWidget* parent = nullptr);
+    SettingsDialog(QWidget* parent);
     ~SettingsDialog(){}
 
 private slots:

@@ -1,4 +1,5 @@
 #include "settingsdialog.hpp"
+#include "mainwindow.h"
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -14,15 +15,14 @@ SettingsDialog::SettingsDialog(QWidget* parent)
     setMinimumSize(300,100);
 
     m_toggleBtn = new QPushButton("", this);
-    m_toggleBtn->setIcon(QIcon(m_isEngArmMode ? ":/icons/toggle_eng.png" : ":/icons/toggle_arm.png"));
-    m_toggleBtn->setFixedSize(QSize(40, 22));
-    m_toggleBtn->setIconSize(QSize(40, 40));
-    m_toggleBtn->setCursor(Qt::PointingHandCursor);
-    m_toggleBtn->setToolTip("Swap languages");
+    qobject_cast<MainWindow*>(parent)->setUpButtonWithIcon(m_toggleBtn,
+                                    m_isEngArmMode ? "toggle_eng" : "toggle_arm",
+                                    "Swap languages", true, QSize(30, 20), QSize(30, 30));
     m_toggleBtn->setStyleSheet("QPushButton { background-color: #2e2f30; }");
     connect(m_toggleBtn, &QPushButton::clicked, this, &SettingsDialog::onToggle);
 
     m_toggleText = new QLabel(m_isEngArmMode ? "Eng - Arm" : "Arm - Eng", this);
+    m_toggleText->setStyleSheet("QLabel { font-size: 14px; }");
     m_toggleText->setObjectName("dialog");
 
     m_saveBtn = new QPushButton("Save", this);

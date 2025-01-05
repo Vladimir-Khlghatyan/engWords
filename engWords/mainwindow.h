@@ -24,6 +24,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void setUpButtonWithIcon(QPushButton* btn,
+                             const QString& iconName,
+                             const QString& tooltip = "",
+                             bool isEnabled = true,
+                             const QSize& buttonSize = QSize(30, 30),
+                             const QSize& iconSize = QSize(24, 24));
+
 private:
     QString     getExecutableGrandparentDirPath(void);
     QStringList readFromFile(const QString& filepath);

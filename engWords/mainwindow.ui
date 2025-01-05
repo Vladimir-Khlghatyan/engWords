@@ -115,7 +115,7 @@
        </size>
       </property>
       <property name="text">
-       <string>Words in base: </string>
+       <string>Words in the base: </string>
       </property>
      </widget>
     </item>

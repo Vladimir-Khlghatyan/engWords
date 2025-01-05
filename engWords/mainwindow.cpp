@@ -26,25 +26,9 @@ MainWindow::MainWindow(QWidget *parent)
     setStyleSheet(MAIN_WINDOW_STYLE);
     setFixedSize(QSize(600, 350));
 
-    ui->sourceBtn->setIcon(QIcon(":/icons/source.png"));
-    ui->sourceBtn->setFixedSize(QSize(30, 30));
-    ui->sourceBtn->setIconSize(QSize(24, 24));
-    ui->sourceBtn->setCursor(Qt::PointingHandCursor);
-    ui->sourceBtn->setToolTip("Choose a Source");
-
-    ui->resetBtn->setIcon(QIcon(":/icons/reset_disabled.png"));
-    ui->resetBtn->setFixedSize(QSize(30, 30));
-    ui->resetBtn->setIconSize(QSize(24, 24));
-    ui->resetBtn->setCursor(Qt::PointingHandCursor);
-    ui->resetBtn->setToolTip("Reset the Counter");
-    ui->resetBtn->setEnabled(false);
-
-    ui->deleteBtn->setIcon(QIcon(":/icons/delete_disabled.png"));
-    ui->deleteBtn->setFixedSize(QSize(30, 30));
-    ui->deleteBtn->setIconSize(QSize(24, 24));
-    ui->deleteBtn->setCursor(Qt::PointingHandCursor);
-    ui->deleteBtn->setToolTip("Delete the Word from the Database");
-    ui->deleteBtn->setEnabled(false);
+    setUpButtonWithIcon(ui->resetBtn, "reset_disabled", "Reset the Counter", false);
+    setUpButtonWithIcon(ui->deleteBtn, "delete_disabled", "Delete the Word from the Database", false);
+    setUpButtonWithIcon(ui->sourceBtn, "source", "Choose a Source");
 
     ui->countLabel->setStyleSheet("QLabel { font-size: 20px; color: white; }");
     ui->countLabel->hide();
@@ -138,11 +122,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     m_textToSpeech = new TextToSpeech(this);
 
-    ui->soundPlayBtn->setIcon(QIcon(":/icons/soundPlay.png"));
-    ui->soundPlayBtn->setFixedSize(QSize(30, 30));
-    ui->soundPlayBtn->setIconSize(QSize(24, 24));
-    ui->soundPlayBtn->setCursor(Qt::PointingHandCursor);
-    ui->soundPlayBtn->setToolTip("Listen");
+    setUpButtonWithIcon(ui->soundPlayBtn, "soundPlay", "Listen");
 
     connect(ui->soundPlayBtn, &QPushButton::clicked, this,
             [this] {
@@ -156,22 +136,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->soundPlayBtn->hide();
 #endif
 
-    ui->splitBtn->setIcon(QIcon(":/icons/split.png"));
-    ui->splitBtn->setFixedSize(QSize(30, 30));
-    ui->splitBtn->setIconSize(QSize(24, 24));
-    ui->splitBtn->setCursor(Qt::PointingHandCursor);
-    ui->splitBtn->setToolTip("Split a file in 'eng-arm' format into separate files:\n - eng.txt\n - arm.txt");
+    setUpButtonWithIcon(ui->splitBtn, "split", "Split a file in 'eng-arm' format into separate files:\n - eng.txt\n - arm.txt");
     connect(ui->splitBtn, &QPushButton::clicked, this,
             [this] {
                 SplitDialog dlg(getExecutableGrandparentDirPath() + "/fileToSplit", this);
                 dlg.exec();
             });
 
-    ui->settingsBtn->setIcon(QIcon(":/icons/settings.png"));
-    ui->settingsBtn->setFixedSize(QSize(30, 30));
-    ui->settingsBtn->setIconSize(QSize(24, 24));
-    ui->settingsBtn->setCursor(Qt::PointingHandCursor);
-    ui->settingsBtn->setToolTip("Settings.");
+    setUpButtonWithIcon(ui->settingsBtn, "settings", "Settings");
     connect(ui->settingsBtn, &QPushButton::clicked, this,
             [this] {
                 SettingsDialog dlg(this);
@@ -441,4 +413,15 @@ void MainWindow::onTextToSpeechError(const QString& msg)
     });
 }
 #endif
+
+void MainWindow::setUpButtonWithIcon(QPushButton* btn, const QString& iconName, const QString& tooltip,
+                                        bool isEnabled, const QSize& buttonSize, const QSize& iconSize)
+{
+    btn->setIcon(QIcon(":/icons/" + iconName + ".png"));
+    btn->setFixedSize(buttonSize);
+    btn->setIconSize(iconSize);
+    btn->setCursor(Qt::PointingHandCursor);
+    btn->setToolTip(tooltip);
+    btn->setEnabled(isEnabled);
+}
 

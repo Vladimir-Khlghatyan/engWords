@@ -13,7 +13,7 @@ class SplitDialog : public QDialog
 {
     using baseClass = QDialog;
 public:
-    SplitDialog(const QString& path = "", QWidget* parent = nullptr);
+    SplitDialog(const QString& path, QWidget* parent);
     ~SplitDialog(){}
 
 private:
