@@ -419,7 +419,11 @@ void MainWindow::onSourceButtonClicked()
 void MainWindow::onSoundPlayButtonClicked()
 {
     ui->errorMsg->setText("");
-    m_textToSpeech->fetchAudio(ui->wordLabel->text());
+    if (m_currentWordIndex != -1){
+        m_textToSpeech->fetchAudio(m_engWords[m_currentWordIndex]);
+    } else {
+        m_textToSpeech->fetchAudio(ui->wordLabel->text());
+    }
 }
 
 void MainWindow::setUpButtonWithIcon(QPushButton* btn, const QString& iconName, const QString& tooltip,
