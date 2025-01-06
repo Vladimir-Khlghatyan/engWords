@@ -64,6 +64,7 @@ private:
     QTimer*                 m_dltTimer;
     QTimer*                 m_nextTimer;
     bool                    m_isEngArmMode;
+    bool                    m_autoSlide;
 
 #ifdef _PLAY_SOUND_
     TextToSpeech*           m_textToSpeech;

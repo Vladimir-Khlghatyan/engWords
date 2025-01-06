@@ -13,21 +13,26 @@ class SettingsDialog : public QDialog
 {
     using baseClass = QDialog;
 public:
-    SettingsDialog(bool& isEngArmMode, QWidget* parent);
+    SettingsDialog(bool& isEngArmMode, bool& showPossAnsImmediately, QWidget* parent);
     ~SettingsDialog(){}
 
 private slots:
-    void onToggle();
+    void onSwap();
+    void onAutoSlie();
     void onCencel();
     void onSave();
 
 private:
-    QLabel*      m_toggleText;
-    QPushButton* m_toggleBtn;
+    QLabel*      m_swapText;
+    QLabel*      m_autoSlieText;
+    QPushButton* m_autoSlieBtn;
+    QPushButton* m_swapBtn;
     QPushButton* m_cancelBtn;
     QPushButton* m_saveBtn;
     bool         m_isEngArmMode;
-    bool&        m_parentMode;
+    bool&        m_parentEngArmMode;
+    bool         m_autoSlide;
+    bool&        m_parentAutoSlide;
 };
 
 #endif // SETTINGSDIALOG_HPP

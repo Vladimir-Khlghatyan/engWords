@@ -10,7 +10,7 @@
         <file>icons/source_disabled.png</file>
         <file>icons/split.png</file>
         <file>icons/settings.png</file>
-        <file>icons/toggle_arm.png</file>
-        <file>icons/toggle_eng.png</file>
+        <file>icons/toggle_off.png</file>
+        <file>icons/toggle_on.png</file>
     </qresource>
 </RCC>

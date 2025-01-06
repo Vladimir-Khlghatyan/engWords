@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     , m_deletedWords(0)
     , m_currentWordIndex(-1)
     , m_isEngArmMode(true)
+    , m_autoSlide(false)
 {
     ui->setupUi(this);
 
@@ -261,8 +262,13 @@ void MainWindow::onNextButtonClicked()
     m_currentWordIndex = getRandomNumber(0, m_engWords.size() - 1);
     ui->wordLabel->setText(m_isEngArmMode ? m_engWords[m_currentWordIndex] : m_armWords[m_currentWordIndex]);
 
+    if (m_autoSlide) {
+        onShowButtonClicked();
+    } else {
+        ui->showBtn->setEnabled(true);
+    }
+
     ui->nextBtn->setEnabled(false);
-    ui->showBtn->setEnabled(true);
 }
 
 void MainWindow::onShowButtonClicked()
@@ -327,7 +333,7 @@ void MainWindow::onDeleteButtonClicked()
 
 void MainWindow::onSettingsButtonClicked()
 {
-    SettingsDialog dlg(m_isEngArmMode, this);
+    SettingsDialog dlg(m_isEngArmMode, m_autoSlide, this);
     if (dlg.exec() == QDialog::Accepted) {
         onNextButtonClicked();
     }
